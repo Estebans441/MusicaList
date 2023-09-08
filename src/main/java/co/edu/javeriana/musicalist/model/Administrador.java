@@ -35,4 +35,9 @@ public class Administrador extends Cuenta {
         this.contrasena = this.hashContrasena(contrasena);
         this.activada = false;
     }
+
+    @Override
+    public void setContrasena(String contrasena) {
+        this.contrasena = this.hashContrasena(contrasena);
+    }
 }
