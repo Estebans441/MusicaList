@@ -6,17 +6,17 @@
 
 ### Inicio
 <p align="center">
-  <img src="https://github.com/Estebans441/MusicaList/blob/resources/mockups/Inicio.png" alt="Inicio" width="35%">
+  <img src="https://github.com/Estebans441/MusicaList/blob/master/resources/mockups/Inicio.png" alt="Inicio" width="35%">
 </p>
 
 ### Pagina de contenido
 <p align="center">
-  <img src="https://github.com/Estebans441/MusicaList/blob/resources/mockups/Page_3.png" alt="Contenido" width="35%">
+  <img src="https://github.com/Estebans441/MusicaList/blob/master/resources/mockups/Page_3.png" alt="Contenido" width="35%">
 </p>
 
 ### Formulario de contacto
 <p align="center">
-  <img src="https://github.com/Estebans441/MusicaList/blob/resources/mockups/Contact.png" alt="Contact us" width="35%">
+  <img src="https://github.com/Estebans441/MusicaList/blob/master/resources/mockups/Contact.png" alt="Contact us" width="35%">
 </p>
 
 ¡Gracias por visitar nuestra wiki de Desarrollo de Plataforma de Votación Musical! Esperamos que esta información te ayude a comprender mejor los objetivos y requisitos de nuestro emocionante proyecto. ¡No dudes en explorar más y unirte a nosotros en esta emocionante aventura musical! 🎶🎉
