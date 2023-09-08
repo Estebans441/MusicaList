@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Despliegue</title>
+  <link href = "/css/arquitectura_requerimientos_despliegue.css" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?  family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-------------------- 
+  BARRA DE NAVEGACION 
+  ----------------------->
+  <header class='lg_header' id='lg-header'>
+    <div class="interior">
+      <a class="logo" href="/wiki/inicio">
+        <img alt="logo" src="/images/logo1.png">
+      </a>
+      <nav class="navegacion">
+        <ul>
+          <li><a href="/wiki/inicio">Inicio </a></li>
+          <li class="submenu">
+            <a href="/wiki/acerca-de/requerimientos">Acerca del Proyecto</a>
+            <ul class="hijos">
+              <li><a href="/wiki/acerca-de/requerimientos">Requerimientos</a></li>
+              <li><a href="/wiki/acerca-de/arquitectura">Arquitectura</a></li>
+            </ul>
+          </li>
+          <li class="submenu">
+            <a href="/wiki/implementacion/desarrollo">Implementacion</a>
+            <ul class="hijos">
+              <li><a href="/wiki/implementacion/desarrollo">Desarrollo</a></li>
+              <li><a href="/wiki/implementacion/pruebas">Pruebas</a></li>
+              <li><a href="/wiki/implementacion/despliegue">Despliegue</a></li>
+            </ul>
+          </li>
+          <li><a href="/wiki/contactenos">Contactenos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="cuerpo">
+    <h2 class="tituloMedioB">Despliegue del Proyecto</h2>
+
+    <!-- DESPLIEGUE DEL PROYECTO-->
+    <div class="seccion">
+      <div class="imagenTexto">
+        <div>
+          <p>
+            En el mundo actual, donde la m&uacute;sica desempeña un papel crucial en la vida de las personas, la
+            creaci&oacute;n de
+            plataformas que permitan a los usuarios descubrir, votar y compartir canciones se ha convertido en una
+            necesidad imperante. En este contexto, surge el proyecto de "Lista Musical", una aplicaci&oacute;n web
+            diseñada
+            para proporcionar a los amantes de la m&uacute;sica una experiencia &uacute;nica y enriquecedora. En esta
+            introducci&oacute;n,
+            exploraremos el enfoque y las etapas clave del desarrollo y despliegue de este emocionante proyecto.
+            <br><br>
+            En el coraz&oacute;n del proyecto de Lista Musical, se encuentran dos roles principales: el "Administrador"
+            y el
+            "Votante". Estos roles interact&uacute;an con la plataforma de manera &uacute;nica, donde el Administrador
+            se encarga de
+            administrar canciones, g&eacute;neros musicales y su exposici&oacute;n a la votaci&oacute;n, mientras que
+            los Votantes disfrutan
+            de la experiencia de explorar y votar canciones en funci&oacute;n de sus preferencias musicales. El objetivo
+            del
+            proyecto es crear una plataforma interactiva y din&aacute;mica que permita a los usuarios expresar sus
+            gustos
+            musicales y descubrir nuevas canciones en funci&oacute;n de sus intereses.
+            <br><br>
+            El desarrollo y despliegue del proyecto de Lista Musical se divide en tres versiones sucesivas, cada una
+            centrada en aspectos clave del sistema. Estas versiones representan hitos en el proceso de
+            construcci&oacute;n y
+            permiten una evoluci&oacute;n iterativa hacia una aplicaci&oacute;n web completa y robusta.
+          </p>
+        </div>
+        <img class="imagenCenter classBlueBorder" src="/images/versionamiento.png" alt="Versionamiento" width="350px"
+          height="350px" />
+      </div>
+    </div>
+    <br>
+
+
+
+    <!--Versi&oacute;n 1: Integraci&oacute;n (Thymeleaf, Persistencia JPA y JUNIT)-->
+    <h3 class="tituloMedioS">Versi&oacute;n 1 - Integraci&oacute;n (Thymeleaf, Persistencia JPA y JUNIT) </h3>
+
+    <div class="seccion">
+      <div class="imagenTexto">
+        <img class="imagenCenter classYellowBorder" src="/images/version_1.jpg" alt="Versi&oacute;n - Entrega I"
+          height="480px" , width="350px" />
+        <div>
+          <p> En esta primera versi&oacute;n del despliegue del proyecto, el enfoque principal es establecer la base del
+            sistema mediante el uso de tecnolog&iacute;as como Thymeleaf, JPA y JUNIT. </p>
+          <ol>
+            <li>
+              <p> <b> Frontend con Thymeleaf: </b> </p>
+              <ul>
+                <li>
+                  <p>Implementar un formulario de contacto en la interfaz de usuario utilizando Thymeleaf como motor de
+                    plantillas. </p>
+                </li>
+                <li>
+                  <p> Llevar a cabo la estructura y estilo de la p&aacute;gina de contacto para asegurar una experiencia
+                    de
+                    usuario agradable.</p>
+                </li>
+              </ul>
+            </li>
+
+
+            <li>
+              <p> <b> Backend con Persistencia JPA: </b> </p>
+              <ul>
+                <li>
+                  <p> Desarrollar la l&oacute;gica del backend utilizando Java y JPA para gestionar la persistencia de
+                    datos.
+                  </p>
+                </li>
+                <li>
+                  <p> Crear las entidades necesarias, como "Canci&oacute;n", "G&eacute;nero Musical" y "Usuario", junto
+                    con sus
+                    relaciones.</p>
+                </li>
+                <li>
+                  <p> Implementar las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para las entidades
+                    mencionadas.</p>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <p> <b> Pruebas Unitarias con JUNIT: </b> </p>
+              <ul>
+                <li>
+                  <p> Escribir pruebas unitarias exhaustivas para las funcionalidades del backend. </p>
+                </li>
+                <li>
+                  <p> Asegurarse de que las pruebas cubran escenarios diferentes y bordes para garantizar la robustez
+                    del c&oacute;digo. </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p> <b> Wiki y Casos de Prueba: </b> </p>
+              <ul>
+                <li>
+                  <p> Documentar todas las funcionalidades implementadas en la wiki del proyecto. </p>
+                </li>
+                <li>
+                  <p> Detallar los casos de prueba que cubren tanto el frontend como el backend, incluyendo escenarios
+                    positivos y negativos. </p>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <br><br><br><br>
+
+    <!--Versi&oacute;n 2: Integraci&oacute;n (Angular y Rest)-->
+    <h3 class="tituloMedioBS">Versi&oacute;n 2 - Integraci&oacute;n Angular y Rest </h3>
+    <div class="seccion">
+      <div class="imagenTexto">
+        <div>
+          <p> En esta segunda versi&oacute;n, se expande la aplicaci&oacute;n incorporando tecnolog&iacute;as modernas
+            como Angular para la
+            interfaz de usuario y se contin&uacute;a fortaleciendo el backend con REST. </p>
+          <ol>
+            <li>
+              <p> <b> Frontend con Angular: </b> </p>
+              <ul>
+                <li>
+                  <p>Implementar el mismo formulario de contacto utilizando Angular para crear una interfaz m&aacute;s
+                    interactiva y din&aacute;mica. </p>
+                </li>
+                <li>
+                  <p> Configurar rutas y componentes necesarios para la navegaci&oacute;n y presentaci&oacute;n de la
+                    informaci&oacute;n.</p>
+                </li>
+              </ul>
+            </li>
+
+
+            <li>
+              <p> <b> Backend con REST: </b> </p>
+              <ul>
+                <li>
+                  <p> Exponer endpoints REST para las operaciones CRUD en el backend. </p>
+                </li>
+                <li>
+                  <p> Asegurar que la comunicaci&oacute;n entre el frontend y el backend se realice de manera eficiente
+                    y
+                    segura.</p>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <p> <b> Pruebas Unitarias Continuas: </b> </p>
+              <ul>
+                <li>
+                  <p> Mantener y mejorar las pruebas unitarias para el nuevo c&oacute;digo desarrollado en esta
+                    versi&oacute;n. </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p> <b> Wiki y Casos de Prueba Actualizados: </b> </p>
+              <ul>
+                <li>
+                  <p> Agregar nuevos casos de prueba que cubran las nuevas funcionalidades implementadas en el frontend
+                    y el backend. </p>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+        <!-- IMAGEN -->
+        <img class="imagenCenter classBlueBorder" src="/images/guiWeb.png" alt="Versi&oacute;n - Entrega II" ,
+          height="500px" />
+      </div>
+    </div>
+
+    <br><br><br><br>
+
+
+    <!--Versi&oacute;n 3: Integraci&oacute;n (Comunicaci&oacute;n, pruebas y seguridad)-->
+    <h3 class="tituloMedioS">Versi&oacute;n 3 - Integraci&oacute;n (Comunicaci&oacute;n, pruebas y seguridad) </h3>
+
+    <div class="seccion">
+      <div class="imagenTexto">
+        <img class="imagenCenter classYellowBorder" src="/images/seguridad.png" alt="Versi&oacute;n - Entrega III"
+          height="480px" , width="350px" />
+        <div>
+          <p> En esta tercera y &uacute;ltima versi&oacute;n, se abordan aspectos de comunicaci&oacute;n, seguridad y
+            pruebas adicionales.
+          </p>
+          <ol>
+            <li>
+              <p> <b> Comunicaci&oacute;n con JWT: </b> </p>
+              <ul>
+                <li>
+                  <p> Implementar la autenticaci&oacute;n y autorizaci&oacute;n utilizando JSON Web Tokens (JWT) para
+                    garantizar la
+                    seguridad de las interacciones entre usuarios y el sistema.</p>
+                </li>
+              </ul>
+            </li>
+
+
+            <li>
+              <p> <b> Historias de Usuario Completas: </b> </p>
+              <ul>
+                <li>
+                  <p> Desarrollar completamente las historias de usuario relacionadas con el sistema de votaci&oacute;n
+                    y las
+                    funcionalidades de cuenta de usuario..</p>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <p> <b> Pruebas de Interfaz y Pruebas de Carga: </b> </p>
+              <ul>
+                <li>
+                  <p> Realizar pruebas exhaustivas de la interfaz de usuario para validar que todas las funcionalidades
+                    se comporten seg&uacute;n lo esperado. </p>
+                </li>
+                <li>
+                  <p> Ejecutar pruebas de carga simulando diferentes niveles de tr&aacute;fico para evaluar el
+                    rendimiento y la
+                    escalabilidad del sistema. </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p> <b> Documentaci&oacute;n y Finalizaci&oacute;n: </b> </p>
+              <ul>
+                <li>
+                  <p> Actualizar la documentaci&oacute;n en la wiki para incluir detalles sobre la implementaci&oacute;n
+                    de JWT, las
+                    pruebas realizadas y los resultados obtenidos.
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p> Con cada versi&oacute;n, se sigue un proceso de desarrollo iterativo y colaborativo, donde los desarrolladores
+        y
+        equipos involucrados trabajan juntos para lograr los objetivos establecidos y mejorar la calidad y funcionalidad
+        del sistema en cada etapa. La documentaci&oacute;n y la comunicaci&oacute;n efectiva son elementos clave en todo
+        el proceso
+        para garantizar un despliegue exitoso del proyecto. </p>
+    </div>
+
+
+  </div>
+</body>
+
+</html>

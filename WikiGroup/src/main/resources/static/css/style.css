@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols:wght@100&family=Nunito&family=Roboto+Slab&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: montserrat;
+}
+
+.cuerpo {
+  background-color: #ffffff;
+  padding: 100px;
+}
+
+.borde {
+  border: 1px solid #000;
+  padding: 30px;
+}
+
+.integrante{
+  margin: 0px 0 50px 0;
+}
+
+.seccion{
+  margin: 40px 0 40px 0;
+}
+
+/*
+BARRA DE NAVEGACION
+*/
+header {
+  padding: 0;
+  width: 100%;
+  height: 90px;
+  background-color: #ffffff;
+}
+header a{
+  font-family: 'Roboto Slab', serif;
+  text-decoration: none;
+}
+
+.interior {
+  max-width: 100%;
+  padding: 0 10px;
+  margin: auto;
+}
+
+.logo {
+  float: left;
+  padding: 5px 20px 0;
+}
+
+.logo img {
+  height: 80px;
+  transition: .3s linear;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+.navegacion {
+  float: right;
+  display: flex;
+  align-items: center;
+  min-height: 90px;
+  z-index: 1000;
+}
+
+.navegacion ul {
+  list-style: none;
+  padding: 0 10px;
+}
+
+.navegacion ul li {
+  display: inline-block;
+  position: relative;
+  transition: .3s linear;
+  z-index: 1000;
+}
+
+.navegacion ul li:hover {
+  transform: scale(1.1);
+}
+
+.navegacion ul li a {
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bolder;
+  padding: 12px 20px;
+  transition: .3s linear;
+}
+
+.navegacion ul li a:hover {
+  color: #EAC102;
+  transform: scale(1.1);
+}
+
+.navegacion ul li:hover .hijos {
+  display: block;
+}
+
+.navegacion .submenu .hijos {
+  display: none;
+  background: #ffffff;
+  position: absolute;
+  width: 100%;
+}
+
+.navegacion .submenu .hijo li {
+  display: block;
+  overflow: hidden;
+  border-bottom: none;
+}
+
+.navegacion .submenu .hijos li a {
+  display: block;
+}
+
+/*
+IMAGEN-TEXTO
+*/
+.imagenTexto {
+  display: flex;
+  align-items: center;
+
+}
+
+.imagenTexto img {
+  width: 20%;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.imagenTexto p {
+  text-align: justify;
+}
+
+
+/*
+TITULOS
+*/
+.titulo_principal {
+  font-family: oswald;
+  font-size: 300%;
+  font-weight: bolder;
+  letter-spacing: 0.15cm;
+  text-align: center;
+
+  background: linear-gradient(-5deg, #000000, #EAC102);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  color: #fff;
+}
+
+
+.claseP_DescripGeneral {
+  color: black;
+  text-align: center;
+  font-size: 200%;
+}
+
+.tituloMedio {
+  color: black;
+  font-family: poppins;
+  font-size: 260%;
+  font-weight: bolder;
+  letter-spacing: 0.05cm;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: goldenrod;
+}
+
+.clase3Titulo {
+  color: darkblue;
+  font-family: oswald;
+  font-size: 250%;
+  font-weight: bolder;
+  text-align: left;
+}
+
+img:hover {
+  filter: grayscale(25%)
+}
+
+.imagenCenter {
+  border-radius: 5%;
+  -webkit-border-radius: 10%;
+  box-shadow: 0px 0px 5px 5px #e7ca36;
+  -webkit-box-shadow: 0px 0px 5px 5px #e7ca36;
+}
+
+.classP_DescripcionPerfiles:first-letter {
+  color: darkblue;
+  font-family: fantasy;
+  font-size: 150%;
+  font-weight: bolder;
+}
+
+.classP_DescripcionPerfiles {
+  color: black;
+  text-align: justify;
+  font-size: 200%;
+}
+
+.classTituloSecundarioAmarillo {
+  color: darkgoldenrod;
+  font-family: fantasy;
+  text-align: center;
+  font-size: 250%;
+  font-weight: bolder;
+}
+
+.classTituloSecundarioAzul {
+  color: rgb(2, 85, 165);
+  font-family: montserrat;
+  text-align: justify;
+  font-size: 250%;
+  font-weight: bold;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.imagenCenterBlue {
+  border-radius: 5%;
+  -webkit-border-radius: 10%;
+  box-shadow: 0px 0px 5px 5px #97c3f2;
+  -webkit-box-shadow: 0px 0px 5px 5px #97c3f2;
+  display: flex;
+  justify-content: center;
+}
+
+.classLiFormato {
+  color: black;
+  text-align: justify;
+  font-size: 200%;
+}
+
+/*
+TABLAS
+*/
+.centerTable {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+
+.centerTable th,
+.centerTable td {
+  border: 1px solid darkblue;
+  padding: 8px;
+}
+
+th {
+  color: black;
+  font-family: monospace;
+  font-size: 150%;
+  font-weight: bolder;
+  background-color: lightcyan;
+}
+
+td {
+  color: black;
+  font-family: monospace;
+  font-size: 150%;
+  font-weight: bold;
+  text-align: justify;
+  padding: 10px;
+}
+
+td.imagen {
+  text-align: center;
+  width: 50px;
+  height: 100px;
+}
+
+
+
+/*
+Carrusel
+*/
+.carrusel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.elementoCarrusel {
+  flex: 1 0 auto;
+  margin: 0 50px;
+  background-color: #fff;
+  width: flex;
+  text-align: center;
+}
+
+.elementoCarrusel img {
+  height: 150px;
+  transition: .3s linear;
+}
+.elementoCarrusel img:hover {
+  transform: scale(1.1);
+}
+
+/*
+Carrusel integrantes
+*/
+
+.integrantes-lista {
+  display: flex;
+  margin-top: 50px;
+  height: 550px;
+  align-items: center;
+  justify-content: center;
+}
+
+.integrante-lista {
+  width: flex;
+  text-align: center;
+  transition: .3s linear;
+  margin: 10px;
+}
+
+.integrante-lista img{
+  height: 400px;
+  border-radius: 20px;
+}
+
+.integrante-lista p {
+  color: rgb(0, 0, 0);
+  font-family: montserrat;
+  text-align: center;
+  font-size: 150%;
+  font-weight: bold;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.integrante-lista:hover, .integrante-lista.selected{
+  height: 500px;
+  text-decoration: underline;
+  color: blue;
+  transform: scale(1.1);
+}
+
+
+.integrante{
+  display: none;
+}
+
+.integrante.selected{
+  display: block;
+}
