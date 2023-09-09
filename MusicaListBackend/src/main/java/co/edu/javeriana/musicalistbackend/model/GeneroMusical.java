@@ -1,6 +1,7 @@
 package co.edu.javeriana.musicalistbackend.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,7 +21,7 @@ public class GeneroMusical {
     private String nombreGenero;
     private String descripcion;
 
-    @JsonBackReference("genero_musical_id")
+    @JsonIgnoreProperties("generoMusical")
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "genero_musical_id")
     private Set<Cancion> canciones = new LinkedHashSet<>();
