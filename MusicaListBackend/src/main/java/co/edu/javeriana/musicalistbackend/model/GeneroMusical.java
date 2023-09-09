@@ -16,7 +16,7 @@ import java.util.Set;
 public class GeneroMusical {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idGenero;
 
     private String nombreGenero;
     private String descripcion;

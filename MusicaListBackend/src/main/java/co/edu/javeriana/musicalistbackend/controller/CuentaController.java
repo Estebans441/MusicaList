@@ -15,7 +15,7 @@ public class CuentaController {
     @CrossOrigin
     @GetMapping(value = "/crear")
     void crearAdministrador(){
-        Administrador administrador = new Administrador("estebans441","estebans441@gmail.com","ESA1234");
+        Administrador administrador = new Administrador("camorag","camorag@gmail.com","calamardo-loves-L10NEL");
         administradorRepository.save(administrador);
     }
 }

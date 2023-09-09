@@ -16,7 +16,7 @@ import java.security.NoSuchAlgorithmException;
 public abstract class Cuenta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Integer id;
+    protected Integer idCuenta;
 
     protected String nombreUsuario;
     protected String correo;
