@@ -40,6 +40,22 @@ public class AdministradorTest {
     }
 
     @Test
+    void findAdministradorByNombre(){
+        Administrador administrador = new Administrador();
+        Optional<Administrador> optionalAdministrador = administradorRepository.findByNombreUsuario("estebans441");
+        if(optionalAdministrador.isPresent())
+            administrador = optionalAdministrador.get();
+        System.out.println("Nombre de administrador: " + administrador.getNombreUsuario());
+        Set<GeneroMusical> generoMusicales = administrador.getGeneros();
+        for(GeneroMusical generoMusical : generoMusicales){
+            System.out.println("\t- " + generoMusical.getNombreGenero());
+        }
+        assert(true);
+    }
+
+
+
+    @Test
     void findAllAdministradores(){
         ArrayList<Administrador> administradores = (ArrayList<Administrador>) administradorRepository.findAll();
         for(Administrador administrador : administradores){
