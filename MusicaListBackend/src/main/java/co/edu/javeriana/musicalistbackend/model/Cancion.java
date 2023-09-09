@@ -38,6 +38,9 @@ public class Cancion {
             inverseJoinColumns = @JoinColumn(name = "votante_cuenta_id"))
     private Set<Votante> votos = new LinkedHashSet<>();
 
+    @Transient
+    private Integer numeroVotos;
+
     public Cancion(){
         this.nombre = "";
         this.generoMusical = new GeneroMusical();
@@ -53,5 +56,10 @@ public class Cancion {
         this.artista = artista;
         this.duracionSeg = duracionSeg;
         this.generoMusical = generoMusical;
+    }
+
+    public Integer getNumeroVotos() {
+        this.numeroVotos = getVotos().size();
+        return numeroVotos;
     }
 }
