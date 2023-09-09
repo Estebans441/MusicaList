@@ -16,43 +16,36 @@ public class AdministradorController {
 
     // Create -> POST
     @CrossOrigin
-    @GetMapping(value = "/crear")
-    public Administrador crearAdministrador(@RequestBody Administrador administrador){
+    @PostMapping(value = "/crear")
+    public Administrador crearAdministrador(@RequestBody Administrador administrador) {
         return administradorRepository.save(administrador);
     }
 
     // Retrieve -> GET
     @GetMapping("/all")
-    public List<Administrador> getAdministradores(){
+    public List<Administrador> getAdministradores() {
         return administradorRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public Administrador getAdministradorId(@PathVariable Integer id){
-        Administrador administrador = new Administrador();
-        Optional<Administrador> administradorOptional = administradorRepository.findById(id);
-        if(administradorOptional.isPresent())
-            administrador = administradorOptional.get();
-        return administrador;
+    public Administrador getAdministradorId(@PathVariable Integer id) {
+        return administradorRepository.findById(id).orElse(null);
     }
 
     // Update -> PUT
     @PutMapping("/actualizar/{id}")
-    public Administrador actualizarAdministrador(@PathVariable Integer id, @RequestBody Administrador administrador){
-        Administrador administradorEditado = new Administrador();
+    public Administrador actualizarAdministrador(@PathVariable Integer id, @RequestBody Administrador administrador) {
         Optional<Administrador> administradorOptional = administradorRepository.findById(id);
-        if(administradorOptional.isPresent()){
-            administradorEditado = administradorOptional.get();
-            administradorEditado.setNombreUsuario(administrador.getNombreUsuario());
-            administradorEditado.setCorreo(administrador.getCorreo());
-            administradorEditado.setContrasena(administrador.getContrasena());
+        if (administradorOptional.isPresent()){
+            administrador.setIdCuenta(id);
+            return administradorRepository.save(administrador);
         }
-        return administradorRepository.save(administradorEditado);
+        return null;
     }
 
     // Delete -> DELETE
     @DeleteMapping("/eliminar/{id}")
-    public Boolean borrarId(@PathVariable Integer id){
+    public Boolean borrarId(@PathVariable Integer id) {
         administradorRepository.deleteById(id);
         return true;
     }
