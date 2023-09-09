@@ -68,6 +68,19 @@ public class GeneroTest {
     }
 
     @Test
+    void findByNameGenero(){
+        GeneroMusical generoMusical = new GeneroMusical();
+        Optional<GeneroMusical> optionalGeneroMusical = generoMusicalRepository.findGeneroMusicalByNombreGenero("Rock");
+
+        if (optionalGeneroMusical.isPresent())
+            generoMusical = optionalGeneroMusical.get();
+
+        System.out.println("Se encontro el genero musical con nombre: " + generoMusical.getNombreGenero());
+
+        assert (true);
+    }
+
+    @Test
     void actualizarGeneroMusical(){
         GeneroMusical generoMusical = new GeneroMusical();
         Optional <GeneroMusical> optionalGeneroMusical = generoMusicalRepository.findById(2);
