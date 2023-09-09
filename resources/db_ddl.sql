@@ -70,15 +70,8 @@ CREATE TABLE IF NOT EXISTS musicalist.genero_musical (
   id_genero INT NOT NULL AUTO_INCREMENT,
   nombre_genero VARCHAR(45) NOT NULL,
   descripcion VARCHAR(45) NOT NULL,
-  administrador_id INT NULL,
   PRIMARY KEY (id_genero),
-  INDEX fk_genero_musical_administrador1_idx (administrador_id ASC) VISIBLE,
-  UNIQUE INDEX nombre_genero_UNIQUE (nombre_genero ASC) VISIBLE,
-  CONSTRAINT fk_genero_musical_administrador1
-    FOREIGN KEY (administrador_id)
-    REFERENCES musicalist.administrador (cuenta_id)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
+  UNIQUE INDEX nombre_genero_UNIQUE (nombre_genero ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
@@ -92,16 +85,9 @@ CREATE TABLE IF NOT EXISTS musicalist.cancion (
   nombre VARCHAR(45) NOT NULL,
   artista VARCHAR(45) NULL,
   duracion_seg INT NULL,
-  administrador_id INT NULL,
   genero_musical_id INT NOT NULL,
   PRIMARY KEY (id_cancion),
-  INDEX fk_cancion_administrador1_idx (administrador_id ASC) VISIBLE,
   INDEX fk_cancion_genero_musical1_idx (genero_musical_id ASC) VISIBLE,
-  CONSTRAINT fk_cancion_administrador1
-    FOREIGN KEY (administrador_id)
-    REFERENCES musicalist.administrador (cuenta_id)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
   CONSTRAINT fk_cancion_genero_musical1
     FOREIGN KEY (genero_musical_id)
     REFERENCES musicalist.genero_musical (id_genero)
