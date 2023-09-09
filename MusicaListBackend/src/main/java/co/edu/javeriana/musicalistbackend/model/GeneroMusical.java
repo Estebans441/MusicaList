@@ -29,4 +29,20 @@ public class GeneroMusical {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "genero_musical_id")
     private Set<Cancion> canciones = new LinkedHashSet<>();
+
+    public GeneroMusical(){
+        this.descripcion = "";
+        this.nombreGenero = "";
+    }
+
+    public GeneroMusical(String descripcion, String nombre){
+        this.descripcion = descripcion;
+        this.nombreGenero = nombre;
+    }
+
+    public GeneroMusical(String descripcion, String nombre, Administrador administrador){
+        this.descripcion = descripcion;
+        this.nombreGenero = nombre;
+        this.administrador = administrador;
+    }
 }
