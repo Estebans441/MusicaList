@@ -32,10 +32,6 @@ public class AdministradorTest {
         if(optionalAdministrador.isPresent())
             administrador = optionalAdministrador.get();
         System.out.println("Nombre de administrador: " + administrador.getNombreUsuario());
-        Set<GeneroMusical> generoMusicales = administrador.getGeneros();
-        for(GeneroMusical generoMusical : generoMusicales){
-            System.out.println("\t- " + generoMusical.getNombreGenero());
-        }
         assert(true);
     }
 
@@ -46,10 +42,6 @@ public class AdministradorTest {
         if(optionalAdministrador.isPresent())
             administrador = optionalAdministrador.get();
         System.out.println("Nombre de administrador: " + administrador.getNombreUsuario());
-        Set<GeneroMusical> generoMusicales = administrador.getGeneros();
-        for(GeneroMusical generoMusical : generoMusicales){
-            System.out.println("\t- " + generoMusical.getNombreGenero());
-        }
         assert(true);
     }
 

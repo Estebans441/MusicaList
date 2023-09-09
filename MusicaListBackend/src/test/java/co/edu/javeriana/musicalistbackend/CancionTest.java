@@ -27,14 +27,7 @@ public class CancionTest {
 
     @Test
     void crearCancion() {
-        Optional<Administrador> administradorOptional = administradorRepository.findById(1);
-        Administrador administrador = null;
-        Cancion cancion;
-        if (administradorOptional.isPresent())
-            administrador = administradorOptional.get();
-
-        cancion = new Cancion("Something real", "Post Malone", 270, administrador, generoMusicalRepository.findById(1).get());
-
+        Cancion cancion = new Cancion("Something real", "Post Malone", 270, generoMusicalRepository.findById(4).get());
         cancionRepository.save(cancion);
         assert (true);
     }
@@ -48,7 +41,6 @@ public class CancionTest {
 
         System.out.println("Nombre de la cancion: " + cancion.getNombre());
         System.out.println("Genero: " + cancion.getGeneroMusical().getNombreGenero());
-
         assert(true);
     }
 

@@ -25,17 +25,7 @@ public class GeneroTest {
     AdministradorRepository administradorRepository;
     @Test
     void crearGeneroMusical (){
-        Administrador administrador = new Administrador();
-        GeneroMusical generoMusical;
-        Optional<Administrador> optionalAdministrador = administradorRepository.findById(1);
-
-        if (optionalAdministrador.isPresent()){
-            administrador = optionalAdministrador.get();
-            generoMusical = new GeneroMusical("Cumbia", "Genero musical Cumbia Villera", administrador);
-        }
-        else{
-            generoMusical = new GeneroMusical("Cumbia", "Genero musical Cumbia Villera");
-        }
+        GeneroMusical generoMusical = new GeneroMusical("Cumbia", "Genero musical Cumbia Villera");
         generoMusicalRepository.save(generoMusical);
         assert (true);
     }

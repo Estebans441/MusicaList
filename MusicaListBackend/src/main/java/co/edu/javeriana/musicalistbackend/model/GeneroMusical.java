@@ -1,12 +1,9 @@
 package co.edu.javeriana.musicalistbackend.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -23,13 +20,7 @@ public class GeneroMusical {
     private String nombreGenero;
     private String descripcion;
 
-    @JsonBackReference("generos")
-    @ManyToOne(fetch = FetchType.LAZY)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "administrador_id")
-    private Administrador administrador;
-
-    @JsonManagedReference
+    @JsonBackReference("genero_musical_id")
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "genero_musical_id")
     private Set<Cancion> canciones = new LinkedHashSet<>();
@@ -39,14 +30,8 @@ public class GeneroMusical {
         this.nombreGenero = "";
     }
 
-    public GeneroMusical(String descripcion, String nombre){
+    public GeneroMusical(String nombre, String descripcion){
         this.descripcion = descripcion;
         this.nombreGenero = nombre;
-    }
-
-    public GeneroMusical(String descripcion, String nombre, Administrador administrador){
-        this.descripcion = descripcion;
-        this.nombreGenero = nombre;
-        this.administrador = administrador;
     }
 }
