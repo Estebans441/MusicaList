@@ -1,5 +1,8 @@
 package co.edu.javeriana.musicalistbackend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,16 +26,19 @@ public class Cancion {
     private String artista;
     private Integer duracionSeg;
 
+    @JsonBackReference("canciones")
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "administrador_id")
     private Administrador administrador;
 
+    @JsonBackReference("canciones")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "genero_musical_id", nullable = false)
     private GeneroMusical generoMusical;
 
+    //@JsonManagedReference
     @ManyToMany
     @JoinTable(name = "votos_cancion",
             joinColumns = @JoinColumn(name = "cancion_id_cancion"),
