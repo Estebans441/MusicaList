@@ -17,7 +17,7 @@ public class Cancion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cancion", nullable = false)
-    private Integer id;
+    private Integer idCancion;
 
     private String nombre;
     private String artista;
@@ -38,4 +38,29 @@ public class Cancion {
             joinColumns = @JoinColumn(name = "cancion_id_cancion"),
             inverseJoinColumns = @JoinColumn(name = "votante_cuenta_id"))
     private Set<Votante> votos = new LinkedHashSet<>();
+
+    public Cancion(){
+        this.nombre = "";
+        this.generoMusical = new GeneroMusical();
+    }
+
+    public Cancion(String nombre, GeneroMusical genero){
+        this.nombre = nombre;
+        this.generoMusical = genero;
+    }
+
+    public Cancion(String nombre, String artista, Integer duracionSeg, Administrador administrador, GeneroMusical generoMusical) {
+        this.nombre = nombre;
+        this.artista = artista;
+        this.duracionSeg = duracionSeg;
+        this.administrador = administrador;
+        this.generoMusical = generoMusical;
+    }
+
+    public Cancion(String nombre, String artista, Integer duracionSeg, GeneroMusical generoMusical) {
+        this.nombre = nombre;
+        this.artista = artista;
+        this.duracionSeg = duracionSeg;
+        this.generoMusical = generoMusical;
+    }
 }
