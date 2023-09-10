@@ -45,8 +45,6 @@ public class AdministradorTest {
         assert(true);
     }
 
-
-
     @Test
     void findAllAdministradores(){
         ArrayList<Administrador> administradores = (ArrayList<Administrador>) administradorRepository.findAll();
