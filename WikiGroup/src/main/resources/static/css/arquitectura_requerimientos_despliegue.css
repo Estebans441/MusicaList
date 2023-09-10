@@ -315,10 +315,58 @@ td {
 li{
   font-weight: bold;
 }
-p{
+p {
   font-weight: normal;
   color: black;
   text-align: justify;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 120%;
+}
+
+/*
+  Carruseles a emplear para documentación, basados en el carrusel del index
+ */
+
+.integrantes-lista {
+  display: flex;
+  margin-top: 50px;
+  height: 550px;
+  align-items: center;
+  justify-content: center;
+}
+
+.integrante-lista {
+  width: flex;
+  text-align: center;
+  transition: .3s linear;
+  margin: 10px;
+}
+
+.integrante-lista img{
+  height: 400px;
+  border-radius: 20px;
+}
+
+.integrante-lista p {
+  color: rgb(0, 0, 0);
+  font-family: montserrat;
+  text-align: center;
+  font-size: 150%;
+  font-weight: bold;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.integrante-lista:hover, .integrante-lista.selected{
+  height: 500px;
+  text-decoration: underline;
+  color: blue;
+  transform: scale(1.1);
+}
+
+.integrante{
+  display: none;
+}
+
+.integrante.selected{
+  display: block;
 }

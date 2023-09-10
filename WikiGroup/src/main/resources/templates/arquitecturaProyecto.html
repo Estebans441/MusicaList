@@ -1,70 +1,76 @@
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title> Arquitectura del Proyecto </title>
-    <link href = "/css/arquitectura_requerimientos_despliegue.css" rel="stylesheet" type="text/css">
+    <link href="/css/arquitectura_requerimientos_despliegue.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?  family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
-  </head> 
-  <body>
-  <!-------------------- 
-  BARRA DE NAVEGACION 
-  ----------------------->
-  <header class='lg_header' id='lg-header'>
+</head>
+<body>
+<!--------------------
+BARRA DE NAVEGACION
+----------------------->
+<header class='lg_header' id='lg-header'>
     <div class="interior">
-      <a class="logo" href="/wiki/inicio">
-        <img alt="logo" src="/images/logo1.png">
-      </a>
-      <nav class="navegacion">
-        <ul>
-          <li><a href="/wiki/inicio">Inicio </a></li>
-          <li class="submenu">
-            <a href="/wiki/acerca-de/requerimientos">Acerca del Proyecto</a>
-            <ul class="hijos">
-              <li><a href="/wiki/acerca-de/requerimientos">Requerimientos</a></li>
-              <li><a href="/wiki/acerca-de/arquitectura">Arquitectura</a></li>
+        <a class="logo" href="/wiki/inicio">
+            <img alt="logo" src="/images/logo1.png">
+        </a>
+        <nav class="navegacion">
+            <ul>
+                <li><a href="/wiki/inicio">Inicio </a></li>
+                <li class="submenu">
+                    <a href="/wiki/acerca-de/requerimientos">Acerca del Proyecto</a>
+                    <ul class="hijos">
+                        <li><a href="/wiki/acerca-de/requerimientos">Requerimientos</a></li>
+                        <li><a href="/wiki/acerca-de/arquitectura">Arquitectura</a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="/wiki/implementacion/desarrollo">Implementacion</a>
+                    <ul class="hijos">
+                        <li><a href="/wiki/implementacion/desarrollo">Desarrollo</a></li>
+                        <li><a href="/wiki/implementacion/pruebas">Pruebas</a></li>
+                        <li><a href="/wiki/implementacion/despliegue">Despliegue</a></li>
+                    </ul>
+                </li>
+                <li><a href="/wiki/contactenos">Contactenos</a></li>
             </ul>
-          </li>
-          <li class="submenu">
-            <a href="/wiki/implementacion/desarrollo">Implementacion</a>
-            <ul class="hijos">
-              <li><a href="/wiki/implementacion/desarrollo">Desarrollo</a></li>
-              <li><a href="/wiki/implementacion/pruebas">Pruebas</a></li>
-              <li><a href="/wiki/implementacion/despliegue">Despliegue</a></li>
-            </ul>
-          </li>
-          <li><a href="/wiki/contactenos">Contactenos</a></li>
-        </ul>
-      </nav>
+        </nav>
     </div>
-  </header>
+</header>
 
-  <div class="cuerpo">
+<div class="cuerpo">
     <h2 class="tituloMedio">Arquitectura del Proyecto</h2>
 
     <!-- DESCRIPCION ARQUITECTURA -->
     <div class="seccion">
-      <div class="imagenTexto">
-        <p class="classP_Descripcion">
-          La definici&oacute;n de la arquitectura de un proyecto de software es de gran importancia debido a varias
-          razones clave. Primero, establece la estructura global del sistema, determinando c&oacute;mo los componentes se
-          organizan y se comunican entre s&iacute;. Esta estructura proporciona claridad y coherencia durante el
-          desarrollo y el mantenimiento continuo.
-          <br><br>
-          La arquitectura tambi&eacute;n tiene un impacto en la mantenibilidad del software. Una estructura modular y
-          bien definida permite identificar y solucionar problemas de manera m&aacute;s eficiente. Adem&aacute;s,
-          fomenta la reutilizaci&oacute;n de componentes, lo que agiliza el desarrollo y reduce la duplicaci&oacute;n de
-          esfuerzos.
-          <br><br>
-          A continuaci&oacute;n, se presentan los diagramas principales que buscan representar la arquitectura del sistema
-          correspondiente al presente proyecto de Desarrollo Web.
-        </p>
-        <img class="imagenCenter classBlueBorder" src="/images/arquitecturaProyectos.jpg" alt="Arquitectura Proyectos"
-          width="55%" height="270px" />
-      </div>
+        <div class="imagenTexto">
+            <p class="classP_Descripcion">
+                La definici&oacute;n de la arquitectura de un proyecto de software es de gran importancia debido a
+                varias
+                razones clave. Primero, establece la estructura global del sistema, determinando c&oacute;mo los
+                componentes se
+                organizan y se comunican entre s&iacute;. Esta estructura proporciona claridad y coherencia durante el
+                desarrollo y el mantenimiento continuo.
+                <br><br>
+                La arquitectura tambi&eacute;n tiene un impacto en la mantenibilidad del software. Una estructura
+                modular y
+                bien definida permite identificar y solucionar problemas de manera m&aacute;s eficiente. Adem&aacute;s,
+                fomenta la reutilizaci&oacute;n de componentes, lo que agiliza el desarrollo y reduce la duplicaci&oacute;n
+                de
+                esfuerzos.
+                <br><br>
+                A continuaci&oacute;n, se presentan los diagramas principales que buscan representar la arquitectura del
+                sistema
+                correspondiente al presente proyecto de Desarrollo Web.
+            </p>
+            <img class="imagenCenter classBlueBorder" src="/images/arquitecturaProyectos.jpg"
+                 alt="Arquitectura Proyectos"
+                 width="55%" height="270px"/>
+        </div>
     </div>
 
     <!-- DESCRIPCION DE DIAGRAMAS DE REFERENCIA -->
@@ -73,126 +79,191 @@
     <!-- Modelo Conceptual -->
     <h4 class="tituloCenter">Modelo Conceptual</h4>
     <div class="section">
-      <div class="imagenTexto">
-        <img class="imagenCenter classYellowBorder" src="/images/ModeloConceptual.png" alt="Modelo Conceptual Proyecto"
-          width="670px" height="450px" />
-        <br><br>
+        <div class="imagenTexto">
+            <img class="imagenCenter classYellowBorder" src="/images/ModeloConceptual.png"
+                 alt="Modelo Conceptual Proyecto"
+                 width="670px" height="450px"/>
+            <br><br>
 
-        <div>
-          <h5 class="tituloLateralDer_sub">Descripci&oacute;n Modelo Conceptual:</h5>
-          <p>
-            En el modelo conceptual, se representan las funcionalidades principales del sistema a desarrollar. Tal c&oacute;mo
-            se puede evidenciar, se solidifica la existencia de dos roles (Cada uno de ellos con funcionalidades
-            espec&iacute;ficas):
-          </p>
-          <ol>
-            <li>
-              <p><b>Administrador</b></p>
-              <!-- Funcionalidades del Administrador -->
-              <ul>
-                <li><p>Crear y/o subir canciones</p></li>
-                <li><p>Exponer canci&oacute;n a votaci&oacute;n</p></li>
-                <li><p>Crear g&eacute;neros musicales</p></li>
-              </ul>
-            </li>
-            <li>
-              <p><b>Votante</b></p>
-              <!-- Funcionalidades del Votante -->
-              <ul>
-                <li><p>Ver lista de reproducci&oacute;n</p></li>
-                <li><p>Dar Like</p></li>
-                <li><p>Creaci&oacute;n y Activaci&oacute;n de cuenta de usuario.</p></li>
-              </ul>
-            </li>
-          </ol>
-          <p>Asimismo, es posible evidenciar la interacci&oacute;n de las partes mencionadas con anterioridad a través del
-            Sistema en s&iacute;, el cu&aacute;l en el diagrama representado se conoce c&oacute;mo Lista Musical, su objetivo,
-            radica en permitirle a los usuarios poder votar por listas de géneros de acuerdo con el gusto de su
-            canci&oacute;n.</p>
-          <p>Se realiza la integraci&oacute;n con un sistema para el env&iacute;o de correos electr&oacute;nicos, para que en
-            caso tal de que se solicit&eacute; realizar una actividad de este tipo, el sistema de la aplicaci&oacute;n web
-            redireccione de manera eficiente de acuerdo con la funcionalidad.</p>
+            <div>
+                <h5 class="tituloLateralDer_sub">Descripci&oacute;n Modelo Conceptual:</h5>
+                <p>
+                    En el modelo conceptual, se representan las funcionalidades principales del sistema a desarrollar.
+                    Tal c&oacute;mo
+                    se puede evidenciar, se solidifica la existencia de dos roles (Cada uno de ellos con funcionalidades
+                    espec&iacute;ficas):
+                </p>
+                <ol>
+                    <li>
+                        <p><b>Administrador</b></p>
+                        <!-- Funcionalidades del Administrador -->
+                        <ul>
+                            <li><p>Crear y/o subir canciones</p></li>
+                            <li><p>Exponer canci&oacute;n a votaci&oacute;n</p></li>
+                            <li><p>Crear g&eacute;neros musicales</p></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><b>Votante</b></p>
+                        <!-- Funcionalidades del Votante -->
+                        <ul>
+                            <li><p>Ver lista de reproducci&oacute;n</p></li>
+                            <li><p>Dar Like</p></li>
+                            <li><p>Creaci&oacute;n y Activaci&oacute;n de cuenta de usuario.</p></li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Asimismo, es posible evidenciar la interacci&oacute;n de las partes mencionadas con anterioridad a
+                    trav&eacute;s del
+                    Sistema en s&iacute;, el cu&aacute;l en el diagrama representado se conoce c&oacute;mo Lista
+                    Musical, su objetivo,
+                    radica en permitirle a los usuarios poder votar por listas de g&eacute;neros de acuerdo con el gusto de su
+                    canci&oacute;n.</p>
+                <p>Se realiza la integraci&oacute;n con un sistema para el env&iacute;o de correos electr&oacute;nicos,
+                    para que en
+                    caso tal de que se solicit&eacute; realizar una actividad de este tipo, el sistema de la aplicaci&oacute;n
+                    web
+                    redireccione de manera eficiente de acuerdo con la funcionalidad.</p>
+            </div>
         </div>
-      </div>
     </div>
     <br><br>
 
     <!-- Modelo de Contenedores -->
     <h4 class="tituloCenter">Modelo de Contenedores</h4>
     <div class="section">
-      <div class="imagenTexto">
-        <div>
-          <h5 class="tituloLateralDer_sub">Descripci&oacute;n Modelo Contenedores:</h5>
-          <p>El modelo de contenedores solidifica un papel de crucial importancia en la elaboración de proyectos de
-            desarrollo web. En el vertiginoso mundo digital actual, donde la entrega de aplicaciones eficientes y
-            escalables es esencial, los contenedores emergen como una solución ingeniosa y valiosa.</p>
-          <p>En el contexto de un proyecto de desarrollo web, los contenedores juegan un papel doblemente esencial:
-            backend y frontend. Esta dicotomía es clara en la imagen visual que acompaña estas palabras. En el backend,
-            los contenedores se encargan de la ejecución de código que subyace a las funcionalidades principales de la
-            aplicación. Aquí reside el corazón de la lógica empresarial, manejando bases de datos, procesos y flujos de
-            datos complejos.</p>
-          <p>Por otro lado, en el frontend, los contenedores definen la experiencia del usuario. Responsables de la
-            interacción visual, se encargan de presentar información de manera amigable y atractiva. Los usuarios
-            interactúan directamente con estas interfaces, lo que hace crucial que los contenedores frontend sean estables
-            y responsivos.</p>
-          <p>En total, el sistema contempla seis contenedores distintos. Cada uno de ellos cumple un rol específico en
-            la arquitectura general de la aplicación. La segmentación se realiza tanto según el rol de los usuarios
-            finales como en relación con el desarrollo técnico.</p>
-          <p>Es oportuno destacar la presencia de dos contenedores adicionales que merecen mención especial. Uno de ellos
-            es el encargado de gestionar la persistencia de información relacionada con las listas de música. Aquí residen
-            los detalles de las canciones publicadas y los votos asociados a cada una de ellas. Por último, se encuentra
-            el contenedor dedicado al sistema de correos. Aunque no forma parte del sistema en desarrollo, se prevé su
-            uso para enviar correos electrónicos, aprovechando un servicio web externo.</p>
+        <div class="imagenTexto">
+            <div>
+                <h5 class="tituloLateralDer_sub">Descripci&oacute;n Modelo Contenedores:</h5>
+                <p>El modelo de contenedores solidifica un papel de crucial importancia en la elaboraci&oacute;n de proyectos
+                    de
+                    desarrollo web. En el vertiginoso mundo digital actual, donde la entrega de aplicaciones eficientes
+                    y
+                    escalables es esencial, los contenedores emergen como una soluci&oacute;n ingeniosa y valiosa.</p>
+                <p>En el contexto de un proyecto de desarrollo web, los contenedores juegan un papel doblemente
+                    esencial:
+                    backend y frontend. Esta dicotom&iacute;a es clara en la imagen visual que acompaña estas palabras. En el
+                    backend,
+                    los contenedores se encargan de la ejecuci&oacute;n de c&oacute;digo que subyace a las funcionalidades principales
+                    de la
+                    aplicaci&oacute;n. Aqu&iacute; reside el coraz&oacute;n de la l&oacute;gica empresarial, manejando bases de datos, procesos y
+                    flujos de
+                    datos complejos.</p>
+                <p>Por otro lado, en el frontend, los contenedores definen la experiencia del usuario. Responsables de
+                    la
+                    interacci&oacute;n visual, se encargan de presentar informaci&oacute;n de manera amigable y atractiva. Los
+                    usuarios
+                    interact&uacute;an directamente con estas interfaces, lo que hace crucial que los contenedores frontend
+                    sean estables
+                    y responsivos.</p>
+                <p>En total, el sistema contempla seis contenedores distintos. Cada uno de ellos cumple un rol
+                    espec&iacute;fico en
+                    la arquitectura general de la aplicaci&oacute;n. La segmentaci&oacute;n se realiza tanto seg&uacute;n el rol de los
+                    usuarios
+                    finales como en relaci&oacute;n con el desarrollo t&eacute;cnico.</p>
+                <p>Es oportuno destacar la presencia de dos contenedores adicionales que merecen menci&oacute;n especial. Uno
+                    de ellos
+                    es el encargado de gestionar la persistencia de informaci&oacute;n relacionada con las listas de m&uacute;sica.
+                    Aqu&iacute; residen
+                    los detalles de las canciones publicadas y los votos asociados a cada una de ellas. Por &uacute;ltimo, se
+                    encuentra
+                    el contenedor dedicado al sistema de correos. Aunque no forma parte del sistema en desarrollo, se
+                    prev&eacute; su
+                    uso para enviar correos electr&oacute;nicos, aprovechando un servicio web externo.</p>
+            </div>
+            <br><br>
+            <img class="imagenCenter classYellowBorder" src="/images/ModeloContenedores.png"
+                 alt="Modelo Contenedores Proyecto"
+                 width="500px" height="500px"/>
         </div>
-        <br><br>
-        <img class="imagenCenter classYellowBorder" src="/images/ModeloContenedores.png" alt="Modelo Contenedores Proyecto"
-          width="500px" height="500px" />
-      </div>
     </div>
 
     <!-- Modelo de Componentes -->
     <h4 class="tituloCenter">Modelo de Componentes</h4>
     <div class="section">
-      <div class="imagenTexto">
-        <img class="imagenCenter classYellowBorder" src="/images/ModeloComponente.png" alt="Modelo Componentes Proyecto"
-        width="45%" height="60%" />
-        <br><br>
-        <div>
-          <h5 class="tituloLateralDer_sub">Descripción Modelo de Componentes:</h5>
-          <p>
-            El modelo de componentes presenta una fuerte relación con el desarrollo de los contenedores del frontend.
-            De esta manera, los componentes están orientados hacia la gestión de las funcionalidades del sistema,
-            considerando la cobertura específica de cada acción para cada rol de actor.
-          </p>
-          <ol>
-            <li>
-              <p> Frontend Votantes </p>
-              <ul>
-                <li> <p> Administrador de usuario: Creación y activación de cuentas </p> </li>
-                <li> <p> Autorización: Genera la autorización necesaria para el usuario </p> </li>
-                <li> <p> Canciones: Búsqueda de letras y canciones, así como la realización de votaciones </p> </li>
-              </ul>
-            </li>
-          </ol>
-          <ol start="2">
-            <li>
-              <p> Frontend Administrador </p>
-              <ul>
-                <li> <p> Autorización: Autenticación y generación de tokens para acceder a las funcionalidades de la aplicación </p> </li>
-                <li> <p> Canciones: Búsqueda de letras y canciones, además de la posibilidad de realizar votaciones</p></li>
-              </ul>
-            </li>
-          </ol>
-          <p>
-            Esta conexión entre los componentes proporciona un nivel más detallado de comportamiento,
-            lo que facilita una mejor organización al estructurar el código y llevar a cabo la implementación del proyecto.
-          </p>
+        <div class="imagenTexto">
+            <img class="imagenCenter classYellowBorder" src="/images/ModeloComponente.png"
+                 alt="Modelo Componentes Proyecto"
+                 width="45%" height="60%"/>
+            <br><br>
+            <div>
+                <h5 class="tituloLateralDer_sub">Descripci&oacute;n Modelo de Componentes:</h5>
+                <p>
+                    El modelo de componentes presenta una fuerte relaci&oacute;n con el desarrollo de los contenedores del
+                    frontend.
+                    De esta manera, los componentes est&aacute;n orientados hacia la gesti&oacute;n de las funcionalidades del
+                    sistema,
+                    considerando la cobertura espec&iacute;fica de cada acci&oacute;n para cada rol de actor.
+                </p>
+                <ol>
+                    <li>
+                        <p> Frontend Votantes </p>
+                        <ul>
+                            <li><p> Administrador de usuario: Creaci&oacute;n y activaci&oacute;n de cuentas </p></li>
+                            <li><p> Autorizaci&oacute;n: Genera la autorizaci&oacute;n necesaria para el usuario </p></li>
+                            <li><p> Canciones: B&uacute;squeda de letras y canciones, as&iacute; como la realizaci&oacute;n de
+                                votaciones </p></li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol start="2">
+                    <li>
+                        <p> Frontend Administrador </p>
+                        <ul>
+                            <li><p> Autorizaci&oacute;n: Autenticaci&oacute;n y generaci&oacute;n de tokens para acceder a las
+                                funcionalidades de la aplicaci&oacute;n </p></li>
+                            <li><p> Canciones: B&uacute;squeda de letras y canciones, adem&aacute;s de la posibilidad de realizar
+                                votaciones</p></li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>
+                    Esta conexi&oacute;n entre los componentes proporciona un nivel m&aacute;s detallado de comportamiento,
+                    lo que facilita una mejor organizaci&oacute;n al estructurar el c&oacute;digo y llevar a cabo la implementaci&oacute;n
+                    del proyecto.
+                </p>
+            </div>
         </div>
-      </div>
     </div>
     <br><br>
 
-    
-  </div>
+    <!-- Modelo de Base de Datos -->
+    <h4 class="tituloCenter">Modelo de la base de Datos </h4>
+    <div class="section">
+        <div class="imagenTexto">
+            <div>
+                <h5 class="tituloLateralDer_sub">Descripci&oacute;n Modelo Base de Datos:</h5>
+                <p>El modelo de base de datos desempeña un papel fundamental en los proyectos de desarrollo web, ya que
+                    act&uacute;a como un repositorio central para almacenar y gestionar datos cr&iacute;ticos. Su diseño eficiente
+                    asegura un acceso r&aacute;pido y seguro a la informaci&oacute;n, garantizando la integridad de los datos y
+                    cumpliendo con las regulaciones de privacidad. Adem&aacute;s, una base de datos bien estructurada facilita
+                    la escalabilidad de la aplicaci&oacute;n, permitiendo un crecimiento sin problemas a medida que aumenta el
+                    volumen de datos y usuarios.</p>
+
+                <p>Por otro lado, la mantenibilidad de la aplicaci&oacute;n tambi&eacute;n depende en gran medida del modelo de base
+                    de datos, ya que un diseño adecuado y una documentaci&oacute;n clara facilitan las actualizaciones y
+                    correcciones de errores. En conjunto, el modelo de base de datos contribuye de manera significativa
+                    a la eficiencia, seguridad y confiabilidad de la aplicaci&oacute;n, lo que lo convierte en un componente
+                    esencial en el desarrollo de proyectos web en el entorno digital actual.
+                </p>
+
+                <p>
+                    Tal c&oacute;mo se puede observar en la im&aacute;gen, se representa el modelo de la base de datos empleada para
+                    esbozar la informaci&oacute;n correspondiente al proyecto MusicaList, en el cu&aacute;l en total, se evidencian un
+                    total de seis tablas. A continuaci&oacute;n, se presenta el diccionario de datos de cada una de las
+                    entidades, cuyo objetivo radica en explicar
+                    la naturaleza de los atributos y la importancia de cada uno de estos para el
+                    proyecto.
+                </p>
+            </div>
+            <br><br>
+            <img class="imagenCenter classYellowBorder" src="/images/modeloDatos.PNG"
+                 alt="Modelo Base de Datos Proyecto"
+                 width="500px" height="500px"/>
+        </div>
+    </div>
+
+
+</div>
 </body>
 </html>

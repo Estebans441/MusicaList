@@ -57,10 +57,10 @@ public class AdministradorTest {
     @Test
     void actualizarAdministrador(){
         Administrador administrador = new Administrador();
-        Optional<Administrador> optionalAdministrador = administradorRepository.findById(1);
+        Optional<Administrador> optionalAdministrador = administradorRepository.findById(2);
         if(optionalAdministrador.isPresent())
             administrador = optionalAdministrador.get();
-        administrador.setCorreo("estebans441@hotmail.com");
+        administrador.setCorreo("juanframireze@hotmail.com");
         administradorRepository.save(administrador);
 
         assert(true);
