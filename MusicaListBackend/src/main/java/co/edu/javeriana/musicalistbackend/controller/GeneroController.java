@@ -1,6 +1,7 @@
 package co.edu.javeriana.musicalistbackend.controller;
 
 import co.edu.javeriana.musicalistbackend.model.GeneroMusical;
+import co.edu.javeriana.musicalistbackend.repository.AdministradorRepository;
 import co.edu.javeriana.musicalistbackend.repository.CancionRepository;
 import co.edu.javeriana.musicalistbackend.repository.GeneroMusicalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,21 +19,24 @@ public class GeneroController {
     @Autowired
     CancionRepository cancionRepository;
 
+    @Autowired
+    AdministradorRepository administradorRepository;
+
     // Create -> Post
     @CrossOrigin
     @PostMapping(value = "/crear")
-    public GeneroMusical crearGeneroMusical(@RequestBody GeneroMusical generoMusical){
+    public GeneroMusical crearGeneroMusical(@RequestBody GeneroMusical generoMusical) {
         return generoMusicalRepository.save(generoMusical);
     }
 
     // Retrieve -> GET
     @GetMapping("/all")
-    public List<GeneroMusical> getGenerosMusicales(){
+    public List<GeneroMusical> getGenerosMusicales() {
         return generoMusicalRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public GeneroMusical getAdministradorId(@PathVariable Integer id){
+    public GeneroMusical getGeneroID(@PathVariable Integer id) {
         return generoMusicalRepository.findById(id).orElse(null);
     }
 
