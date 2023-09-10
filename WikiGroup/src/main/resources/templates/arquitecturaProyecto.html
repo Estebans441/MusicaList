@@ -330,9 +330,9 @@ BARRA DE NAVEGACION
         </div>
     </div>
 
-    <br><br><br>
+    <br><br>
 
-
+    <h4 class="tituloMedioS">Diccionario de datos por tabla</h4>
     <!-- DICCIONARIO DE DATOS POR TRIOS DE TABLAS, RELACIONES Y ORDENES CORRESPONDIENTES DE LAS TABLAS (CUENTA, ADMIN, VOTANTE) -->
     <div class="section">
         <div class="imagenTexto">
@@ -391,42 +391,72 @@ BARRA DE NAVEGACION
                     </tr>
                     <tr>
                         <td class="tdH">id_cancion</td>
-                        <td>El sistema debe permitir al votante ver la lista de reproducci&oacute;n actual, mostrando
-                            las
-                            canciones
-                            disponibles para votaci&oacute;n, junto con sus detalles relevantes.
+                        <td>
+                            Identificador único para cada canción registrada en uso para la aplicación MusicaList, se
+                            representa a través de un número entero. Es autogenerado e incremental.
                         </td>
                     </tr>
                     <tr>
                         <td class="tdH">nombre</td>
-                        <td>El sistema debe permitir al votante dar "like" a una canci&oacute;n de la lista de
-                            reproducci&oacute;n,
-                            indicando su
-                            preferencia por la misma.
+                        <td>
+                            Nombre de la canción, a través de este atributo; los entes a través de sus roles pueden
+                            realizar modificaciones sobre cada registro de la tabla Canción de acuerdo con las
+                            funcionalidades de la aplicación. Se representa a
+                            través de una cadena de 45 carácteres.
                         </td>
                     </tr>
                     <tr>
                         <td class="tdH">artista</td>
-                        <td>El sistema debe permitir al votante realizar la creaci&oacute;n y activaci&oacute;n de una
-                            cuenta de
-                            usuario,
-                            solicitando la informaci&oacute;n necesaria para el registro, como nombre, correo electr&oacute;nico
-                            y
-                            contrase&ntilde;a.
+                        <td>
+                            Nombre del artista/banda de la canción; permite identificar el nombre de quien la compusó
+                            para su lanzamiento. Este atributo se representa a través de una cadena de 45 carácteres; no
+                            obstante, tiene la particularidad de que puede ser nulo, es decir, no es obligatorio el
+                            hecho de tener un artista, es decir, existe la posibilidad de que sea anónima la
+                            elaboración/composición de la canción.
                         </td>
                     </tr>
                     <tr>
-                        <td class="tdH">duracion</td>
-                        <td>El sistema debe permitir a los usuarios votar por listas de g&eacute;neros musicales en
-                            funci&oacute;n de sus
-                            preferencias de canciones, de acuerdo con el objetivo de la Lista Musical.
+                        <td class="tdH">duracion_seg</td>
+                        <td>
+                            Representación de la duración en segundos de la canción. Este atributo se implementa a
+                            través de un número entero.
                         </td>
                     </tr>
                     <tr>
                         <td class="tdH">genero_musical_id</td>
-                        <td>El sistema debe permitir a los usuarios votar por listas de g&eacute;neros musicales en
-                            funci&oacute;n de sus
-                            preferencias de canciones, de acuerdo con el objetivo de la Lista Musical.
+                        <td>
+                            Representa el id del genero musical en la relaci&oacute;n que representa que una canción
+                            debe tener un genero musical asignado, se relaciona con
+                            la tabla Genero Musical; este valor
+                            viaja cómo llave foránea referenciado cómo genero_musical_id. Este atributo posee la
+                            naturaleza de la tabla de la cuál es originaria, es decir, es un identificador único y
+                            autoincremental.
+                        </td>
+                    </tr>
+                </table>
+
+                <h5 class="tituloLateralDer_sub">Diccionario de Datos - Tabla Votos_Cancion </h5>
+                <table>
+                    <tr>
+                        <th>Nombre Atributo:</th>
+                        <th>Descripci&oacute;n del Atributo:</th>
+                    </tr>
+                    <tr>
+                        <td class="tdH">votante_cuenta_id</td>
+                        <td>
+                            Representa el id del votante en la relaci&oacute;n de la tabla intermedia, se relaciona con
+                            la tabla Votante; este valor
+                            viaja cómo llave foránea referenciado cómo votante_cuenta_id, y a su vez representa una de
+                            las dos llaves primarias de la Tabla.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdH">cancion_id_cuenta</td>
+                        <td>
+                            Representa el id de canción en la relaci&oacute;n de la tabla intermedia, se relaciona con
+                            la tabla Cancion; este valor
+                            viaja cómo llave foránea referenciado cómo cancion_id_cancion y a su vez representa una de
+                            las dos llaves primarias de la Tabla.
                         </td>
                     </tr>
                 </table>
@@ -504,31 +534,6 @@ BARRA DE NAVEGACION
                 <br>
                 <br>
 
-                <h5 class="tituloLateralDer_sub">Diccionario de Datos - Tabla Votos_Cancion </h5>
-                <table>
-                    <tr>
-                        <th>Nombre Atributo:</th>
-                        <th>Descripci&oacute;n del Atributo:</th>
-                    </tr>
-                    <tr>
-                        <td class="tdH">votante_cuenta_id</td>
-                        <td>
-                            Representa el id del votante en la relaci&oacute;n de la tabla intermedia, se relaciona con
-                            la tabla Votante; este valor
-                            viaja cómo llave foránea referenciado cómo votante_cuenta_id, y a su vez representa una de
-                            las dos llaves primarias de la Tabla.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="tdH">cancion_id_cuenta</td>
-                        <td>
-                            Representa el id de canción en la relaci&oacute;n de la tabla intermedia, se relaciona con
-                            la tabla Cancion; este valor
-                            viaja cómo llave foránea referenciado cómo cancion_id_cancion y a su vez representa una de
-                            las dos llaves primarias de la Tabla.
-                        </td>
-                    </tr>
-                </table>
             </div>
         </div>
     </div>
