@@ -246,7 +246,7 @@ BARRA DE NAVEGACION
     <br><br>
 
     <!-- Modelo de Base de Datos -->
-    <h4 class="tituloCenter">Modelo de la Base de Datos </h4>
+    <h3 class="tituloCenter">Modelo de la Base de Datos </h3>
     <div class="section">
         <div class="imagenTexto">
             <div>
@@ -285,14 +285,54 @@ BARRA DE NAVEGACION
             <br><br>
             <img class="imagenCenter classYellowBorder" src="/images/modeloDatos.PNG"
                  alt="Modelo Base de Datos Proyecto"
-                 width="500px" height="500px"/>
+                 width="400px" height="400px"/>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <!-- Diccionario de Datos -->
+    <h3 class="tituloMedioS">Diccionario de Datos Proyecto MusicaList</h3>
+    <!-- Descripcion Diccionario de Datos  -->
+    <div class="section">
+        <div class="imagenTexto">
+            <img class="imagenCenter classYellowBorder" src="/images/diccionarioBD.jpg"
+                 alt="Diccionario Modelo de Datos"
+                 width="550px" height="400px"/>
+            <br><br>
+            <div>
+                <h5 class="tituloLateralDer_sub">Descripci&oacute;n Importancia Diccionario de Datos: </h5>
+                <p>
+                    El diccionario de datos en un proyecto es una herramienta crítica para la gestión y organización de
+                    la información. Este recurso proporciona una referencia exhaustiva y estructurada de todos los
+                    elementos de datos utilizados en la aplicación, incluyendo detalles sobre su estructura, tipos,
+                    relaciones y restricciones. Esta documentación detallada garantiza la coherencia y la integridad de
+                    los datos, asegurando que la información se almacene y utilice de manera precisa y eficiente.
+                </p>
+
+                <p>
+                    Además de su relevancia durante la fase de diseño, el diccionario de datos se convierte en una
+                    herramienta invaluable durante el mantenimiento continuo de la aplicación. Facilita la comprensión y
+                    administración de los datos, lo que permite realizar actualizaciones, modificaciones y correcciones
+                    de errores de manera eficiente sin comprometer la calidad de la información. Desde el diseño inicial
+                    hasta el ciclo de vida de la aplicación, el diccionario de datos contribuye significativamente a la
+                    eficiencia, confiabilidad y escalabilidad del sistema, garantizando que los datos sean un activo
+                    esencial para el éxito de proyectos de desarrollo web y más allá.
+                </p>
+
+                <p>
+                    En este orden de ideas, el diccionario de datos es un componente crítico en la gestión de la
+                    información en proyectos de desarrollo web, proporcionando una base sólida para la toma de
+                    decisiones informadas, la integridad de los datos y la eficiencia operativa en toda la vida útil de
+                    la aplicación.
+                </p>
+            </div>
         </div>
     </div>
 
     <br><br><br>
 
 
-    <h3 class="tituloMedioS">Diccionario de Datos Proyecto MusicaList</h3>
     <!-- DICCIONARIO DE DATOS POR TRIOS DE TABLAS, RELACIONES Y ORDENES CORRESPONDIENTES DE LAS TABLAS (CUENTA, ADMIN, VOTANTE) -->
     <div class="section">
         <div class="imagenTexto">
@@ -305,38 +345,87 @@ BARRA DE NAVEGACION
                     </tr>
                     <tr>
                         <td class="tdH">id_cuenta</td>
-                        <td>El sistema debe permitir al votante ver la lista de reproducción actual, mostrando las
-                            canciones
-                            disponibles para votación, junto con sus detalles relevantes.
+                        <td>
+                            Identificador único para cada cuenta registrada en uso para la aplicación MusicaList, se
+                            representa a través de un número entero. Es autogenerado e incremental.
                         </td>
                     </tr>
                     <tr>
                         <td class="tdH">nombre_usuario</td>
-                        <td>El sistema debe permitir al votante dar "like" a una canción de la lista de reproducción,
+                        <td>
+                            Username del usuario en la aplicación, es visible para la identificación y tareas de acuerdo
+                            con el rol asignado en MusicaList. Se representa por medio de una cadena de 45 carácteres de
+                            longitud.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdH">correo</td>
+                        <td>
+                            Dirección de correo electrónico del usuario, fundamental para el manejo de la cuenta y el
+                            uso del formulario de contacto. Se representa por medio una cadena de 45 carácteres de
+                            longitud.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdH">contrasena</td>
+                        <td>
+                            Password de usuario que se almacena para su autenticación dentro del sistema. Se representa
+                            por medio una cadena de 45 carácteres de longitud. El sistema almacena el hash del password
+                            en función SHA-256 con el fin de generar seguridad al usuario final.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdH">activada</td>
+                        <td>
+                            Atributo que permite conocer el estado de la cuenta (Activado/Desactivado), se representa
+                            mediante un tipo de dato TINYINT; el cuál puede tomar valores de 0 o 1 según corresponda.
+                        </td>
+                    </tr>
+                </table>
+
+                <h5 class="tituloLateralDer_sub">Diccionario de Datos - Tabla Canci&oacute;n</h5>
+                <table>
+                    <tr>
+                        <th>Nombre Atributo:</th>
+                        <th>Descripci&oacute;n del Atributo:</th>
+                    </tr>
+                    <tr>
+                        <td class="tdH">id_cancion</td>
+                        <td>El sistema debe permitir al votante ver la lista de reproducci&oacute;n actual, mostrando
+                            las
+                            canciones
+                            disponibles para votaci&oacute;n, junto con sus detalles relevantes.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdH">nombre</td>
+                        <td>El sistema debe permitir al votante dar "like" a una canci&oacute;n de la lista de
+                            reproducci&oacute;n,
                             indicando su
                             preferencia por la misma.
                         </td>
                     </tr>
                     <tr>
-                        <td class="tdH">correo</td>
-                        <td>El sistema debe permitir al votante realizar la creación y activación de una cuenta de
+                        <td class="tdH">artista</td>
+                        <td>El sistema debe permitir al votante realizar la creaci&oacute;n y activaci&oacute;n de una
+                            cuenta de
                             usuario,
-                            solicitando la información necesaria para el registro, como nombre, correo electr&oacute;nico
+                            solicitando la informaci&oacute;n necesaria para el registro, como nombre, correo electr&oacute;nico
                             y
                             contrase&ntilde;a.
                         </td>
                     </tr>
                     <tr>
-                        <td class="tdH">contrasena</td>
+                        <td class="tdH">duracion</td>
                         <td>El sistema debe permitir a los usuarios votar por listas de g&eacute;neros musicales en
-                            función de sus
+                            funci&oacute;n de sus
                             preferencias de canciones, de acuerdo con el objetivo de la Lista Musical.
                         </td>
                     </tr>
                     <tr>
-                        <td class="tdH">activada</td>
+                        <td class="tdH">genero_musical_id</td>
                         <td>El sistema debe permitir a los usuarios votar por listas de g&eacute;neros musicales en
-                            función de sus
+                            funci&oacute;n de sus
                             preferencias de canciones, de acuerdo con el objetivo de la Lista Musical.
                         </td>
                     </tr>
@@ -352,9 +441,10 @@ BARRA DE NAVEGACION
                     </tr>
                     <tr>
                         <td class="tdH">cuenta_id</td>
-                        <td>El sistema debe permitir al votante ver la lista de reproducción actual, mostrando las
-                            canciones
-                            disponibles para votación, junto con sus detalles relevantes.
+                        <td>
+                            Representa el id de la cuenta de administrador, se relaciona con la tabla Cuenta; este valor
+                            viaja cómo llave foránea referenciado cómo id_cuenta, y a su vez representa la llave
+                            primaria y único valor de la tabla administrador.
                         </td>
                     </tr>
                 </table>
@@ -370,68 +460,14 @@ BARRA DE NAVEGACION
                     </tr>
                     <tr>
                         <td class="tdH">cuenta_id</td>
-                        <td>El sistema debe permitir al votante ver la lista de reproducción actual, mostrando las
-                            canciones
-                            disponibles para votación, junto con sus detalles relevantes.
+                        <td>
+                            Representa el id de la cuenta del votante, se relaciona con la tabla Cuenta; este valor
+                            viaja cómo llave foránea referenciado cómo id_cuenta, y a su vez representa la llave
+                            primaria y único valor de la tabla votante.
                         </td>
                     </tr>
                 </table>
-            </div>
-        </div>
-    </div>
-    <br> <br> <br>
 
-    <!-- ORGANIZACIÓN DICCIONARIO DE DATOS - SEGUNDO TRIO DE TABLAS (CANCION, GENERO MUSICAL, VOTOS POR CANCION) -->
-    <div class="section">
-        <div class="imagenTexto">
-            <div class="tableCenter">
-                <h5 class="tituloLateralDer_sub">Diccionario de Datos - Tabla Canci&oacute;n</h5>
-                <table>
-                    <tr>
-                        <th>Nombre Atributo:</th>
-                        <th>Descripci&oacute;n del Atributo:</th>
-                    </tr>
-                    <tr>
-                        <td class="tdH">id_cancion</td>
-                        <td>El sistema debe permitir al votante ver la lista de reproducción actual, mostrando las
-                            canciones
-                            disponibles para votación, junto con sus detalles relevantes.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="tdH">nombre</td>
-                        <td>El sistema debe permitir al votante dar "like" a una canción de la lista de reproducción,
-                            indicando su
-                            preferencia por la misma.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="tdH">artista</td>
-                        <td>El sistema debe permitir al votante realizar la creación y activación de una cuenta de
-                            usuario,
-                            solicitando la información necesaria para el registro, como nombre, correo electr&oacute;nico
-                            y
-                            contrase&ntilde;a.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="tdH">duracion</td>
-                        <td>El sistema debe permitir a los usuarios votar por listas de g&eacute;neros musicales en
-                            función de sus
-                            preferencias de canciones, de acuerdo con el objetivo de la Lista Musical.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="tdH">genero_musical_id</td>
-                        <td>El sistema debe permitir a los usuarios votar por listas de g&eacute;neros musicales en
-                            función de sus
-                            preferencias de canciones, de acuerdo con el objetivo de la Lista Musical.
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="tableCenter">
                 <h5 class="tituloLateralDer_sub">Diccionario de Datos - Tabla G&eacute;nero Musical </h5>
                 <table>
                     <tr>
@@ -440,23 +476,27 @@ BARRA DE NAVEGACION
                     </tr>
                     <tr>
                         <td class="tdH">id_genero</td>
-                        <td>El sistema debe permitir al votante ver la lista de reproducción actual, mostrando las
-                            canciones
-                            disponibles para votación, junto con sus detalles relevantes.
+                        <td>
+                            Identificador único para cada género musical registrado en uso para la aplicación
+                            MusicaList, se
+                            representa a través de un número entero. Es autogenerado e incremental.
                         </td>
                     </tr>
                     <tr>
                         <td class="tdH">nombre_genero</td>
-                        <td>El sistema debe permitir al votante ver la lista de reproducción actual, mostrando las
-                            canciones
-                            disponibles para votación, junto con sus detalles relevantes.
+                        <td>
+                            Nombre del género musical, a través del cual los votantes y/o administradores pueden
+                            buscarlo y
+                            realizar las acciones que correspondan de acuerdo con su rol. Se representa a través de una
+                            cadena de 45 carácteres.
                         </td>
                     </tr>
                     <tr>
                         <td class="tdH">descripcion</td>
-                        <td>El sistema debe permitir al votante ver la lista de reproducción actual, mostrando las
-                            canciones
-                            disponibles para votación, junto con sus detalles relevantes.
+                        <td>
+                            Descripción del género musical. Recopilar información más concreta correspondiente al género
+                            musical. Se representa a través de una
+                            cadena de 45 carácteres.
                         </td>
                     </tr>
                 </table>
@@ -472,22 +512,28 @@ BARRA DE NAVEGACION
                     </tr>
                     <tr>
                         <td class="tdH">votante_cuenta_id</td>
-                        <td>El sistema debe permitir al votante ver la lista de reproducción actual, mostrando las
-                            canciones
-                            disponibles para votación, junto con sus detalles relevantes.
+                        <td>
+                            Representa el id del votante en la relaci&oacute;n de la tabla intermedia, se relaciona con
+                            la tabla Votante; este valor
+                            viaja cómo llave foránea referenciado cómo votante_cuenta_id, y a su vez representa una de
+                            las dos llaves primarias de la Tabla.
                         </td>
                     </tr>
                     <tr>
                         <td class="tdH">cancion_id_cuenta</td>
-                        <td>El sistema debe permitir al votante ver la lista de reproducción actual, mostrando las
-                            canciones
-                            disponibles para votación, junto con sus detalles relevantes.
+                        <td>
+                            Representa el id de canción en la relaci&oacute;n de la tabla intermedia, se relaciona con
+                            la tabla Cancion; este valor
+                            viaja cómo llave foránea referenciado cómo cancion_id_cancion y a su vez representa una de
+                            las dos llaves primarias de la Tabla.
                         </td>
                     </tr>
                 </table>
             </div>
         </div>
     </div>
+
+    <br> <br> <br>
 
 
 </div>
