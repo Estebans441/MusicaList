@@ -2,15 +2,13 @@ package co.edu.javeriana.musicalistbackend.controller;
 
 import co.edu.javeriana.musicalistbackend.model.Cancion;
 import co.edu.javeriana.musicalistbackend.model.GeneroMusical;
-import co.edu.javeriana.musicalistbackend.repository.AdministradorRepository;
 import co.edu.javeriana.musicalistbackend.repository.CancionRepository;
 import co.edu.javeriana.musicalistbackend.repository.GeneroMusicalRepository;
-import jakarta.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 @RequestMapping("/musicalist/api/cancion")
@@ -20,9 +18,6 @@ public class CancionController {
 
     @Autowired
     private GeneroMusicalRepository generoMusicalRepository;
-
-    @Autowired
-    private AdministradorRepository administradorRepository;
 
 
     // Create -> POST
@@ -47,6 +42,13 @@ public class CancionController {
     @GetMapping("/{id}")
     public Cancion getAdministradorId(@PathVariable Integer id){
         return cancionRepository.findById(id).orElse(null);
+    }
+
+    //Feature -> GET
+    @GetMapping("/cancionesGenero/{id}")
+    public Set<Cancion> getCancionesGenero(@PathVariable Integer id){
+        Optional<GeneroMusical> generoMusicalOptional = generoMusicalRepository.findById(id);
+        return generoMusicalOptional.map(GeneroMusical::getCanciones).orElse(null);
     }
 
     // Update -> PUT
