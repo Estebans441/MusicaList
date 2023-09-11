@@ -46,6 +46,7 @@ public class GeneroController {
         Optional<GeneroMusical> generoMusicalOptional = generoMusicalRepository.findById(id);
         if (generoMusicalOptional.isPresent()){
             generoMusical.setIdGenero(id);
+            generoMusical.setCanciones(generoMusicalOptional.get().getCanciones());
             return generoMusicalRepository.save(generoMusical);
         }
         return null;

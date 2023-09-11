@@ -87,3 +87,9 @@ INSERT INTO musicalist.cancion (nombre, artista, duracion_seg, genero_musical_id
   ('Best Part', 'Daniel Caesar ft. H.E.R.', 219, 5),
   ('Peaches', 'Justin Bieber ft. Daniel Caesar', 198, 5),
   ('Pony', 'Ginuwine', 319, 5);
+  
+  INSERT INTO musicalist.votos_cancion (votante_cuenta_id, cancion_id_cancion) VALUES
+  (3,1),
+  (4,1),
+  (3,2),
+  (4,3);

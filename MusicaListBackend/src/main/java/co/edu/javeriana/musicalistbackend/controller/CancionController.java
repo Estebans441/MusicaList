@@ -25,7 +25,7 @@ public class CancionController {
     @PostMapping(value = "/crear")
     public Cancion crearCancion(@RequestBody Cancion cancion) {
         Optional<GeneroMusical> generoMusicalOptional = generoMusicalRepository.findById(cancion.getGeneroMusical().getIdGenero());
-        if(generoMusicalOptional.isPresent()){
+        if (generoMusicalOptional.isPresent()) {
             cancion.setGeneroMusical(generoMusicalOptional.get());
             return cancionRepository.save(cancion);
         }
@@ -35,36 +35,46 @@ public class CancionController {
 
     // Retrieve -> GET
     @GetMapping("/all")
-    public List<Cancion> getCanciones(){
+    public List<Cancion> getCanciones() {
         return cancionRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public Cancion getAdministradorId(@PathVariable Integer id){
+    public Cancion getCancionId(@PathVariable Integer id) {
         return cancionRepository.findById(id).orElse(null);
     }
 
     //Feature -> GET
     @GetMapping("/cancionesGenero/{id}")
-    public Set<Cancion> getCancionesGenero(@PathVariable Integer id){
+    public Set<Cancion> getCancionesGenero(@PathVariable Integer id) {
         Optional<GeneroMusical> generoMusicalOptional = generoMusicalRepository.findById(id);
         return generoMusicalOptional.map(GeneroMusical::getCanciones).orElse(null);
     }
 
     // Update -> PUT
     @PutMapping("/actualizar/{id}")
-    public Cancion actualizarCancion(@PathVariable Integer id, @RequestBody Cancion cancion){
+    public Cancion actualizarCancion(@PathVariable Integer id, @RequestBody Cancion cancion) {
         Optional<Cancion> cancionOptional = cancionRepository.findById(id);
-        if (cancionOptional.isPresent()){
-            cancion.setIdCancion(id);
-            return cancionRepository.save(cancion);
-        }
-        return null;
+        if (cancionOptional.isEmpty())
+            return null;
+        // Datos que no se pueden editar
+        cancion.setIdCancion(id);
+        cancion.setVotos(cancionOptional.get().getVotos());
+
+        // Si decide cambiar genero musical
+        Optional<GeneroMusical> generoMusicalOptional = Optional.empty();
+        if (cancion.getGeneroMusical().getIdGenero() != null)
+            generoMusicalOptional = generoMusicalRepository.findById(cancion.getGeneroMusical().getIdGenero());
+        if (generoMusicalOptional.isPresent())
+            cancion.setGeneroMusical(generoMusicalOptional.get());
+        else
+            cancion.setGeneroMusical(cancionOptional.get().getGeneroMusical());
+        return cancionRepository.save(cancion);
     }
 
     // Delete -> DELETE
     @DeleteMapping("/eliminar/{id}")
-    public Boolean borrarId(@PathVariable Integer id){
+    public Boolean borrarId(@PathVariable Integer id) {
         cancionRepository.deleteById(id);
         return true;
     }

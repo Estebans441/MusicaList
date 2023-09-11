@@ -38,6 +38,7 @@ public class AdministradorController {
         Optional<Administrador> administradorOptional = administradorRepository.findById(id);
         if (administradorOptional.isPresent()){
             administrador.setIdCuenta(id);
+            administrador.setActivada(administradorOptional.get().getActivada());
             return administradorRepository.save(administrador);
         }
         return null;

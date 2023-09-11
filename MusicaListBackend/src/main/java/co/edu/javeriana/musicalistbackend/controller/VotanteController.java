@@ -35,6 +35,8 @@ public class VotanteController {
         Optional<Votante> optionalVotante = votanteRepository.findById(id);
         if (optionalVotante.isPresent()){
             votante.setIdCuenta(id);
+            votante.setCancionesVotadas(optionalVotante.get().getCancionesVotadas());
+            votante.setActivada(optionalVotante.get().getActivada());
             return votanteRepository.save(votante);
         }
         return null;
