@@ -16,6 +16,7 @@ public class CuentaController {
     CuentaRepository cuentaRepository;
 
     // Update -> PUT
+    @CrossOrigin
     @PutMapping("/actualizar/{id}")
     public Cuenta actualizarCuenta(@PathVariable Integer id, @RequestBody Cuenta nuevaCuenta) {
         Optional<Cuenta> cuentaOptional = cuentaRepository.findById(id);
@@ -30,6 +31,7 @@ public class CuentaController {
     }
 
     // Update -> PUT
+    @CrossOrigin
     @PutMapping("/actualizar-c/{id}")
     public Boolean actualizarContrasena(@PathVariable Integer id, @RequestBody CambioContrasena cambio) {
         Optional<Cuenta> cuentaOptional = cuentaRepository.findById(id);
@@ -44,6 +46,7 @@ public class CuentaController {
     }
 
     // Delete -> DELETE
+    @CrossOrigin
     @DeleteMapping("/eliminar/{id}")
     public Boolean borrarId(@PathVariable Integer id) {
         cuentaRepository.deleteById(id);

@@ -35,4 +35,12 @@ public class Votante extends Cuenta {
     public void setContrasena(String contrasena) {
         this.contrasena = this.hashContrasena(contrasena);
     }
+
+    public void votarCancion(Cancion cancion){
+        this.cancionesVotadas.add(cancion);
+    }
+
+    public void eliminarVotoCancion(Cancion cancion){
+        this.cancionesVotadas.remove(cancion);
+    }
 }

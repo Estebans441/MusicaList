@@ -30,17 +30,20 @@ public class GeneroController {
     }
 
     // Retrieve -> GET
+    @CrossOrigin
     @GetMapping("/all")
     public List<GeneroMusical> getGenerosMusicales() {
         return generoMusicalRepository.findAll();
     }
 
+    @CrossOrigin
     @GetMapping("/{id}")
     public GeneroMusical getGeneroID(@PathVariable Integer id) {
         return generoMusicalRepository.findById(id).orElse(null);
     }
 
     // Update -> PUT
+    @CrossOrigin
     @PutMapping("/actualizar/{id}")
     public GeneroMusical actualizarGenero(@PathVariable Integer id, @RequestBody GeneroMusical generoMusical){
         Optional<GeneroMusical> generoMusicalOptional = generoMusicalRepository.findById(id);
@@ -53,6 +56,7 @@ public class GeneroController {
     }
 
     // Delete -> DELETE
+    @CrossOrigin
     @DeleteMapping("/eliminar/{id}")
     public Boolean borrarId (@PathVariable Integer id){
         generoMusicalRepository.deleteById(id);

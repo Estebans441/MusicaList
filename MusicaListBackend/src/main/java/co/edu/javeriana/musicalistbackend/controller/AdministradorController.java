@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/musicalist/api/administrador")
@@ -22,11 +21,13 @@ public class AdministradorController {
     }
 
     // Retrieve -> GET
+    @CrossOrigin
     @GetMapping("/all")
     public List<Administrador> getAdministradores() {
         return administradorRepository.findAll();
     }
 
+    @CrossOrigin
     @GetMapping("/{id}")
     public Administrador getAdministradorId(@PathVariable Integer id) {
         return administradorRepository.findById(id).orElse(null);

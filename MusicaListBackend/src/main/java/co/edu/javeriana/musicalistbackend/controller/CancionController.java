@@ -34,17 +34,20 @@ public class CancionController {
 
 
     // Retrieve -> GET
+    @CrossOrigin
     @GetMapping("/all")
     public List<Cancion> getCanciones() {
         return cancionRepository.findAll();
     }
 
+    @CrossOrigin
     @GetMapping("/{id}")
     public Cancion getCancionId(@PathVariable Integer id) {
         return cancionRepository.findById(id).orElse(null);
     }
 
     //Feature -> GET
+    @CrossOrigin
     @GetMapping("/cancionesGenero/{id}")
     public Set<Cancion> getCancionesGenero(@PathVariable Integer id) {
         Optional<GeneroMusical> generoMusicalOptional = generoMusicalRepository.findById(id);
@@ -52,6 +55,7 @@ public class CancionController {
     }
 
     // Update -> PUT
+    @CrossOrigin
     @PutMapping("/actualizar/{id}")
     public Cancion actualizarCancion(@PathVariable Integer id, @RequestBody Cancion cancion) {
         Optional<Cancion> cancionOptional = cancionRepository.findById(id);
@@ -73,6 +77,7 @@ public class CancionController {
     }
 
     // Delete -> DELETE
+    @CrossOrigin
     @DeleteMapping("/eliminar/{id}")
     public Boolean borrarId(@PathVariable Integer id) {
         cancionRepository.deleteById(id);
