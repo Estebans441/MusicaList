@@ -28,24 +28,4 @@ public class VotanteController {
     public Votante getVotanteID (@PathVariable Integer id){
         return votanteRepository.findById(id).orElse(null);
     }
-
-    // Update -> PUT
-    @PutMapping("/actualizar/{id}")
-    public Votante actualizarVotante(@PathVariable Integer id, @RequestBody Votante votante){
-        Optional<Votante> optionalVotante = votanteRepository.findById(id);
-        if (optionalVotante.isPresent()){
-            votante.setIdCuenta(id);
-            votante.setCancionesVotadas(optionalVotante.get().getCancionesVotadas());
-            votante.setActivada(optionalVotante.get().getActivada());
-            return votanteRepository.save(votante);
-        }
-        return null;
-    }
-
-    //Delete -> DELETE
-    @DeleteMapping("/eliminar/{id}")
-    public Boolean borrarId(@PathVariable Integer id){
-        votanteRepository.deleteById(id);
-        return true;
-    }
 }

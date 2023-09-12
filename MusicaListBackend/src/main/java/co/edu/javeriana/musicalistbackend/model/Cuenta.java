@@ -13,7 +13,7 @@ import java.security.NoSuchAlgorithmException;
 @Entity
 @Table(name = "cuenta")
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Cuenta {
+public class Cuenta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer idCuenta;
@@ -22,6 +22,13 @@ public abstract class Cuenta {
     protected String correo;
     protected String contrasena;
     protected Boolean activada;
+
+    public Cuenta() {
+        this.nombreUsuario = "";
+        this.correo = "";
+        this.contrasena = "";
+        this.activada = false;
+    }
 
     protected String hashContrasena(String contrasena){
         try{
@@ -45,5 +52,9 @@ public abstract class Cuenta {
         catch(NoSuchAlgorithmException e){
             return contrasena;
         }
+    }
+
+    public Boolean coincide(String nuevaContrasena){
+        return (this.hashContrasena(nuevaContrasena).equals(this.getContrasena()));
     }
 }

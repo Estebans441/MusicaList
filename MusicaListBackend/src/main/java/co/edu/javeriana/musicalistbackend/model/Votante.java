@@ -19,11 +19,9 @@ public class Votante extends Cuenta {
             inverseJoinColumns = @JoinColumn(name = "cancion_id_cancion"))
     private Set<Cancion> cancionesVotadas = new LinkedHashSet<>();
 
-    public Votante(){
-        this.nombreUsuario = "";
-        this.correo = "";
-        this.contrasena = "";
-        this.activada = false;
+
+    public Votante() {
+        super();
     }
 
     public Votante(String nombreUsuario, String correo, String contrasena){

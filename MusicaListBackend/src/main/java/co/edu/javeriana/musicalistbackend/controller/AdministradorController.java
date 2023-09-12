@@ -31,24 +31,4 @@ public class AdministradorController {
     public Administrador getAdministradorId(@PathVariable Integer id) {
         return administradorRepository.findById(id).orElse(null);
     }
-
-    // Update -> PUT
-    @PutMapping("/actualizar/{id}")
-    public Administrador actualizarAdministrador(@PathVariable Integer id, @RequestBody Administrador administrador) {
-        Optional<Administrador> administradorOptional = administradorRepository.findById(id);
-        if (administradorOptional.isPresent()){
-            administrador.setIdCuenta(id);
-            administrador.setActivada(administradorOptional.get().getActivada());
-            return administradorRepository.save(administrador);
-        }
-        return null;
-    }
-
-    // Delete -> DELETE
-    @DeleteMapping("/eliminar/{id}")
-    public Boolean borrarId(@PathVariable Integer id) {
-        administradorRepository.deleteById(id);
-        return true;
-    }
-
 }

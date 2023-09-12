@@ -11,14 +11,11 @@ import lombok.Setter;
 @PrimaryKeyJoinColumn(name = "cuenta_id")
 public class Administrador extends Cuenta {
 
-    public Administrador(){
-        this.nombreUsuario = "";
-        this.correo = "";
-        this.contrasena = "";
-        this.activada = false;
+    public Administrador() {
+        super();
     }
 
-    public Administrador(String nombreUsuario, String correo, String contrasena){
+    public Administrador(String nombreUsuario, String correo, String contrasena) {
         this.nombreUsuario = nombreUsuario;
         this.correo = correo;
         this.contrasena = this.hashContrasena(contrasena);
