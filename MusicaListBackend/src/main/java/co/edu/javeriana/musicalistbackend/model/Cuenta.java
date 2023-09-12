@@ -30,6 +30,14 @@ public class Cuenta {
         this.activada = false;
     }
 
+    public Boolean coincide(String nuevaContrasena){
+        return (this.hashContrasena(nuevaContrasena).equals(this.getContrasena()));
+    }
+
+    public Boolean autenticar(String contrasena){
+        return this.contrasena.equals(this.hashContrasena(contrasena));
+    }
+
     protected String hashContrasena(String contrasena){
         try{
             // Crear una instancia de MessageDigest para SHA-256
@@ -52,9 +60,5 @@ public class Cuenta {
         catch(NoSuchAlgorithmException e){
             return contrasena;
         }
-    }
-
-    public Boolean coincide(String nuevaContrasena){
-        return (this.hashContrasena(nuevaContrasena).equals(this.getContrasena()));
     }
 }

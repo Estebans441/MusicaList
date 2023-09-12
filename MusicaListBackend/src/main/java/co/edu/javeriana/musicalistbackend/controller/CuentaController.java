@@ -2,6 +2,7 @@ package co.edu.javeriana.musicalistbackend.controller;
 
 import co.edu.javeriana.musicalistbackend.model.dto.CambioContrasena;
 import co.edu.javeriana.musicalistbackend.model.Cuenta;
+import co.edu.javeriana.musicalistbackend.model.dto.Login;
 import co.edu.javeriana.musicalistbackend.repository.CuentaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,17 @@ public class CuentaController {
 
     @Autowired
     CuentaRepository cuentaRepository;
+
+
+    // Retrieve -> GET
+    @CrossOrigin
+    @GetMapping("/autenticar")
+    public Boolean autenticarCuenta(@RequestBody Login login){
+        Optional<Cuenta> cuentaOptional = cuentaRepository.findByNombreUsuarioOrCorreo(login.usuarioCorreo, login.usuarioCorreo);
+        if(cuentaOptional.isPresent())
+            return cuentaOptional.get().autenticar(login.contrasena);
+        return false;
+    }
 
     // Update -> PUT
     @CrossOrigin
