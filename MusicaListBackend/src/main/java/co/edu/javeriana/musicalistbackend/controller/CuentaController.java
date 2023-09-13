@@ -16,7 +16,6 @@ public class CuentaController {
     @Autowired
     CuentaRepository cuentaRepository;
 
-
     // Retrieve -> GET
     @CrossOrigin
     @GetMapping("/autenticar")

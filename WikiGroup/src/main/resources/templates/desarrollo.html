@@ -168,6 +168,73 @@
       </div>
     </div>
 
+    <h2 class = "tituloMedioS"> Contratos Funcionales - Mapping Controladores</h2>
+    <div class = "seccion">
+      <div class="tableCenter">
+        <h5 class="tituloLateralDer_sub">CuentaController - Servicios CRUD</h5>
+        <table>
+          <tr>
+            <th>Servicio</th>
+            <th>Método HTTP</th>
+            <th>Ruta</th>
+            <th>Contrato Funcional</th>
+          </tr>
+          <tr>
+            <td class="tdH">Crear una cuenta (Create)</td>
+            <td>POST</td>
+            <td>/musicalist/api/cuenta/crear</td>
+            <td>
+              <strong>Entrada:</strong> Los datos necesarios para crear una nueva cuenta, como el nombre de usuario, correo y contraseña.<br>
+              <strong>Salida:</strong> La cuenta creada con éxito, incluyendo su identificador único (ID).<br>
+              <strong>Descripción:</strong> Permite crear una nueva cuenta en el sistema de MusicaList.
+            </td>
+          </tr>
+          <tr>
+            <td class="tdH">Autenticar una cuenta (Retrieve)</td>
+            <td>POST</td>
+            <td>/musicalist/api/cuenta/autenticar</td>
+            <td>
+              <strong>Entrada:</strong> Los datos de autenticación, incluyendo el nombre de usuario o correo y la contraseña.<br>
+              <strong>Salida:</strong> Un valor booleano que indica si la autenticación fue exitosa o no.<br>
+              <strong>Descripción:</strong> Permite autenticar una cuenta en el sistema de MusicaList.
+            </td>
+          </tr>
+          <tr>
+            <td class="tdH">Actualizar una cuenta (Update)</td>
+            <td>PUT</td>
+            <td>/musicalist/api/cuenta/actualizar/{id}</td>
+            <td>
+              <strong>Entrada:</strong> El ID de la cuenta que se desea actualizar y los nuevos datos de la cuenta.<br>
+              <strong>Salida:</strong> La cuenta actualizada con los nuevos datos.<br>
+              <strong>Descripción:</strong> Permite actualizar los datos de una cuenta existente en el sistema de MusicaList.
+            </td>
+          </tr>
+          <tr>
+            <td class="tdH">Actualizar la contraseña de una cuenta (Update)</td>
+            <td>PUT</td>
+            <td>/musicalist/api/cuenta/actualizar-c/{id}</td>
+            <td>
+              <strong>Entrada:</strong> El ID de la cuenta cuya contraseña se desea actualizar y los datos de cambio de contraseña, incluyendo la contraseña anterior y la nueva contraseña.<br>
+              <strong>Salida:</strong> Un valor booleano que indica si la contraseña se actualizó con éxito o no.<br>
+              <strong>Descripción:</strong> Permite actualizar la contraseña de una cuenta existente en el sistema de MusicaList.
+            </td>
+          </tr>
+          <tr>
+            <td class="tdH">Eliminar una cuenta (Delete)</td>
+            <td>DELETE</td>
+            <td>/musicalist/api/cuenta/eliminar/{id}</td>
+            <td>
+              <strong>Entrada:</strong> El ID de la cuenta que se desea eliminar.<br>
+              <strong>Salida:</strong> Un valor booleano que indica si la cuenta se eliminó con éxito o no.<br>
+              <strong>Descripción:</strong> Permite eliminar una cuenta existente en el sistema de MusicaList.
+            </td>
+          </tr>
+        </table>
+      </div>
+
+
+    </div>
+
     <br><br><br><br>
 
     <!--Versi&oacute;n 2: Integraci&oacute;n (Angular y Rest)-->
