@@ -320,7 +320,8 @@ BARRA DE NAVEGACION
                             <td class="tdH">Resultados Esperados/td>
                             <td>
                                 Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
-                                un resultado True al buscar el administrador con nombre "estebans441"; asimismo, se debe de
+                                un resultado True al buscar el administrador con nombre "estebans441"; asimismo, se debe
+                                de
                                 mostrar por
                                 pantalla el nombre del mismo.
                             </td>
@@ -485,7 +486,8 @@ BARRA DE NAVEGACION
                             <td class="tdH">Resultados Esperados/td>
                             <td>
                                 Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
-                                un resultado True al buscar el administrador con id 2 y posteriormente realizar el cambio del
+                                un resultado True al buscar el administrador con id 2 y posteriormente realizar el
+                                cambio del
                                 atributo correspondiente al correo a "juanframireze@hotmail.com" sobre el registro.
                             </td>
                         </tr>
@@ -1080,8 +1082,502 @@ BARRA DE NAVEGACION
     </div>
 
 
+    <div class="integrante selected" id="4-detalle">
+        <h3 class='tituloMedioS'> Pruebas Unitarias - Clase G&eacute;nero M&uacute;sical </h3>
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Crear G&eacute;nero</h5>
+                    <table>
+                        <tr>
+                            <th>Aspecto:</th>
+                            <th>Descripci&oacute;n del Aspecto:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                GEN-01
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Crear G&eacute;nero
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que verifica la creaci&oacute;n &eacute;xitosa de un g&eacute;nero m&uacute;sical
+                                en el
+                                sistema de MusicaList.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Juan Francisco Ram&iacute;rez Escobar
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Juan Francisco Ram&iacute;rez Escobar
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `generoMusicalRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados/td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al ingresar el nuevo g&eacute;nero m&uacute;sical "Cumbia".
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
 
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/genero-crear.PNG"
+                     alt="Foto Prueba Género Músical - Crear"/>
+            </div>
+        </div>
 
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar G&eacute;nero M&uacute;sical por
+                        ID</h5>
+                    <table>
+                        <tr>
+                            <th>Aspecto:</th>
+                            <th>Descripci&oacute;n del Aspecto:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                GEN-02
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Encontrar G&eacute;nero M&uacute;sical por ID
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que busca el g&eacute;nero m&uacute;sical dentro del repositorio de
+                                generos de
+                                acuerdo con el id dado, esto, al interior del
+                                sistema de MusicaList.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Juan Francisco Ram&iacute;rez Escobar
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Juan Francisco Ram&iacute;rez Escobar
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `generoMusicalRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados/td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al buscar el g&eacute;nero con id 2; asimismo, se debe de mostrar por
+                                pantalla el nombre correspondiente a cada una de las canciones que se le encuentran
+                                asignadas al g&eacute;nero consultado.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/genero-find-by-id.PNG"
+                     alt="Foto Prueba Género Músical - FindById"/>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar G&eacute;nero M&uacute;sical por
+                        Nombre</h5>
+                    <table>
+                        <tr>
+                            <th>Aspecto:</th>
+                            <th>Descripci&oacute;n del Aspecto:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                GEN-03
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Encontrar G&eacute;nero M&uacute;sical por Nombre
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que busca el g&eacute;nero dentro del repositorio de generos musicales
+                                de
+                                acuerdo con el nombre dado, esto, al interior del
+                                sistema de MusicaList.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Esteban Salazar Arbel&aacute;ez
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Esteban Salazar Arbel&aacute;ez
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `generoMusicalRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados/td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al buscar el g&eacute;nero m&uacute;sical con nombre "Rock"; asimismo,
+                                se debe de
+                                mostrar por
+                                pantalla el nombre del mismo.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/genero-find-by-nombre.PNG"
+                     alt="Foto Prueba Género Músical - FindByNombre"/>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Todos los Generos Musicales </h5>
+                    <table>
+                        <tr>
+                            <th>Nombre Atributo:</th>
+                            <th>Descripci&oacute;n del Atributo:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                GEN-04
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Encontrar todos los Generos Musicales del sistema.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que busca y recopila en una lista todos los generos musicales que se
+                                encuentran en la base de datos del
+                                sistema de MusicaList.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Esteban Salazar Arbel&aacute;ez
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Esteban Salazar Arbel&aacute;ez
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `generoMusicalRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados/td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al buscar todos los generos musicales provenientes de
+                                generoMusicalRepository, se debe de mostrar por
+                                pantalla el nombre de cada uno de los generos musicales del sistema.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/genero-find-all.PNG"
+                     alt="Foto Prueba Genero Musical - FindAll"/>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Actualizar G&eacute;nero M&uacute;sical </h5>
+                    <table>
+                        <tr>
+                            <th>Aspecto:</th>
+                            <th>Descripci&oacute;n del Aspecto:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                GEN-05
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Actualizar la informaci&oacute;n del G&eacute;nero M&uacute;sical indicado.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que busca el g&eacute;nero m&uacute;sical dentro del repositorio de
+                                generos de
+                                acuerdo con el id dado, posteriormente, realiza el cambio del nombre del genero
+                                en la prueba unitaria, esto, al interior del
+                                sistema de MusicaList.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `generoMusicalRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados/td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al buscar el votante con id 2 y posteriormente realizar el cambio del
+                                atributo correspondiente al correo a "moyano1711@hotmail.com" sobre el registro.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/genero-update.PNG"
+                     alt="Foto Prueba Género Músical - Actualizar"/>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Eliminar G&eacute;nero M&uacute;sical</h5>
+                    <table>
+                        <tr>
+                            <th>Nombre Atributo:</th>
+                            <th>Descripci&oacute;n del Atributo:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                GEN-06
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Eliminar G&eacute;nero M&uacute;sical por ID.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que elimina un registro del repositorio de generos musicales, el cu&aacute;l
+                                realiza la acción al interior de la base de datos del sistema de MusicaList simult&aacute;neamente.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `generoMusicalRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados/td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al eliminar el genero musical que se encuentra identificado con el id
+                                2.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/genero-delete.PNG"
+                     alt="Foto Prueba Género Músical - Eliminar"/>
+            </div>
+        </div>
+    </div>
 
 
 </div>
