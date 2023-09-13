@@ -239,7 +239,7 @@ BARRA DE NAVEGACION
                             <td class="tdH">Resultados Esperados/td>
                             <td>
                                 Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
-                                un resultado True al buscar el usuario con id 1; asimismo, se debe de mostrar por
+                                un resultado True al buscar el administrador con id 1; asimismo, se debe de mostrar por
                                 pantalla el nombre del mismo.
                             </td>
                         </tr>
@@ -320,7 +320,7 @@ BARRA DE NAVEGACION
                             <td class="tdH">Resultados Esperados/td>
                             <td>
                                 Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
-                                un resultado True al buscar el usuario con nombre "estebans441"; asimismo, se debe de
+                                un resultado True al buscar el administrador con nombre "estebans441"; asimismo, se debe de
                                 mostrar por
                                 pantalla el nombre del mismo.
                             </td>
@@ -485,7 +485,7 @@ BARRA DE NAVEGACION
                             <td class="tdH">Resultados Esperados/td>
                             <td>
                                 Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
-                                un resultado True al buscar el usuario con id 2 y posteriormente realizar el cambio del
+                                un resultado True al buscar el administrador con id 2 y posteriormente realizar el cambio del
                                 atributo correspondiente al correo a "juanframireze@hotmail.com" sobre el registro.
                             </td>
                         </tr>
@@ -636,7 +636,7 @@ BARRA DE NAVEGACION
                             <td class="tdH">Dependencias de las pruebas</td>
                             <td>
                                 <ul>
-                                    <li>Utilizaci&oacute;n del `administradorRepository` de JPA.</li>
+                                    <li>Utilizaci&oacute;n del `votanteRepository` de JPA.</li>
                                     <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
                                     <li>Uso de anotaciones de Spring como `@Autowired`.</li>
                                     <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
@@ -667,14 +667,14 @@ BARRA DE NAVEGACION
                 </div>
 
                 <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/votante-crear.PNG"
-                     alt="Foto Prueba Admin - Crear"/>
+                     alt="Foto Prueba Votante - Crear"/>
             </div>
         </div>
 
         <div class="seccion">
             <div class="imagenTexto">
                 <div class="tableCenter" style="width: 1000px;">
-                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Administrador por ID</h5>
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Votante por ID</h5>
                     <table>
                         <tr>
                             <th>Aspecto:</th>
@@ -683,19 +683,19 @@ BARRA DE NAVEGACION
                         <tr>
                             <td class="tdH">Identificador de la Prueba</td>
                             <td>
-                                ADM-02
+                                VOT-02
                             </td>
                         </tr>
                         <tr>
                             <td class="tdH">T&iacute;tulo</td>
                             <td>
-                                Encontrar Administrador por ID
+                                Encontrar Votante por ID
                             </td>
                         </tr>
                         <tr>
                             <td class="tdH">Descripci&oacute;n</td>
                             <td>
-                                Prueba unitaria que busca el administrador dentro del repositorio de administradores de
+                                Prueba unitaria que busca el votante dentro del repositorio de votantes de
                                 acuerdo con el id dado, esto, al interior del
                                 sistema de MusicaList.
                             </td>
@@ -716,7 +716,7 @@ BARRA DE NAVEGACION
                             <td class="tdH">Dependencias de las pruebas</td>
                             <td>
                                 <ul>
-                                    <li>Utilizaci&oacute;n del `administradorRepository` de JPA.</li>
+                                    <li>Utilizaci&oacute;n del `votanteRepository` de JPA.</li>
                                     <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
                                     <li>Uso de anotaciones de Spring como `@Autowired`.</li>
                                     <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
@@ -728,7 +728,7 @@ BARRA DE NAVEGACION
                             <td class="tdH">Resultados Esperados/td>
                             <td>
                                 Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
-                                un resultado True al buscar el usuario con id 1; asimismo, se debe de mostrar por
+                                un resultado True al buscar el votante con id 3; asimismo, se debe de mostrar por
                                 pantalla el nombre del mismo.
                             </td>
                         </tr>
@@ -747,15 +747,15 @@ BARRA DE NAVEGACION
                     </table>
                 </div>
 
-                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/admin-find-by-id.PNG"
-                     alt="Foto Prueba Admin - FindById"/>
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/votante-find-by-id.PNG"
+                     alt="Foto Prueba Votante - FindById"/>
             </div>
         </div>
 
         <div class="seccion">
             <div class="imagenTexto">
                 <div class="tableCenter" style="width: 1000px;">
-                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Administrador por Nombre</h5>
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Votante por Nombre</h5>
                     <table>
                         <tr>
                             <th>Aspecto:</th>
@@ -764,19 +764,19 @@ BARRA DE NAVEGACION
                         <tr>
                             <td class="tdH">Identificador de la Prueba</td>
                             <td>
-                                ADM-03
+                                VOT-03
                             </td>
                         </tr>
                         <tr>
                             <td class="tdH">T&iacute;tulo</td>
                             <td>
-                                Encontrar Administrador por Nombre
+                                Encontrar Votante por Nombre
                             </td>
                         </tr>
                         <tr>
                             <td class="tdH">Descripci&oacute;n</td>
                             <td>
-                                Prueba unitaria que busca el administrador dentro del repositorio de administradores de
+                                Prueba unitaria que busca el votante dentro del repositorio de votantes de
                                 acuerdo con el nombre dado, esto, al interior del
                                 sistema de MusicaList.
                             </td>
@@ -797,7 +797,7 @@ BARRA DE NAVEGACION
                             <td class="tdH">Dependencias de las pruebas</td>
                             <td>
                                 <ul>
-                                    <li>Utilizaci&oacute;n del `administradorRepository` de JPA.</li>
+                                    <li>Utilizaci&oacute;n del `votanteRepository` de JPA.</li>
                                     <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
                                     <li>Uso de anotaciones de Spring como `@Autowired`.</li>
                                     <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
@@ -809,7 +809,7 @@ BARRA DE NAVEGACION
                             <td class="tdH">Resultados Esperados/td>
                             <td>
                                 Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
-                                un resultado True al buscar el usuario con nombre "estebans441"; asimismo, se debe de
+                                un resultado True al buscar el votante con nombre "moyano1711"; asimismo, se debe de
                                 mostrar por
                                 pantalla el nombre del mismo.
                             </td>
@@ -829,15 +829,15 @@ BARRA DE NAVEGACION
                     </table>
                 </div>
 
-                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/admin-find-by-name.PNG"
-                     alt="Foto Prueba Admin - FindByNombre"/>
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/votante-find-by-nombre.PNG"
+                     alt="Foto Prueba Votante - FindByNombre"/>
             </div>
         </div>
 
         <div class="seccion">
             <div class="imagenTexto">
                 <div class="tableCenter" style="width: 1000px;">
-                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Todos los Administradores </h5>
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Todos los Votantes </h5>
                     <table>
                         <tr>
                             <th>Nombre Atributo:</th>
@@ -846,19 +846,19 @@ BARRA DE NAVEGACION
                         <tr>
                             <td class="tdH">Identificador de la Prueba</td>
                             <td>
-                                ADM-04
+                                VOT-04
                             </td>
                         </tr>
                         <tr>
                             <td class="tdH">T&iacute;tulo</td>
                             <td>
-                                Encontrar todos los Administradores del sistema.
+                                Encontrar todos los Votantes del sistema.
                             </td>
                         </tr>
                         <tr>
                             <td class="tdH">Descripci&oacute;n</td>
                             <td>
-                                Prueba unitaria que busca y recopila en una lista todos los administradores que se
+                                Prueba unitaria que busca y recopila en una lista todos los votantes que se
                                 encuentran en la base de datos del
                                 sistema de MusicaList.
                             </td>
@@ -879,7 +879,7 @@ BARRA DE NAVEGACION
                             <td class="tdH">Dependencias de las pruebas</td>
                             <td>
                                 <ul>
-                                    <li>Utilizaci&oacute;n del `administradorRepository` de JPA.</li>
+                                    <li>Utilizaci&oacute;n del `votanteRepository` de JPA.</li>
                                     <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
                                     <li>Uso de anotaciones de Spring como `@Autowired`.</li>
                                     <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
@@ -891,9 +891,9 @@ BARRA DE NAVEGACION
                             <td class="tdH">Resultados Esperados/td>
                             <td>
                                 Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
-                                un resultado True al buscar todos los administradores provenientes de
-                                administradorRepository, se debe de mostrar por
-                                pantalla el nombre de cada uno de los administradores del sistema.
+                                un resultado True al buscar todos los votantes provenientes de
+                                votanteRepository, se debe de mostrar por
+                                pantalla el nombre de cada uno de los votantes del sistema.
                             </td>
                         </tr>
                         <tr>
@@ -911,15 +911,15 @@ BARRA DE NAVEGACION
                     </table>
                 </div>
 
-                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/admin-find-all.PNG"
-                     alt="Foto Prueba Admin - FindAll"/>
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/votante-find-all.PNG"
+                     alt="Foto Prueba Votante - FindAll"/>
             </div>
         </div>
 
         <div class="seccion">
             <div class="imagenTexto">
                 <div class="tableCenter" style="width: 1000px;">
-                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Actualizar Administrador </h5>
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Actualizar Votante </h5>
                     <table>
                         <tr>
                             <th>Aspecto:</th>
@@ -928,19 +928,19 @@ BARRA DE NAVEGACION
                         <tr>
                             <td class="tdH">Identificador de la Prueba</td>
                             <td>
-                                ADM-05
+                                VOT-05
                             </td>
                         </tr>
                         <tr>
                             <td class="tdH">T&iacute;tulo</td>
                             <td>
-                                Actualizar la informaci&oacute;n del administrador indicado.
+                                Actualizar la informaci&oacute;n del votante indicado.
                             </td>
                         </tr>
                         <tr>
                             <td class="tdH">Descripci&oacute;n</td>
                             <td>
-                                Prueba unitaria que busca el administrador dentro del repositorio de administradores de
+                                Prueba unitaria que busca el votante dentro del repositorio de votantes de
                                 acuerdo con el id dado, posteriormente, realiza el cambio del correo electr&oacute;nico
                                 en la prueba unitaria, esto, al interior del
                                 sistema de MusicaList.
@@ -962,7 +962,7 @@ BARRA DE NAVEGACION
                             <td class="tdH">Dependencias de las pruebas</td>
                             <td>
                                 <ul>
-                                    <li>Utilizaci&oacute;n del `administradorRepository` de JPA.</li>
+                                    <li>Utilizaci&oacute;n del `votanteRepository` de JPA.</li>
                                     <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
                                     <li>Uso de anotaciones de Spring como `@Autowired`.</li>
                                     <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
@@ -974,8 +974,8 @@ BARRA DE NAVEGACION
                             <td class="tdH">Resultados Esperados/td>
                             <td>
                                 Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
-                                un resultado True al buscar el usuario con id 2 y posteriormente realizar el cambio del
-                                atributo correspondiente al correo a "juanframireze@hotmail.com" sobre el registro.
+                                un resultado True al buscar el votante con id 2 y posteriormente realizar el cambio del
+                                atributo correspondiente al correo a "moyano1711@hotmail.com" sobre el registro.
                             </td>
                         </tr>
                         <tr>
@@ -993,15 +993,15 @@ BARRA DE NAVEGACION
                     </table>
                 </div>
 
-                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/admin-update.PNG"
-                     alt="Foto Prueba Admin - Actualizar"/>
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/votante-update.PNG"
+                     alt="Foto Prueba Votante - Actualizar"/>
             </div>
         </div>
 
         <div class="seccion">
             <div class="imagenTexto">
                 <div class="tableCenter" style="width: 1000px;">
-                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Eliminar Administrador </h5>
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Eliminar Votante </h5>
                     <table>
                         <tr>
                             <th>Nombre Atributo:</th>
@@ -1010,19 +1010,19 @@ BARRA DE NAVEGACION
                         <tr>
                             <td class="tdH">Identificador de la Prueba</td>
                             <td>
-                                ADM-06
+                                VOT-06
                             </td>
                         </tr>
                         <tr>
                             <td class="tdH">T&iacute;tulo</td>
                             <td>
-                                Eliminar Administrador por ID.
+                                Eliminar Votante por ID.
                             </td>
                         </tr>
                         <tr>
                             <td class="tdH">Descripci&oacute;n</td>
                             <td>
-                                Prueba unitaria que elimina un registro del repositorio de administradores, el cu&aacute;l
+                                Prueba unitaria que elimina un registro del repositorio de votantes, el cu&aacute;l
                                 realiza la acción al interior de la base de datos del sistema de MusicaList simult&aacute;neamente.
                             </td>
                         </tr>
@@ -1042,7 +1042,7 @@ BARRA DE NAVEGACION
                             <td class="tdH">Dependencias de las pruebas</td>
                             <td>
                                 <ul>
-                                    <li>Utilizaci&oacute;n del `administradorRepository` de JPA.</li>
+                                    <li>Utilizaci&oacute;n del `votanteRepository` de JPA.</li>
                                     <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
                                     <li>Uso de anotaciones de Spring como `@Autowired`.</li>
                                     <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
@@ -1054,8 +1054,8 @@ BARRA DE NAVEGACION
                             <td class="tdH">Resultados Esperados/td>
                             <td>
                                 Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
-                                un resultado True al eliminar el administrador que se encuentra identificado con el id
-                                2.
+                                un resultado True al eliminar el votante que se encuentra identificado con el id
+                                3.
                             </td>
                         </tr>
                         <tr>
@@ -1073,8 +1073,8 @@ BARRA DE NAVEGACION
                     </table>
                 </div>
 
-                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/admin-delete.PNG"
-                     alt="Foto Prueba Admin - Eliminar"/>
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/votante-delete.PNG"
+                     alt="Foto Prueba Votante - Eliminar"/>
             </div>
         </div>
     </div>
