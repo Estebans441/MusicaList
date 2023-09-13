@@ -1081,6 +1081,499 @@ BARRA DE NAVEGACION
         </div>
     </div>
 
+    <div class="integrante selected" id="3-detalle">
+        <h3 class='tituloMedioS'> Pruebas Unitarias - Clase Canci&oacute;n </h3>
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Crear Canci&oacute;n</h5>
+                    <table>
+                        <tr>
+                            <th>Aspecto:</th>
+                            <th>Descripci&oacute;n del Aspecto:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                CAN-01
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Crear Canci&oacute;n
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que verifica la creaci&oacute;n &eacute;xitosa de una canci&oacute;n en
+                                el
+                                sistema de MusicaList.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `cancionRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados</td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al ingresar la nueva canci&oacute;n "Something real", realizando la
+                                verificaci&oacute;n correspondiente del g&eacute;nero m&uacute;sical a trav&eacute;s del
+                                repositorio de la clase mencionada.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/cancion-crear.PNG"
+                     alt="Foto Prueba Canción - Crear"/>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Canci&oacute;n por ID</h5>
+                    <table>
+                        <tr>
+                            <th>Aspecto:</th>
+                            <th>Descripci&oacute;n del Aspecto:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                CAN-02
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Encontrar Canci&oacute;n por ID
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que busca la canci&oacute;n dentro del repositorio de canciones de
+                                acuerdo con el id dado, esto, al interior del
+                                sistema de MusicaList.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `cancionRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados</td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al buscar la canci&oacute;n con id 1; asimismo, se debe de mostrar por
+                                pantalla el nombre de la canci&oacute;n y el nombre del g&eacute;nero al que pertenece.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/cancion-find-by-id.PNG"
+                     alt="Foto Prueba Canción - FindById"/>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Canci&oacute;n por Nombre</h5>
+                    <table>
+                        <tr>
+                            <th>Aspecto:</th>
+                            <th>Descripci&oacute;n del Aspecto:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                CAN-03
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Encontrar Canci&oacute;n por Nombre
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que busca la canci&oacute;n dentro del repositorio de canciones de
+                                acuerdo con el nombre dado, esto, al interior del
+                                sistema de MusicaList.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `cancionRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados</td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al buscar la canci&oacute;n con nombre "Shape of you"; asimismo, se
+                                debe de mostrar por
+                                pantalla el nombre de la canci&oacute;n y el nombre del g&eacute;nero al que pertenece.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/cancion-find-by-nombre.PNG"
+                     alt="Foto Prueba Canción - FindByNombre"/>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Todas las Canciones </h5>
+                    <table>
+                        <tr>
+                            <th>Nombre Atributo:</th>
+                            <th>Descripci&oacute;n del Atributo:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                CAN-04
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Encontrar todos las canciones del sistema.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que busca y recopila en una lista todas las canciones que se
+                                encuentran en la base de datos del
+                                sistema de MusicaList.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `cancionRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados</td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al buscar todas las canciones provenientes de
+                                cancionRepository, se debe de mostrar por
+                                pantalla el nombre de cada una de las canciones en conjunto con el nombre del g&eacute;nero
+                                m&uacute;sical al que pertenencen.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/cancion-find-all.PNG"
+                     alt="Foto Prueba Canción - FindAll"/>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Actualizar Canci&oacute;n </h5>
+                    <table>
+                        <tr>
+                            <th>Aspecto:</th>
+                            <th>Descripci&oacute;n del Aspecto:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                CAN-05
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Actualizar la informaci&oacute;n de la canci&oacute;n indicada.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que busca la canci&oacute;n dentro del repositorio de canciones de
+                                acuerdo con el id dado, posteriormente, realiza el cambio del atributo de la duraci&oacute;n
+                                en segundos
+                                en la prueba unitaria, esto, al interior del
+                                sistema de MusicaList.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `cancionRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados</td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al buscar la canci&oacute;n con id 1 y posteriormente realizar el cambio del
+                                atributo correspondiente a la duraci&oacute;n en segundos a "120" sobre el registro.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/cancion-update.PNG"
+                     alt="Foto Prueba Canción - Actualizar"/>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Eliminar Canci&oacute;n </h5>
+                    <table>
+                        <tr>
+                            <th>Nombre Atributo:</th>
+                            <th>Descripci&oacute;n del Atributo:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                CAN-06
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Eliminar Canci&oacute;n por ID.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que elimina un registro del repositorio de canciones, el cu&aacute;l
+                                realiza la acción al interior de la base de datos del sistema de MusicaList simult&aacute;neamente.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `cancionRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados</td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al eliminar la canci&oacute;n que se encuentra identificada con el id
+                                1.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/cancion-delete.PNG"
+                     alt="Foto Prueba Canción - Eliminar"/>
+            </div>
+        </div>
+    </div>
 
     <div class="integrante selected" id="4-detalle">
         <h3 class='tituloMedioS'> Pruebas Unitarias - Clase G&eacute;nero M&uacute;sical </h3>
