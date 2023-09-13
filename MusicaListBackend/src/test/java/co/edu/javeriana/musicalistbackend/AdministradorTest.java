@@ -43,10 +43,12 @@ public class AdministradorTest {
     @Test
     void findAdministradorByNombre() {
         Administrador administrador = new Administrador();
-        Optional<Administrador> optionalAdministrador = administradorRepository.findByNombreUsuario("estebans441");
+        Optional<Administrador> optionalAdministrador =
+                administradorRepository.findByNombreUsuario("estebans441");
         if (optionalAdministrador.isPresent())
             administrador = optionalAdministrador.get();
-        System.out.println("Nombre de administrador: " + administrador.getNombreUsuario());
+        System.out.println("Nombre de administrador: " +
+                administrador.getNombreUsuario());
         assert (true);
     }
 

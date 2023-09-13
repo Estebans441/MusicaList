@@ -106,7 +106,7 @@ BARRA DE NAVEGACION
 
         <div class="seccion">
             <div class="imagenTexto">
-                <div class="tableCenter" style="width: 85%;">
+                <div class="tableCenter" style="width: 1000px;">
                     <h5 class="tituloLateralDer_sub">Prueba Unitaria - Crear Administrador</h5>
                     <table>
                         <tr>
@@ -185,7 +185,7 @@ BARRA DE NAVEGACION
 
         <div class="seccion">
             <div class="imagenTexto">
-                <div class="tableCenter" style="width: 85%;">
+                <div class="tableCenter" style="width: 1000px;">
                     <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Administrador por ID</h5>
                     <table>
                         <tr>
@@ -264,10 +264,9 @@ BARRA DE NAVEGACION
             </div>
         </div>
 
-
         <div class="seccion">
             <div class="imagenTexto">
-                <div class="tableCenter">
+                <div class="tableCenter" style="width: 1000px;">
                     <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Administrador por Nombre</h5>
                     <table>
                         <tr>
@@ -341,18 +340,13 @@ BARRA DE NAVEGACION
                         </tr>
                     </table>
                 </div>
-
-                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/admin-find-by-nombre.PNG"
-                     alt="Foto Prueba Admin - FindByNombre"/>
+                
             </div>
         </div>
 
         <div class="seccion">
             <div class="imagenTexto">
-                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/admin-find-all.PNG"
-                     alt="Foto Prueba Admin - FindAll"/>
-
-                <div class="tableCenter">
+                <div class="tableCenter" style="width: 1000px;">
                     <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Todos los Administradores </h5>
                     <table>
                         <tr>
@@ -426,13 +420,16 @@ BARRA DE NAVEGACION
                         </tr>
                     </table>
                 </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/admin-find-all.PNG"
+                     alt="Foto Prueba Admin - FindAll"/>
             </div>
         </div>
 
         <div class="seccion">
             <div class="imagenTexto">
-                <div class="tableCenter">
-                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Administrador por ID</h5>
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Actualizar Administrador </h5>
                     <table>
                         <tr>
                             <th>Aspecto:</th>
@@ -441,20 +438,21 @@ BARRA DE NAVEGACION
                         <tr>
                             <td class="tdH">Identificador de la Prueba</td>
                             <td>
-                                ADM-02
+                                ADM-05
                             </td>
                         </tr>
                         <tr>
                             <td class="tdH">T&iacute;tulo</td>
                             <td>
-                                Encontrar Administrador por ID
+                                Actualizar la informaci&oacute;n del administrador indicado.
                             </td>
                         </tr>
                         <tr>
                             <td class="tdH">Descripci&oacute;n</td>
                             <td>
                                 Prueba unitaria que busca el administrador dentro del repositorio de administradores de
-                                acuerdo con el id dado, esto, al interior del
+                                acuerdo con el id dado, posteriormente, realiza el cambio del correo electr&oacute;nico
+                                en la prueba unitaria, esto, al interior del
                                 sistema de MusicaList.
                             </td>
                         </tr>
@@ -486,8 +484,8 @@ BARRA DE NAVEGACION
                             <td class="tdH">Resultados Esperados/td>
                             <td>
                                 Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
-                                un resultado True al buscar el usuario con id 1; asimismo, se debe de mostrar por
-                                pantalla el nombre del mismo.
+                                un resultado True al buscar el usuario con id 2 y posteriormente realizar el cambio del
+                                atributo correspondiente al correo a "juanframireze@hotmail.com" sobre el registro.
                             </td>
                         </tr>
                         <tr>
@@ -505,19 +503,14 @@ BARRA DE NAVEGACION
                     </table>
                 </div>
 
-                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/admin-find-by-id.PNG"
-                     alt="Foto Prueba Admin - FindById"/>
-
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/admin-update.PNG"
+                     alt="Foto Prueba Admin - Actualizar"/>
             </div>
         </div>
 
-
         <div class="seccion">
             <div class="imagenTexto">
-                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/admin-find-all.PNG"
-                     alt="Foto Prueba Admin - FindAll"/>
-
-                <div class="tableCenter">
+                <div class="tableCenter" style="width: 1000px;">
                     <h5 class="tituloLateralDer_sub">Prueba Unitaria - Eliminar Administrador </h5>
                     <table>
                         <tr>
@@ -589,10 +582,12 @@ BARRA DE NAVEGACION
                         </tr>
                     </table>
                 </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder' src="/images/imgPruebas/admin-delete.PNG"
+                     alt="Foto Prueba Admin - Eliminar"/>
             </div>
         </div>
     </div>
-
 
 </div>
 
