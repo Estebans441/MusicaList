@@ -20,7 +20,9 @@ public class VotanteTest {
 
     @Test
     void crearVotante(){
-        Votante votante = new Votante("unpipol","pablo@gmail.com","PABLO1234");
+        Votante votante = new Votante("unpipol",
+                "pablo@gmail.com",
+                "PABLO1234");
         votanteRepository.save(votante);
         assert(true);
     }
@@ -28,28 +30,36 @@ public class VotanteTest {
     @Test
     void findVotanteById(){
         Votante votante = new Votante();
-        Optional<Votante> optionalVotante = votanteRepository.findById(3);
+        Optional<Votante> optionalVotante =
+                votanteRepository.findById(3);
         if(optionalVotante.isPresent())
             votante = optionalVotante.get();
-        System.out.println("Nombre de votante: " + votante.getNombreUsuario());
+        System.out.println("Nombre de votante: " +
+                votante.getNombreUsuario());
         assert(true);
     }
 
     @Test
     void findVotanteByNombre(){
         Votante votante = new Votante();
-        Optional<Votante> optionalVotante = votanteRepository.findByNombreUsuario("moyano1711");
+        Optional<Votante> optionalVotante =
+                votanteRepository.
+                        findByNombreUsuario("moyano1711");
         if(optionalVotante.isPresent())
             votante = optionalVotante.get();
-        System.out.println("Nombre de votante: " + votante.getNombreUsuario());
+        System.out.println("Nombre de votante: " +
+                votante.getNombreUsuario());
         assert(true);
     }
 
     @Test
     void findAllVotantes(){
-        ArrayList<Votante> vontante = (ArrayList<Votante>) votanteRepository.findAll();
+        ArrayList<Votante> vontante =
+                (ArrayList<Votante>)
+                        votanteRepository.findAll();
         for(Votante votante : vontante){
-            System.out.println("Nombre de votante: " + votante.getNombreUsuario());
+            System.out.println("Nombre de votante: " +
+                    votante.getNombreUsuario());
         }
         assert(true);
     }
@@ -57,7 +67,8 @@ public class VotanteTest {
     @Test
     void actualizarVotante(){
         Votante votante = new Votante();
-        Optional<Votante> optionalVotante = votanteRepository.findById(3);
+        Optional<Votante> optionalVotante =
+                votanteRepository.findById(3);
         if(optionalVotante.isPresent())
             votante = optionalVotante.get();
         votante.setCorreo("moyano1711@hotmail.com");
@@ -68,7 +79,7 @@ public class VotanteTest {
 
     @Test
     void eliminarVotante(){
-        votanteRepository.deleteById(2);
+        votanteRepository.deleteById(3);
         assert(true);
     }
 }

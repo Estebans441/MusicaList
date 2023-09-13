@@ -19,56 +19,64 @@ public class AdministradorTest {
     AdministradorRepository administradorRepository;
 
     @Test
-    void crearAdministrador(){
-        Administrador administrador = new Administrador("unpipol","pablo@gmail.com","PABLO1234");
+    void crearAdministrador() {
+        Administrador administrador = new Administrador(
+                "unpipol",
+                "pablo@gmail.com",
+                "PABLO1234");
         administradorRepository.save(administrador);
-        assert(true);
+        assert (true);
     }
 
     @Test
-    void findAdministradorById(){
+    void findAdministradorById() {
         Administrador administrador = new Administrador();
-        Optional<Administrador> optionalAdministrador = administradorRepository.findById(1);
-        if(optionalAdministrador.isPresent())
+        Optional<Administrador> optionalAdministrador =
+                administradorRepository.findById(1);
+        if (optionalAdministrador.isPresent())
             administrador = optionalAdministrador.get();
-        System.out.println("Nombre de administrador: " + administrador.getNombreUsuario());
-        assert(true);
+        System.out.println("Nombre de administrador: " +
+                administrador.getNombreUsuario());
+        assert (true);
     }
 
     @Test
-    void findAdministradorByNombre(){
+    void findAdministradorByNombre() {
         Administrador administrador = new Administrador();
         Optional<Administrador> optionalAdministrador = administradorRepository.findByNombreUsuario("estebans441");
-        if(optionalAdministrador.isPresent())
+        if (optionalAdministrador.isPresent())
             administrador = optionalAdministrador.get();
         System.out.println("Nombre de administrador: " + administrador.getNombreUsuario());
-        assert(true);
+        assert (true);
     }
 
     @Test
-    void findAllAdministradores(){
-        ArrayList<Administrador> administradores = (ArrayList<Administrador>) administradorRepository.findAll();
-        for(Administrador administrador : administradores){
-            System.out.println("Nombre de administrador: " + administrador.getNombreUsuario());
+    void findAllAdministradores() {
+        ArrayList<Administrador> administradores = (ArrayList<Administrador>)
+                administradorRepository.findAll();
+        for (Administrador administrador : administradores) {
+            System.out.println("Nombre de administrador: " +
+                    administrador.getNombreUsuario());
         }
-        assert(true);
+        assert (true);
     }
 
     @Test
-    void actualizarAdministrador(){
+    void actualizarAdministrador() {
         Administrador administrador = new Administrador();
-        Optional<Administrador> optionalAdministrador = administradorRepository.findById(2);
-        if(optionalAdministrador.isPresent())
+        Optional<Administrador> optionalAdministrador = administradorRepository.
+                findById(2);
+        if (optionalAdministrador.isPresent())
             administrador = optionalAdministrador.get();
         administrador.setCorreo("juanframireze@hotmail.com");
         administradorRepository.save(administrador);
 
-        assert(true);
+        assert (true);
     }
 
     @Test
-    void eliminarAdministrador(){
+    void eliminarAdministrador() {
         administradorRepository.deleteById(2);
-        assert(true);
+        assert (true);
     }
 }

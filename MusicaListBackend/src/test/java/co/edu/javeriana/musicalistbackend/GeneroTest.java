@@ -25,21 +25,27 @@ public class GeneroTest {
     AdministradorRepository administradorRepository;
     @Test
     void crearGeneroMusical (){
-        GeneroMusical generoMusical = new GeneroMusical("Cumbia", "Genero musical Cumbia Villera");
+        GeneroMusical generoMusical = new GeneroMusical
+                ("Cumbia",
+                        "Genero musical Cumbia Villera");
         generoMusicalRepository.save(generoMusical);
         assert (true);
     }
 
     @Test
     void findGeneroByID(){
-        GeneroMusical generoMusical = new GeneroMusical();
-        Optional<GeneroMusical> optionalGeneroMusical = generoMusicalRepository.findById(2);
+        GeneroMusical generoMusical =
+                new GeneroMusical();
+        Optional<GeneroMusical> optionalGeneroMusical =
+                generoMusicalRepository.findById(2);
         if(optionalGeneroMusical.isPresent())
             generoMusical = optionalGeneroMusical.get();
-        System.out.println("Nombre del Genero Musical: " + generoMusical.getNombreGenero());
+        System.out.println("Nombre del Genero Musical: " +
+                generoMusical.getNombreGenero());
 
         //Imprimir canciones del genero musical
-        Set<Cancion> canciones = generoMusical.getCanciones();
+        Set<Cancion> canciones =
+                generoMusical.getCanciones();
         System.out.println("Canciones del Genero: ");
         for (Cancion cancion : canciones){
             System.out.println("\t- " + cancion.getNombre());
@@ -50,9 +56,11 @@ public class GeneroTest {
 
     @Test
     void findAllGeneros(){
-        List<GeneroMusical> listaGeneros = generoMusicalRepository.findAll();
+        List<GeneroMusical> listaGeneros =
+                generoMusicalRepository.findAll();
         for (GeneroMusical generoMusical : listaGeneros){
-            System.out.println("Nombre del genero músical: " + generoMusical.getNombreGenero());
+            System.out.println("Nombre del genero músical: " +
+                    generoMusical.getNombreGenero());
         }
         assert (true);
     }
@@ -60,12 +68,15 @@ public class GeneroTest {
     @Test
     void findByNameGenero(){
         GeneroMusical generoMusical = new GeneroMusical();
-        Optional<GeneroMusical> optionalGeneroMusical = generoMusicalRepository.findGeneroMusicalByNombreGenero("Rock");
+        Optional<GeneroMusical> optionalGeneroMusical =
+                generoMusicalRepository.
+                        findGeneroMusicalByNombreGenero("Rock");
 
         if (optionalGeneroMusical.isPresent())
             generoMusical = optionalGeneroMusical.get();
 
-        System.out.println("Se encontro el genero musical con nombre: " + generoMusical.getNombreGenero());
+        System.out.println("Se encontro el genero musical con nombre: " +
+                generoMusical.getNombreGenero());
 
         assert (true);
     }
@@ -73,7 +84,8 @@ public class GeneroTest {
     @Test
     void actualizarGeneroMusical(){
         GeneroMusical generoMusical = new GeneroMusical();
-        Optional <GeneroMusical> optionalGeneroMusical = generoMusicalRepository.findById(2);
+        Optional <GeneroMusical> optionalGeneroMusical =
+                generoMusicalRepository.findById(2);
         if (optionalGeneroMusical.isPresent())
             generoMusical = optionalGeneroMusical.get();
 
