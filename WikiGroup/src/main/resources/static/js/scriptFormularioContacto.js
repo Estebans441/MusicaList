@@ -4,9 +4,9 @@ function validarFormulario() {
   const edad = parseInt(document.getElementById("Edad").value);
   const mensaje = document.getElementById("mensaje").value;
 
-  // Verificar el campo nombre
-  if (nombre.length > 200) {
-    mostrarError("El nombre no puede tener más de 200 caracteres.");
+  // Verificar el campo "nombre"
+  if (nombre.length > 100) {
+    mostrarError("El nombre no puede tener más de 100 caracteres.");
     return false;
   }
 
@@ -18,7 +18,7 @@ function validarFormulario() {
 
   // Verificar el cuerpo del mensaje
   if (mensaje.length > 500) {
-    mostrarError("El mensaje no puede tener más de 500000 caracteres.");
+    mostrarError("El mensaje no puede tener más de 500 caracteres.");
     return false;
   }
 
