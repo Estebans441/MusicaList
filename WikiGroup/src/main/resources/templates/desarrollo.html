@@ -169,6 +169,7 @@
     </div>
 
     <h2 class = "tituloMedioS"> Contratos Funcionales - Mapping Controladores</h2>
+    <!-- CONTRATOS FUNCIONALES - CLASE CUENTA -->
     <div class = "seccion">
       <div class="tableCenter">
         <h5 class="tituloLateralDer_sub">CuentaController - Servicios CRUD</h5>
@@ -231,7 +232,51 @@
           </tr>
         </table>
       </div>
+    </div>
 
+    <!-- CONTRATOS FUNCIONALES - CLASE ADMINISTRADOR -->
+    <div class = "seccion">
+      <div class="tableCenter">
+        <h5 class="tituloLateralDer_sub">AdministradorController - Servicios CRUD</h5>
+        <table>
+          <tr>
+            <th>Servicio</th>
+            <th>Método HTTP</th>
+            <th>Ruta</th>
+            <th>Contrato Funcional</th>
+          </tr>
+          <tr>
+            <td class="tdH">Crear un administrador (Create)</td>
+            <td>POST</td>
+            <td>/musicalist/api/administrador/crear</td>
+            <td>
+              <strong>Entrada:</strong> Los datos necesarios para crear un nuevo administrador.<br>
+              <strong>Salida:</strong> El administrador creado con éxito, incluyendo su identificador único (ID).<br>
+              <strong>Descripción:</strong> Permite crear un nuevo administrador en el sistema de MusicaList.
+            </td>
+          </tr>
+          <tr>
+            <td class="tdH">Obtener todos los administradores (Retrieve)</td>
+            <td>GET</td>
+            <td>/musicalist/api/administrador/all</td>
+            <td>
+              <strong>Entrada:</strong> Ninguna.<br>
+              <strong>Salida:</strong> Una lista de todos los administradores existentes en el sistema.<br>
+              <strong>Descripción:</strong> Permite obtener una lista de todos los administradores registrados en el sistema de MusicaList.
+            </td>
+          </tr>
+          <tr>
+            <td class="tdH">Obtener un administrador por ID (Retrieve)</td>
+            <td>GET</td>
+            <td>/musicalist/api/administrador/{id}</td>
+            <td>
+              <strong>Entrada:</strong> El ID del administrador que se desea obtener.<br>
+              <strong>Salida:</strong> El administrador correspondiente al ID proporcionado o nulo si no se encuentra.<br>
+              <strong>Descripción:</strong> Permite obtener un administrador específico por su ID en el sistema de MusicaList.
+            </td>
+          </tr>
+        </table>
+      </div>
 
     </div>
 
