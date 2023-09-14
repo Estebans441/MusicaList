@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Despliegue</title>
+  <title>Desarrollo</title>
   <link href = "/css/arquitectura_requerimientos_despliegue.css" rel="stylesheet" type="text/css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -277,8 +277,75 @@
           </tr>
         </table>
       </div>
+    </div>
+
+    <!-- CONTRATOS FUNCIONALES - CLASE VENDEDOR -->
+    <div class = "seccion">
+      <div class="tableCenter">
+        <h5 class="tituloLateralDer_sub">VotanteController - Servicios CRUD</h5>
+        <table>
+          <tr>
+            <th>Servicio</th>
+            <th>Método HTTP</th>
+            <th>Ruta</th>
+            <th>Contrato Funcional</th>
+          </tr>
+          <tr>
+            <td class="tdH">Crear un votante (Create)</td>
+            <td>POST</td>
+            <td>/musicalist/api/votante/crear</td>
+            <td>
+              <strong>Entrada:</strong> Los datos necesarios para crear un nuevo votante.<br>
+              <strong>Salida:</strong> El votante creado con éxito, incluyendo su identificador único (ID).<br>
+              <strong>Descripción:</strong> Permite crear un nuevo votante en el sistema de MusicaList.
+            </td>
+          </tr>
+          <tr>
+            <td class="tdH">Obtener todos los votantes (Retrieve)</td>
+            <td>GET</td>
+            <td>/musicalist/api/votante/all</td>
+            <td>
+              <strong>Entrada:</strong> Ninguna.<br>
+              <strong>Salida:</strong> Una lista de todos los votantes existentes en el sistema.<br>
+              <strong>Descripción:</strong> Permite obtener una lista de todos los votantes registrados en el sistema de MusicaList.
+            </td>
+          </tr>
+          <tr>
+            <td class="tdH">Obtener un votante por ID (Retrieve)</td>
+            <td>GET</td>
+            <td>/musicalist/api/votante/{id}</td>
+            <td>
+              <strong>Entrada:</strong> El ID del votante que se desea obtener.<br>
+              <strong>Salida:</strong> El votante correspondiente al ID proporcionado o nulo si no se encuentra.<br>
+              <strong>Descripción:</strong> Permite obtener un votante específico por su ID en el sistema de MusicaList.
+            </td>
+          </tr>
+          <tr>
+            <td class="tdH">Votar por una canción (Update)</td>
+            <td>PUT</td>
+            <td>/musicalist/api/votante/votar/{idVotante}-{idCancion}</td>
+            <td>
+              <strong>Entrada:</strong> El ID del votante que desea votar y el ID de la canción por la que se desea votar.<br>
+              <strong>Salida:</strong> Un valor booleano que indica si el voto se registró con éxito o no.<br>
+              <strong>Descripción:</strong> Permite que un votante vote por una canción en el sistema de MusicaList.
+            </td>
+          </tr>
+          <tr>
+            <td class="tdH">Eliminar voto por una canción (Update)</td>
+            <td>PUT</td>
+            <td>/musicalist/api/votante/eliminar-voto/{idVotante}-{idCancion}</td>
+            <td>
+              <strong>Entrada:</strong> El ID del votante que desea eliminar su voto y el ID de la canción por la que votó.<br>
+              <strong>Salida:</strong> Un valor booleano que indica si el voto se eliminó con éxito o no.<br>
+              <strong>Descripción:</strong> Permite que un votante elimine su voto por una canción en el sistema de MusicaList.
+            </td>
+          </tr>
+        </table>
+      </div>
 
     </div>
+
+
 
     <br><br><br><br>
 
