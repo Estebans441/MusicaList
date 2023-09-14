@@ -8,11 +8,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?  family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
-  </head> 
-  
+  </head>
+
   <body>
-   <!-------------------- 
-  BARRA DE NAVEGACION 
+   <!--------------------
+  BARRA DE NAVEGACION
   ----------------------->
   <header class='lg_header' id='lg-header'>
     <div class="interior">
@@ -42,60 +42,60 @@
       </nav>
     </div>
   </header>
-    
+
     <div id = "container">
       <h1> Cont&aacute;ctanos</h1>
       <p> Si deseas contactarnos para responder alguna duda sobre el proyecto, realizalo a trav&eacute;s de este medio.</p>
 
       <div class = "caja-contacto">
-        
+
         <div class = "contacto-parteIzquierda">
           <h3> Env&iacute;a tu duda. </h3>
           <form onsubmit="return validarFormulario()" action="https://formsubmit.co/loscaballosgalacticos@gmail.com" method="POST">
             <div class = "input-row">
-              
+
               <div class = "input-group">
                 <label> Nombre </label>
-                <input type = "text" id = "nombre" placeholder="Nombre." name = "Nombre" required> 
+                <input type = "text" id = "nombre" placeholder="Nombre." name = "Nombre" required>
               </div>
 
               <div class = "input-group">
                 <label> Edad </label>
-                <input type = "number" id = "Edad" placeholder="Edad" name = "Edad" required> 
+                <input type = "number" id = "Edad" placeholder="Edad" name = "Edad" required>
               </div>
-              
+
             </div>
 
 
             <div class = "input-row">
-              
+
               <div class = "input-group">
                 <label> Email </label>
-                <input type = "text" id = "correo" placeholder="Correo." name = "Correo" required> 
+                <input type = "text" id = "correo" placeholder="Correo." name = "Correo" required>
               </div>
 
               <div class = "input-group">
                 <label> Asunto </label>
-                <input type = "text" id = "asunto" placeholder="Asunto."name = "Asunto" required> 
+                <input type = "text" id = "asunto" placeholder="Asunto."name = "Asunto" required>
               </div>
-              
+
             </div>
 
             <label> Mensaje:. </label>
            <textarea rows="5" placeholder="Mensaje" id="mensaje" name="Mensaje" required></textarea>
           <button type = "submit"> ENVIAR </button>
-          
+
           <div id = "error-message"> </div>
 
           <input type="hidden" name = "_next" value="https://wikigroup--hot-horses.repl.co/">
           <input type="hidden" name = "_captcha" value = "false">
-            
+
           </form>
-          
-          
+
+
         </div>
-        
-        
+
+
         <div class = "contacto-parteDerecha">
           <h3> Llega a nosotros a trav&eacute;s de nuestros datos de contacto. </h3>
 
@@ -104,7 +104,7 @@
               <td> Email </td>
               <td> loscaballosgalacticos@gmail.com</td>
             </tr>
-            
+
             <tr>
               <td> Telef&oacute;no </td>
               <td> (+57) 321 966 8133 - Juan Francisco Ram&iacute;rez <br>
@@ -115,15 +115,15 @@
 
             <tr>
               <td> Direcci&oacute;n  </td>
-              <td> Cra. 7 No. 40-62 Bogot&aacute;, Colombia. <br> 
+              <td> Cra. 7 No. 40-62 Bogot&aacute;, Colombia. <br>
                 Ed. Jos&eacute; Gabriel Maldonado - Piso 10 </td>
             </tr>
-            
+
           </table>
-          
+
         </div>
       </div>
-    
+
     </div>
      <script src='/js/scriptFormularioContacto.js'></script>
   </body>
