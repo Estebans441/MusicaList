@@ -17,7 +17,7 @@ public class ContactoTest {
     PeticionContactoRepository peticionContactoRepository;
 
     @Test
-    void crearCancion(){
+    void crearContacto(){
         PeticionContacto peticionContacto = new PeticionContacto(
                 "Leonardo Castro",
                 "leocastro@gmail.com",
@@ -63,7 +63,7 @@ public class ContactoTest {
         Optional<PeticionContacto> peticionContactoOptional =
                 peticionContactoRepository.findByNombre
                         ("Cristiano Ronaldo");
-        
+
         if (peticionContactoOptional.isPresent())
             peticionContacto = peticionContactoOptional.get();
 

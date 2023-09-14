@@ -98,6 +98,10 @@ BARRA DE NAVEGACION
             <img src="/images/genero.png" alt="Foto Pruebas G&eacute;nero" style="width: 300px; height: 300px;"/>
             <p>G&eacute;nero</p>
         </div>
+        <div class='integrante-lista' id="5">
+            <img src="/images/contacto.png" alt="Foto Pruebas Contacto" style="width: 300px; height: 300px;"/>
+            <p>Petici&oacute;n de Contacto</p>
+        </div>
     </div>
 
     <div class="integrante selected" id="1-detalle">
@@ -1470,7 +1474,8 @@ BARRA DE NAVEGACION
                             <td class="tdH">Resultados Esperados</td>
                             <td>
                                 Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
-                                un resultado True al buscar la canci&oacute;n con id 1 y posteriormente realizar el cambio del
+                                un resultado True al buscar la canci&oacute;n con id 1 y posteriormente realizar el
+                                cambio del
                                 atributo correspondiente a la duraci&oacute;n en segundos a "120" sobre el registro.
                             </td>
                         </tr>
@@ -2073,6 +2078,510 @@ BARRA DE NAVEGACION
         </div>
     </div>
 
+    <div class="integrante selected" id="5-detalle">
+        <h3 class='tituloMedioS'> Pruebas Unitarias - Clase Petici&oacute;n Contacto </h3>
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Crear Contacto</h5>
+                    <table>
+                        <tr>
+                            <th>Aspecto:</th>
+                            <th>Descripci&oacute;n del Aspecto:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                CNT-01
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Crear Contacto
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que verifica la creaci&oacute;n &eacute;xitosa de un contacto
+                                perteneciente a una petición
+                                en el
+                                sistema de MusicaList.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Juan Francisco Ram&iacute;rez Escobar
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Juan Francisco Ram&iacute;rez Escobar
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `peticionContactoRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados</td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al ingresar el contacto "Leonardo Castro".
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder'
+                     src="/images/imgPruebas/peticion-contacto-crear.PNG"
+                     alt="Foto Prueba Petición Contacto - Crear"/>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Contacto por
+                        ID</h5>
+                    <table>
+                        <tr>
+                            <th>Aspecto:</th>
+                            <th>Descripci&oacute;n del Aspecto:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                CNT-02
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Encontrar Petición de Contacto por ID
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que busca la peticion de contacto dentro del repositorio de
+                                peticiones de contacto de
+                                acuerdo con el id dado, esto, al interior del
+                                sistema de MusicaList.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Juan Francisco Ram&iacute;rez Escobar
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Juan Francisco Ram&iacute;rez Escobar
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `peticionContactoRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados</td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al buscar el contacto con id 1; asimismo, se debe de mostrar por
+                                pantalla el nombre del contacto relacionado.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder'
+                     src="/images/imgPruebas/peticion-contacto-find-by-id.PNG"
+                     alt="Foto Prueba Petición Contacto - FindById"/>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Petición de Contacto por
+                        Nombre</h5>
+                    <table>
+                        <tr>
+                            <th>Aspecto:</th>
+                            <th>Descripci&oacute;n del Aspecto:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                CNT-03
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Encontrar Petición de Contacto por Nombre
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que busca el contacto dentro del repositorio de peticiones de contacto
+                                de
+                                acuerdo con el nombre dado, esto, al interior del
+                                sistema de MusicaList.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Esteban Salazar Arbel&aacute;ez
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Esteban Salazar Arbel&aacute;ez
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `peticionContactoRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados</td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al buscar el contacto con nombre "Cristiano Ronaldo"; asimismo, se
+                                debe de mostrar por
+                                pantalla el nombre del contacto relacionado.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder'
+                     src="/images/imgPruebas/peticion-contacto-find-by-nombre.PNG"
+                     alt="Foto Prueba Petición Contacto- FindByNombre"/>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Encontrar Todos los Contactos </h5>
+                    <table>
+                        <tr>
+                            <th>Nombre Atributo:</th>
+                            <th>Descripci&oacute;n del Atributo:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                CNT-04
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Encontrar toda la Información de las Peticiones de contacto del sistema.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que busca y recopila en una lista todas las peticiones de contacto que
+                                se
+                                encuentran en la base de datos del
+                                sistema de MusicaList.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Esteban Salazar Arbel&aacute;ez
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Esteban Salazar Arbel&aacute;ez
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `peticionContactoRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados</td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al buscar todos los contactos provenientes de
+                                peticionContactoRepository, se debe de mostrar por
+                                pantalla el nombre de cada uno de los contactos del sistema.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder'
+                     src="/images/imgPruebas/peticion-contacto-find-all.PNG"
+                     alt="Foto Prueba Petición Contacto - FindAll"/>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Actualizar Contacto </h5>
+                    <table>
+                        <tr>
+                            <th>Aspecto:</th>
+                            <th>Descripci&oacute;n del Aspecto:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                CNT-05
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Actualizar la informaci&oacute;n de la Petición de Contacto.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que busca el contacto dentro del repositorio de
+                                peticiones de contacto de
+                                acuerdo con el id dado, posteriormente, realiza el cambio del atributo correspondiente a
+                                la edad
+                                en la prueba unitaria, esto, al interior del
+                                sistema de MusicaList.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `peticionContactoRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados</td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al buscar la petición de contacto con id 4 y posteriormente
+                                realizar el cambio del
+                                atributo correspondiente a la edad a un valor de "39" sobre el registro.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder'
+                     src="/images/imgPruebas/peticion-contacto-update.PNG"
+                     alt="Foto Prueba Petición Contacto - Actualizar"/>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="imagenTexto">
+                <div class="tableCenter" style="width: 1000px;">
+                    <h5 class="tituloLateralDer_sub">Prueba Unitaria - Eliminar Contacto</h5>
+                    <table>
+                        <tr>
+                            <th>Nombre Atributo:</th>
+                            <th>Descripci&oacute;n del Atributo:</th>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Identificador de la Prueba</td>
+                            <td>
+                                CNT-06
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">T&iacute;tulo</td>
+                            <td>
+                                Eliminar Petición de Contacto
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Descripci&oacute;n</td>
+                            <td>
+                                Prueba unitaria que elimina un registro del repositorio de peticiones de contacto, el cu&aacute;l
+                                realiza la acción al interior de la base de datos del sistema de MusicaList simult&aacute;neamente.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Diseñada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Ejecutada por</td>
+                            <td>
+                                Javier Alejandro Moyano Cipamocha
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Dependencias de las pruebas</td>
+                            <td>
+                                <ul>
+                                    <li>Utilizaci&oacute;n del `peticionContactoRepository` de JPA.</li>
+                                    <li>Empleo de Spring Boot para gesti&oacute;n y configuraci&oacute;n.</li>
+                                    <li>Uso de anotaciones de Spring como `@Autowired`.</li>
+                                    <li>Configuraci&oacute;n de propiedades de la base de datos con Spring Boot.</li>
+                                    <li>Ejecuci&oacute;n en un contexto de prueba de Spring Boot.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Esperados</td>
+                            <td>
+                                Funcionamiento de la Prueba &eacute;xitoso, "Test passed". Se espera que el assert tenga
+                                un resultado True al eliminar la petición de contacto que se encuentra identificada con el id
+                                3.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">Resultados Obtenidos</td>
+                            <td>
+                                Assert (True)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdH">¿Se cumpli&oacute; el objetivo?</td>
+                            <td>
+                                Si, se cumpli&oacute;.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <img class='imagen, imagenCenter, classYellowBorder'
+                     src="/images/imgPruebas/peticion-contacto-delete.PNG"
+                     alt="Foto Prueba Petición Contacto - Eliminar"/>
+            </div>
+        </div>
+    </div>
 
 </div>
 
