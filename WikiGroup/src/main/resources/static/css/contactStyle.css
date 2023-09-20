@@ -183,7 +183,14 @@ tr td{
   color:#fff;
   font-weight : bold;
 }
-#error-message {
+
+.success-message {
+  color: darkgreen;
+  margin-top: 10px;
+  font-weight: bolder;
+}
+
+.error-message {
   color: darkred;
   margin-top: 10px;
   font-weight: bolder;
