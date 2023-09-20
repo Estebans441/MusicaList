@@ -10,36 +10,8 @@
 
 </head>
 <body>
-<!--------------------
-BARRA DE NAVEGACION
------------------------>
 <header class='lg_header' id='lg-header'>
-    <div class="interior">
-        <a class="logo" href="/wiki/inicio">
-            <img alt="logo" src="/images/logo1.png">
-        </a>
-        <nav class="navegacion">
-            <ul>
-                <li><a href="/wiki/inicio">Inicio </a></li>
-                <li class="submenu">
-                    <a href="/wiki/acerca-de/requerimientos">Acerca del Proyecto</a>
-                    <ul class="hijos">
-                        <li><a href="/wiki/acerca-de/requerimientos">Requerimientos</a></li>
-                        <li><a href="/wiki/acerca-de/arquitectura">Arquitectura</a></li>
-                    </ul>
-                </li>
-                <li class="submenu">
-                    <a href="/wiki/implementacion/desarrollo">Implementacion</a>
-                    <ul class="hijos">
-                        <li><a href="/wiki/implementacion/desarrollo">Desarrollo</a></li>
-                        <li><a href="/wiki/implementacion/pruebas">Pruebas</a></li>
-                        <li><a href="/wiki/implementacion/despliegue">Despliegue</a></li>
-                    </ul>
-                </li>
-                <li><a href="/wiki/contactenos">Contactenos</a></li>
-            </ul>
-        </nav>
-    </div>
+    <div th:replace="navegacion.html :: barra"></div>
 </header>
 
 <div class="cuerpo">

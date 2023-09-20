@@ -2,84 +2,70 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Requerimientos</title>
-  <link href = "/css/arquitectura_requerimientos_despliegue.css" rel="stylesheet" type="text/css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?  family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Requerimientos</title>
+    <link href="/css/arquitectura_requerimientos_despliegue.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?  family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-------------------- 
-  BARRA DE NAVEGACION 
-  ----------------------->
-  <header class='lg_header' id='lg-header'>
-    <div class="interior">
-      <a class="logo" href="/wiki/inicio">
-        <img alt="logo" src="/images/logo1.png">
-      </a>
-      <nav class="navegacion">
-        <ul>
-          <li><a href="/wiki/inicio">Inicio </a></li>
-          <li class="submenu">
-            <a href="/wiki/acerca-de/requerimientos">Acerca del Proyecto</a>
-            <ul class="hijos">
-              <li><a href="/wiki/acerca-de/requerimientos">Requerimientos</a></li>
-              <li><a href="/wiki/acerca-de/arquitectura">Arquitectura</a></li>
-            </ul>
-          </li>
-          <li class="submenu">
-            <a href="/wiki/implementacion/desarrollo">Implementacion</a>
-            <ul class="hijos">
-              <li><a href="/wiki/implementacion/desarrollo">Desarrollo</a></li>
-              <li><a href="/wiki/implementacion/pruebas">Pruebas</a></li>
-              <li><a href="/wiki/implementacion/despliegue">Despliegue</a></li>
-            </ul>
-          </li>
-          <li><a href="/wiki/contactenos">Contactenos</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header class='lg_header' id='lg-header'>
+    <div th:replace="navegacion.html :: barra"></div>
+</header>
 
-  <div class="cuerpo">
+<div class="cuerpo">
     <h2 class="tituloMedio">Requerimientos del Proyecto</h2>
 
     <!-- DESCRIPCION DE REQUERIMIENTOS FUNCIONALES -->
     <h4 class="tituloLateralIzqBD">Requerimientos Funcionales</h4>
 
     <div class="seccion">
-      <div class="imagenTexto">
-        <div>
-          <p>
-            Los requerimientos funcionales desempe&acute;an un papel fundamental en los proyectos de desarrollo web al
-            esbozar las caracter&iacute;sticas y funciones esenciales que el sitio web debe incorporar para alinear con los
-            objetivos del proyecto y satisfacer las necesidades de los usuarios. Estos requerimientos no solo act&uacute;an
-            como una br&uacute;jula para los desarrolladores, garantizando un enfoque coherente y la convergencia con los
-            fines del proyecto, sino que tambi&eacute;n desempe&ntilde;an un papel crucial en la mejora de la comunicaci&oacute;n entre los
-            equipos involucrados.
-          </p>
-          <p>
-            Adem&aacute;s de su papel en la alineaci&oacute;n y gu&iacute;a del desarrollo, los requerimientos funcionales ofrecen m&uacute;ltiples
-            beneficios. Permiten la detecci&oacute;n temprana de problemas, lo que evita contratiempos costosos y demoras.
-            Facilitan la estimaci&oacute;n precisa de los recursos necesarios para llevar a cabo el proyecto de manera efectiva
-            y, al mismo tiempo, establecen la base para rigurosas pruebas y validaciones. As&iacute;, garantizan que el sitio
-            web no solo sea funcional, sino que tambi&eacute;n satisfaga a los usuarios y se alinee con sus expectativas.
-          </p>
+        <div class="imagenTexto">
+            <div>
+                <p>
+                    Los requerimientos funcionales desempe&acute;an un papel fundamental en los proyectos de desarrollo
+                    web al
+                    esbozar las caracter&iacute;sticas y funciones esenciales que el sitio web debe incorporar para
+                    alinear con los
+                    objetivos del proyecto y satisfacer las necesidades de los usuarios. Estos requerimientos no solo
+                    act&uacute;an
+                    como una br&uacute;jula para los desarrolladores, garantizando un enfoque coherente y la
+                    convergencia con los
+                    fines del proyecto, sino que tambi&eacute;n desempe&ntilde;an un papel crucial en la mejora de la
+                    comunicaci&oacute;n entre los
+                    equipos involucrados.
+                </p>
+                <p>
+                    Adem&aacute;s de su papel en la alineaci&oacute;n y gu&iacute;a del desarrollo, los requerimientos
+                    funcionales ofrecen m&uacute;ltiples
+                    beneficios. Permiten la detecci&oacute;n temprana de problemas, lo que evita contratiempos costosos
+                    y demoras.
+                    Facilitan la estimaci&oacute;n precisa de los recursos necesarios para llevar a cabo el proyecto de
+                    manera efectiva
+                    y, al mismo tiempo, establecen la base para rigurosas pruebas y validaciones. As&iacute;, garantizan
+                    que el sitio
+                    web no solo sea funcional, sino que tambi&eacute;n satisfaga a los usuarios y se alinee con sus
+                    expectativas.
+                </p>
 
-          <p>
-            Ahora, considerando un proyecto de desarrollo web orientado a la publicaci&oacute;n y votaci&oacute;n de canciones en una
-            lista musical, se propone una serie de requerimientos funcionales espec&iacute;ficos que atiendan las
-            caracter&iacute;sticas &uacute;nicas de los usuarios y las acciones esperadas. Estos requerimientos abordan la interacci&oacute;n
-            con la plataforma, la capacidad de buscar, clasificar y votar canciones, as&iacute; como la facilidad de navegaci&oacute;n
-            y la posibilidad de interactuar con otros usuarios en el contexto musical.
-          </p>
+                <p>
+                    Ahora, considerando un proyecto de desarrollo web orientado a la publicaci&oacute;n y votaci&oacute;n
+                    de canciones en una
+                    lista musical, se propone una serie de requerimientos funcionales espec&iacute;ficos que atiendan
+                    las
+                    caracter&iacute;sticas &uacute;nicas de los usuarios y las acciones esperadas. Estos requerimientos
+                    abordan la interacci&oacute;n
+                    con la plataforma, la capacidad de buscar, clasificar y votar canciones, as&iacute; como la
+                    facilidad de navegaci&oacute;n
+                    y la posibilidad de interactuar con otros usuarios en el contexto musical.
+                </p>
+            </div>
+            <img class="imagenCenter classBlueBorder" src="/images/requisitosFuncionales.jpg"
+                 alt="Requerimientos Funcionales" width="350px" height="350px"/>
         </div>
-        <img class="imagenCenter classBlueBorder" src="/images/requisitosFuncionales.jpg"
-          alt="Requerimientos Funcionales" width="350px" height="350px" />
-      </div>
     </div>
     <br>
 
@@ -87,68 +73,86 @@
 
     <!-- TABLA DE REQUERIMIENTOS POR ROL -->
     <div class="section">
-      <div class="imagenTexto">
-        <div class="tableCenter">
-          <h5 class="tituloLateralDer_sub">Requerimientos Funcionales Rol Votante</h5>
-          <table>
-            <tr>
-              <th>Actor: Votante</th>
-              <th>Requerimientos Funcionales</th>
-            </tr>
-            <tr>
-              <td class="tdH">RF-VOT-VLR</td>
-              <td>El sistema debe permitir al votante ver la lista de reproducción actual, mostrando las canciones
-                disponibles para votación, junto con sus detalles relevantes.</td>
-            </tr>
-            <tr>
-              <td class="tdH">RF-VOT-DLK</td>
-              <td>El sistema debe permitir al votante dar "like" a una canción de la lista de reproducción, indicando su
-                preferencia por la misma.</td>
-            </tr>
-            <tr>
-              <td class="tdH">RF-VOT-CACU</td>
-              <td>El sistema debe permitir al votante realizar la creación y activación de una cuenta de usuario,
-                solicitando la información necesaria para el registro, como nombre, correo electr&oacute;nico y
-                contrase&ntilde;a.</td>
-            </tr>
-            <tr>
-              <td class="tdH">RF-VOT-VLGC</td>
-              <td>El sistema debe permitir a los usuarios votar por listas de g&eacute;neros musicales en función de sus
-                preferencias de canciones, de acuerdo con el objetivo de la Lista Musical.</td>
-            </tr>
-          </table>
-        </div>
+        <div class="imagenTexto">
+            <div class="tableCenter">
+                <h5 class="tituloLateralDer_sub">Requerimientos Funcionales Rol Votante</h5>
+                <table>
+                    <tr>
+                        <th>Actor: Votante</th>
+                        <th>Requerimientos Funcionales</th>
+                    </tr>
+                    <tr>
+                        <td class="tdH">RF-VOT-VLR</td>
+                        <td>El sistema debe permitir al votante ver la lista de reproducción actual, mostrando las
+                            canciones
+                            disponibles para votación, junto con sus detalles relevantes.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdH">RF-VOT-DLK</td>
+                        <td>El sistema debe permitir al votante dar "like" a una canción de la lista de reproducción,
+                            indicando su
+                            preferencia por la misma.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdH">RF-VOT-CACU</td>
+                        <td>El sistema debe permitir al votante realizar la creación y activación de una cuenta de
+                            usuario,
+                            solicitando la información necesaria para el registro, como nombre, correo electr&oacute;nico
+                            y
+                            contrase&ntilde;a.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdH">RF-VOT-VLGC</td>
+                        <td>El sistema debe permitir a los usuarios votar por listas de g&eacute;neros musicales en
+                            función de sus
+                            preferencias de canciones, de acuerdo con el objetivo de la Lista Musical.
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
-        <div class="tableCenter">
-          <h5 class="tituloLateralDer_sub">Requerimientos Funcionales Rol Administrador</h5>
-          <table>
-            <tr>
-              <th>Actor: Administrador</th>
-              <th>Requerimientos Funcionales</th>
-            </tr>
-            <tr>
-              <td class="tdH">RF-ADM-CSC</td>
-              <td>El sistema debe permitir al administrador crear y/o subir canciones al sistema, proporcionando la
-                informaci&oacute;n relevante de la canción, como t&iacute;tulo, artista, duraci&oacute;n y archivo de audio.</td>
-            </tr>
-            <tr>
-              <td class="tdH">RF-ADM-ECV</td>
-              <td>El sistema debe permitir al administrador exponer canciones a votaci&oacute;n, especificando las canciones
-                que estarán disponibles para que los votantes las evalúen.</td>
-            </tr>
-            <tr>
-              <td class="tdH">RF-ADM-CGM</td>
-              <td>El sistema debe permitir al administrador crear g&eacute;neros musicales, definiendo nombres y
-                caracter&iacute;sticas asociadas a cada g&eacute;nero.</td>
-            </tr>
-            <tr>
-              <td class="tdH">RF-ADM-VLGC</td>
-              <td>El sistema debe permitir a los usuarios votar por listas de g&eacute;neros musicales en función de sus
-                preferencias de canciones, de acuerdo con el objetivo de la Lista Musical.</td>
-            </tr>
-          </table>
+            <div class="tableCenter">
+                <h5 class="tituloLateralDer_sub">Requerimientos Funcionales Rol Administrador</h5>
+                <table>
+                    <tr>
+                        <th>Actor: Administrador</th>
+                        <th>Requerimientos Funcionales</th>
+                    </tr>
+                    <tr>
+                        <td class="tdH">RF-ADM-CSC</td>
+                        <td>El sistema debe permitir al administrador crear y/o subir canciones al sistema,
+                            proporcionando la
+                            informaci&oacute;n relevante de la canción, como t&iacute;tulo, artista, duraci&oacute;n y
+                            archivo de audio.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdH">RF-ADM-ECV</td>
+                        <td>El sistema debe permitir al administrador exponer canciones a votaci&oacute;n, especificando
+                            las canciones
+                            que estarán disponibles para que los votantes las evalúen.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdH">RF-ADM-CGM</td>
+                        <td>El sistema debe permitir al administrador crear g&eacute;neros musicales, definiendo nombres
+                            y
+                            caracter&iacute;sticas asociadas a cada g&eacute;nero.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdH">RF-ADM-VLGC</td>
+                        <td>El sistema debe permitir a los usuarios votar por listas de g&eacute;neros musicales en
+                            función de sus
+                            preferencias de canciones, de acuerdo con el objetivo de la Lista Musical.
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-      </div>
     </div>
 
     <br><br><br><br>
@@ -156,34 +160,45 @@
     <!-- DESCRIPCION DE REQUERIMIENTOS NO FUNCIONALES -->
     <h4 class="tituloLateralIzqBD">Requerimientos No Funcionales</h4>
     <div class="seccion">
-      <div class="imagenTexto">
-        <br>
-        <br>
-        <br>
-        <img class="imagenCenter classBlueBorder" src="/images/requisitosNoFuncionales.jpg"
-          alt="Requerimientos Funcionales" width="300px" height="300px" />
-        <div>
-          <p>
-            Los requerimientos no funcionales poseen un papel esencial en los proyectos de desarrollo web al
-            abordar aspectos que trascienden las funciones espec&iacute;ficas del sitio. Mientras que los requerimientos
-            funcionales definen "qu&eacute;" debe hacer el sitio, los no funcionales se centran en "c&oacute;mo" debe hacerlo,
-            considerando la experiencia del usuario, el rendimiento, la seguridad y otros aspectos t&eacute;cnicos. Estos
-            requisitos son fundamentales para asegurar una experiencia de usuario satisfactoria y eficiente, al
-            establecer est&aacute;ndares para la velocidad de carga, la capacidad de respuesta, la seguridad de los datos y la
-            escalabilidad del sitio. Un sitio web que no cumple con los requerimientos no funcionales podr&iacute;a resultar en
-            una mala experiencia para los usuarios y da&ntilde;ar la reputaci&oacute;n de la marca.
-          </p>
-          <p>
-            En el contexto del proyecto de desarrollo web centrado en la publicaci&oacute;n y votaci&oacute;n de canciones en una lista
-            musical, los requerimientos no funcionales adquieren una importancia particular. Determinar&aacute;n aspectos como
-            la velocidad de reproducci&oacute;n de canciones, la disponibilidad del sitio durante picos de tr&aacute;fico, la
-            seguridad de la informaci&oacute;n del usuario y la adaptabilidad para diferentes dispositivos y navegadores.
-            Estos requerimientos garantizan que el sitio no solo cumpla con las expectativas en t&eacute;rminos de funciones,
-            sino que tambi&eacute;n ofrezca un rendimiento &oacute;ptimo, una experiencia de usuario segura y una navegaci&oacute;n fluida,
-            satisfaciendo as&iacute; las necesidades y preferencias de los usuarios finales.
-          </p>
+        <div class="imagenTexto">
+            <br>
+            <br>
+            <br>
+            <img class="imagenCenter classBlueBorder" src="/images/requisitosNoFuncionales.jpg"
+                 alt="Requerimientos Funcionales" width="300px" height="300px"/>
+            <div>
+                <p>
+                    Los requerimientos no funcionales poseen un papel esencial en los proyectos de desarrollo web al
+                    abordar aspectos que trascienden las funciones espec&iacute;ficas del sitio. Mientras que los
+                    requerimientos
+                    funcionales definen "qu&eacute;" debe hacer el sitio, los no funcionales se centran en "c&oacute;mo"
+                    debe hacerlo,
+                    considerando la experiencia del usuario, el rendimiento, la seguridad y otros aspectos t&eacute;cnicos.
+                    Estos
+                    requisitos son fundamentales para asegurar una experiencia de usuario satisfactoria y eficiente, al
+                    establecer est&aacute;ndares para la velocidad de carga, la capacidad de respuesta, la seguridad de
+                    los datos y la
+                    escalabilidad del sitio. Un sitio web que no cumple con los requerimientos no funcionales podr&iacute;a
+                    resultar en
+                    una mala experiencia para los usuarios y da&ntilde;ar la reputaci&oacute;n de la marca.
+                </p>
+                <p>
+                    En el contexto del proyecto de desarrollo web centrado en la publicaci&oacute;n y votaci&oacute;n de
+                    canciones en una lista
+                    musical, los requerimientos no funcionales adquieren una importancia particular. Determinar&aacute;n
+                    aspectos como
+                    la velocidad de reproducci&oacute;n de canciones, la disponibilidad del sitio durante picos de tr&aacute;fico,
+                    la
+                    seguridad de la informaci&oacute;n del usuario y la adaptabilidad para diferentes dispositivos y
+                    navegadores.
+                    Estos requerimientos garantizan que el sitio no solo cumpla con las expectativas en t&eacute;rminos
+                    de funciones,
+                    sino que tambi&eacute;n ofrezca un rendimiento &oacute;ptimo, una experiencia de usuario segura y
+                    una navegaci&oacute;n fluida,
+                    satisfaciendo as&iacute; las necesidades y preferencias de los usuarios finales.
+                </p>
+            </div>
         </div>
-      </div>
     </div>
 
 
@@ -191,70 +206,92 @@
 
     <!-- TABLA CON REQUISITOS NO FUNCIONALES DEL SISTEMA -->
     <div class="seccion">
-      <div class="imagenTexto">
-        <div class="tableCenter">
-          <table>
-            <tr>
-              <th>Requisito No Funcional</th>
-              <th>Clasificaci&oacute;n (URPS+)</th>
-            </tr>
-            <tr>
-              <td>Usabilidad: La interfaz de usuario debe ser intuitiva y f&aacute;cil de navegar para los administradores y
-                votantes.</td>
-              <td><b>Rendimiento</b></td>
-            </tr>
-            <tr>
-              <td>Disponibilidad: El sistema debe estar disponible las 24 horas del d&iacute;a, los 7 d&iacute;as de la semana,
-                para asegurar que los usuarios puedan acceder en cualquier momento.</td>
-              <td><b>Confiabilidad</b></td>
-            </tr>
-            <tr>
-              <td>Seguridad de los datos: Los datos de los usuarios, canciones y votaciones deben estar protegidos mediante
-                encriptaci&oacute;n y medidas de seguridad robustas.</td>
-              <td><b>Seguridad</b></td>
-            </tr>
-            <tr>
-              <td>Escalabilidad: El sistema debe ser capaz de manejar un aumento en el n&uacute;mero de usuarios y canciones sin
-                degradar el rendimiento.</td>
-              <td><b>Rendimiento</b></td>
-            </tr>
-            <tr>
-              <td>Interoperabilidad: El sistema debe ser compatible con diferentes navegadores web y dispositivos para
-                garantizar una experiencia uniforme.</td>
-              <td><b>Compatibilidad</b></td>
-            </tr>
-            <tr>
-              <td>Respuesta r&aacute;pida: Las acciones del usuario, como votar y dar like, deben tener una respuesta r&aacute;pida
-                para mejorar la experiencia del usuario.</td>
-              <td><b>Rendimiento</b></td>
-            </tr>
-            <tr>
-              <td>Adaptabilidad a diferentes dispositivos: La interfaz debe adaptarse y ser funcional en dispositivos
-                m&oacute;viles, tablets y computadoras de escritorio.</td>
-              <td><b>Compatibilidad</b></td>
-            </tr>
-            <tr>
-              <td>Integraci&oacute;n con sistema de correos: El sistema debe integrarse de manera eficiente con un servicio de
-                env&iacute;o de correos electr&oacute;nicos para notificaciones y comunicaciones con los usuarios.</td>
-              <td><b>Compatibilidad</b></td>
-            </tr>
-            <tr>
-              <td>Manejo de alta concurrencia: El sistema debe ser capaz de manejar m&uacute;ltiples usuarios interactuando al
-                mismo tiempo sin afectar el rendimiento.</td>
-              <td><b>Rendimiento</b></td>
-            </tr>
-            <tr>
-              <td>Acceso seguro a cuentas de usuario: Se deben implementar medidas de autenticaci&oacute;n s&oacute;lidas para
-                asegurar que solo los usuarios autorizados puedan acceder a sus cuentas.</td>
-              <td><b>Seguridad</b></td>
-            </tr>
-          </table>
+        <div class="imagenTexto">
+            <div class="tableCenter">
+                <table>
+                    <tr>
+                        <th>Requisito No Funcional</th>
+                        <th>Clasificaci&oacute;n (URPS+)</th>
+                    </tr>
+                    <tr>
+                        <td>Usabilidad: La interfaz de usuario debe ser intuitiva y f&aacute;cil de navegar para los
+                            administradores y
+                            votantes.
+                        </td>
+                        <td><b>Rendimiento</b></td>
+                    </tr>
+                    <tr>
+                        <td>Disponibilidad: El sistema debe estar disponible las 24 horas del d&iacute;a, los 7 d&iacute;as
+                            de la semana,
+                            para asegurar que los usuarios puedan acceder en cualquier momento.
+                        </td>
+                        <td><b>Confiabilidad</b></td>
+                    </tr>
+                    <tr>
+                        <td>Seguridad de los datos: Los datos de los usuarios, canciones y votaciones deben estar
+                            protegidos mediante
+                            encriptaci&oacute;n y medidas de seguridad robustas.
+                        </td>
+                        <td><b>Seguridad</b></td>
+                    </tr>
+                    <tr>
+                        <td>Escalabilidad: El sistema debe ser capaz de manejar un aumento en el n&uacute;mero de
+                            usuarios y canciones sin
+                            degradar el rendimiento.
+                        </td>
+                        <td><b>Rendimiento</b></td>
+                    </tr>
+                    <tr>
+                        <td>Interoperabilidad: El sistema debe ser compatible con diferentes navegadores web y
+                            dispositivos para
+                            garantizar una experiencia uniforme.
+                        </td>
+                        <td><b>Compatibilidad</b></td>
+                    </tr>
+                    <tr>
+                        <td>Respuesta r&aacute;pida: Las acciones del usuario, como votar y dar like, deben tener una
+                            respuesta r&aacute;pida
+                            para mejorar la experiencia del usuario.
+                        </td>
+                        <td><b>Rendimiento</b></td>
+                    </tr>
+                    <tr>
+                        <td>Adaptabilidad a diferentes dispositivos: La interfaz debe adaptarse y ser funcional en
+                            dispositivos
+                            m&oacute;viles, tablets y computadoras de escritorio.
+                        </td>
+                        <td><b>Compatibilidad</b></td>
+                    </tr>
+                    <tr>
+                        <td>Integraci&oacute;n con sistema de correos: El sistema debe integrarse de manera eficiente
+                            con un servicio de
+                            env&iacute;o de correos electr&oacute;nicos para notificaciones y comunicaciones con los
+                            usuarios.
+                        </td>
+                        <td><b>Compatibilidad</b></td>
+                    </tr>
+                    <tr>
+                        <td>Manejo de alta concurrencia: El sistema debe ser capaz de manejar m&uacute;ltiples usuarios
+                            interactuando al
+                            mismo tiempo sin afectar el rendimiento.
+                        </td>
+                        <td><b>Rendimiento</b></td>
+                    </tr>
+                    <tr>
+                        <td>Acceso seguro a cuentas de usuario: Se deben implementar medidas de autenticaci&oacute;n s&oacute;lidas
+                            para
+                            asegurar que solo los usuarios autorizados puedan acceder a sus cuentas.
+                        </td>
+                        <td><b>Seguridad</b></td>
+                    </tr>
+                </table>
+            </div>
+            <img class="imagenCenter classYellowBorder" src="/images/requerimientos.jpg"
+                 alt="Lista Requerimientos No Funcionales"
+                 width="500px" height="500px"/>
         </div>
-        <img class="imagenCenter classYellowBorder" src="/images/requerimientos.jpg" alt="Lista Requerimientos No Funcionales"
-          width="500px" height="500px" />
-      </div>
     </div>
-  </div>
+</div>
 </body>
 
 </html>

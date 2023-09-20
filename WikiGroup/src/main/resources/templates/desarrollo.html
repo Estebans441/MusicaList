@@ -12,36 +12,8 @@
 </head>
 
 <body>
-<!--------------------
-BARRA DE NAVEGACION
------------------------>
 <header class='lg_header' id='lg-header'>
-    <div class="interior">
-        <a class="logo" href="/wiki/inicio">
-            <img alt="logo" src="/images/logo1.png">
-        </a>
-        <nav class="navegacion">
-            <ul>
-                <li><a href="/wiki/inicio">Inicio </a></li>
-                <li class="submenu">
-                    <a href="/wiki/acerca-de/requerimientos">Acerca del Proyecto</a>
-                    <ul class="hijos">
-                        <li><a href="/wiki/acerca-de/requerimientos">Requerimientos</a></li>
-                        <li><a href="/wiki/acerca-de/arquitectura">Arquitectura</a></li>
-                    </ul>
-                </li>
-                <li class="submenu">
-                    <a href="/wiki/implementacion/desarrollo">Implementacion</a>
-                    <ul class="hijos">
-                        <li><a href="/wiki/implementacion/desarrollo">Desarrollo</a></li>
-                        <li><a href="/wiki/implementacion/pruebas">Pruebas</a></li>
-                        <li><a href="/wiki/implementacion/despliegue">Despliegue</a></li>
-                    </ul>
-                </li>
-                <li><a href="/wiki/contactenos">Contactenos</a></li>
-            </ul>
-        </nav>
-    </div>
+    <div th:replace="navegacion.html :: barra"></div>
 </header>
 
 <div class="cuerpo">
@@ -53,17 +25,24 @@ BARRA DE NAVEGACION
             <div>
                 <h5 class="tituloLateralIzq_sub"> Importancia Fase Desarrollo del Proyecto </h5>
                 <p>
-                    La etapa de "Desarrollo" en un proyecto de software es fundamental, ya que es donde la visi&oacute;n y los
+                    La etapa de "Desarrollo" en un proyecto de software es fundamental, ya que es donde la visi&oacute;n
+                    y los
                     requisitos iniciales toman forma concreta. En esta fase, los programadores y desarrolladores
-                    transforman conceptos abstractos en aplicaciones funcionales. La importancia radica en que el &eacute;xito
-                    de todo el proyecto depende en gran medida de la ejecuci&oacute;n efectiva de esta etapa. Aqu&iacute; se crea el
-                    n&uacute;cleo del software que permitir&aacute; a la empresa o entidad lograr sus objetivos y ofrecer valor a sus
+                    transforman conceptos abstractos en aplicaciones funcionales. La importancia radica en que el
+                    &eacute;xito
+                    de todo el proyecto depende en gran medida de la ejecuci&oacute;n efectiva de esta etapa. Aqu&iacute;
+                    se crea el
+                    n&uacute;cleo del software que permitir&aacute; a la empresa o entidad lograr sus objetivos y
+                    ofrecer valor a sus
                     usuarios.
                 </p>
                 <p>
-                    Adem&aacute;s, el desarrollo de software es un proceso iterativo y colaborativo. Los equipos de desarrollo
-                    trabajan en estrecha colaboraci&oacute;n con los stakeholders y otros profesionales para garantizar que el
-                    producto final cumpla con los requisitos, expectativas y est&aacute;ndares de calidad establecidos. Esto
+                    Adem&aacute;s, el desarrollo de software es un proceso iterativo y colaborativo. Los equipos de
+                    desarrollo
+                    trabajan en estrecha colaboraci&oacute;n con los stakeholders y otros profesionales para garantizar
+                    que el
+                    producto final cumpla con los requisitos, expectativas y est&aacute;ndares de calidad establecidos.
+                    Esto
                     asegura que el software resultante sea efectivo y satisfaga las necesidades reales de los usuarios.
                 </p>
             </div>
@@ -540,8 +519,10 @@ BARRA DE NAVEGACION
                     <td>/musicalist/api/contacto/crear</td>
                     <td>
                         <strong>Entrada:</strong> Los datos necesarios para crear una nueva petición de contacto.<br>
-                        <strong>Salida:</strong> La petición de contacto creada con éxito, incluyendo su identificador único (ID).<br>
-                        <strong>Descripción:</strong> Permite crear una nueva petición de contacto en el sistema de MusicaList.
+                        <strong>Salida:</strong> La petición de contacto creada con éxito, incluyendo su identificador
+                        único (ID).<br>
+                        <strong>Descripción:</strong> Permite crear una nueva petición de contacto en el sistema de
+                        MusicaList.
                     </td>
                 </tr>
                 <tr>
@@ -550,8 +531,10 @@ BARRA DE NAVEGACION
                     <td>/musicalist/api/contacto/enviar</td>
                     <td>
                         <strong>Entrada:</strong> Los datos necesarios para enviar una petición de contacto.<br>
-                        <strong>Salida:</strong> Un mensaje de confirmación si se envían los datos con éxito o un mensaje de error en caso contrario.<br>
-                        <strong>Descripción:</strong> Permite enviar datos de contacto al sistema de MusicaList para solicitar información o soporte.
+                        <strong>Salida:</strong> Un mensaje de confirmación si se envían los datos con éxito o un
+                        mensaje de error en caso contrario.<br>
+                        <strong>Descripción:</strong> Permite enviar datos de contacto al sistema de MusicaList para
+                        solicitar información o soporte.
                     </td>
                 </tr>
                 <tr>
@@ -560,8 +543,10 @@ BARRA DE NAVEGACION
                     <td>/musicalist/api/contacto/{id}</td>
                     <td>
                         <strong>Entrada:</strong> El ID de la petición de contacto que se desea obtener.<br>
-                        <strong>Salida:</strong> La petición de contacto correspondiente al ID proporcionado o nulo si no se encuentra.<br>
-                        <strong>Descripción:</strong> Permite obtener una petición de contacto específica por su ID en el sistema de MusicaList.
+                        <strong>Salida:</strong> La petición de contacto correspondiente al ID proporcionado o nulo si
+                        no se encuentra.<br>
+                        <strong>Descripción:</strong> Permite obtener una petición de contacto específica por su ID en
+                        el sistema de MusicaList.
                     </td>
                 </tr>
                 <tr>
@@ -571,7 +556,8 @@ BARRA DE NAVEGACION
                     <td>
                         <strong>Entrada:</strong> Ninguna.<br>
                         <strong>Salida:</strong> Una lista de todas las peticiones de contacto existentes en el sistema.<br>
-                        <strong>Descripción:</strong> Permite obtener una lista de todas las peticiones de contacto registradas en el sistema de MusicaList.
+                        <strong>Descripción:</strong> Permite obtener una lista de todas las peticiones de contacto
+                        registradas en el sistema de MusicaList.
                     </td>
                 </tr>
                 <tr>
@@ -579,9 +565,11 @@ BARRA DE NAVEGACION
                     <td>PUT</td>
                     <td>/musicalist/api/contacto/actualizar/{id}</td>
                     <td>
-                        <strong>Entrada:</strong> El ID de la petición de contacto que se desea actualizar y los datos actualizados de la petición de contacto.<br>
+                        <strong>Entrada:</strong> El ID de la petición de contacto que se desea actualizar y los datos
+                        actualizados de la petición de contacto.<br>
                         <strong>Salida:</strong> La petición de contacto actualizada con éxito.<br>
-                        <strong>Descripción:</strong> Permite actualizar una petición de contacto existente en el sistema de MusicaList.
+                        <strong>Descripción:</strong> Permite actualizar una petición de contacto existente en el
+                        sistema de MusicaList.
                     </td>
                 </tr>
                 <tr>
@@ -590,8 +578,10 @@ BARRA DE NAVEGACION
                     <td>/musicalist/api/contacto/eliminar/{id}</td>
                     <td>
                         <strong>Entrada:</strong> El ID de la petición de contacto que se desea eliminar.<br>
-                        <strong>Salida:</strong> Un valor booleano que indica si la petición de contacto se eliminó con éxito o no.<br>
-                        <strong>Descripción:</strong> Permite eliminar una petición de contacto específica por su ID en el sistema de MusicaList.
+                        <strong>Salida:</strong> Un valor booleano que indica si la petición de contacto se eliminó con
+                        éxito o no.<br>
+                        <strong>Descripción:</strong> Permite eliminar una petición de contacto específica por su ID en
+                        el sistema de MusicaList.
                     </td>
                 </tr>
             </table>
