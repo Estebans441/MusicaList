@@ -14,21 +14,21 @@ public class PeticionContacto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer idPeticionContacto;
 
-    protected String nombre;
+    protected String nombreUsuario;
     protected String correo;
     protected Integer edad;
     protected String asunto;
     protected String mensaje;
 
     public PeticionContacto(){
-        this.nombre = "";
+        this.nombreUsuario = "";
         this.correo = "";
         this.edad = 0;
         this.asunto = "";
         this.mensaje = "";
     }
     public PeticionContacto(String nombreUsuario, String correo, Integer edad, String asunto, String mensaje) {
-        this.nombre = nombreUsuario;
+        this.nombreUsuario = nombreUsuario;
         this.correo = correo;
         this.edad = edad;
         this.asunto = asunto;

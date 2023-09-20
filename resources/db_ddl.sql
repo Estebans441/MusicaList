@@ -124,12 +124,11 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS musicalist.peticion_contacto ;
 
 CREATE TABLE IF NOT EXISTS musicalist.peticion_contacto (
-                                                         id_peticion_contacto INT NOT NULL AUTO_INCREMENT,
-                                                         nombre_usuario VARCHAR(100) NOT NULL,
-                                                         correo VARCHAR(100) NOT NULL,
-                                                         edad INT NOT NULL,
-                                                         asunto VARCHAR (100) NOT NULL,
-                                                         mensaje VARCHAR(500) NOT NULL,
-                                                         PRIMARY KEY (id_peticion_contacto)
-                                                        )
-    ENGINE = InnoDB;
+                                                            id_peticion_contacto INT NOT NULL AUTO_INCREMENT,
+                                                            nombre_usuario VARCHAR(100) NOT NULL,
+                                                            correo VARCHAR(100) NOT NULL,
+                                                            edad INT NOT NULL,
+                                                            asunto VARCHAR(100) NOT NULL,
+                                                            mensaje VARCHAR(500) NOT NULL,
+                                                            PRIMARY KEY (id_peticion_contacto)
+) ENGINE = InnoDB;
