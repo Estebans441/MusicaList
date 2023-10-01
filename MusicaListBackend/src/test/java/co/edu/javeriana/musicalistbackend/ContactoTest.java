@@ -39,7 +39,7 @@ public class ContactoTest {
             peticionContacto = peticionContactoOptional.get();
 
         System.out.println("Nombre del Solicitante: " +
-                peticionContacto.getNombre());
+                peticionContacto.getNombreUsuario());
 
         assert (true);
     }
@@ -51,7 +51,7 @@ public class ContactoTest {
 
         for (PeticionContacto peticion : listaPeticiones)
             System.out.println("Nombre Solicitante: " +
-                    peticion.getNombre());
+                    peticion.getNombreUsuario());
 
         assert (true);
     }
@@ -61,14 +61,14 @@ public class ContactoTest {
         PeticionContacto peticionContacto =
                 new PeticionContacto();
         Optional<PeticionContacto> peticionContactoOptional =
-                peticionContactoRepository.findByNombre
+                peticionContactoRepository.findByNombreUsuario
                         ("Cristiano Ronaldo");
 
         if (peticionContactoOptional.isPresent())
             peticionContacto = peticionContactoOptional.get();
 
         System.out.println("Nombre del Solicitante: " +
-                peticionContacto.getNombre());
+                peticionContacto.getNombreUsuario());
 
         assert (true);
     }
