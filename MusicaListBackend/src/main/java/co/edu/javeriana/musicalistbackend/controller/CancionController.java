@@ -65,7 +65,7 @@ public class CancionController {
         cancion.setIdCancion(id);
         cancion.setVotos(cancionOptional.get().getVotos());
 
-        // Si decide cambiar genero musical
+        // Si decide cambiar género musical
         Optional<GeneroMusical> generoMusicalOptional = Optional.empty();
         if (cancion.getGeneroMusical().getIdGenero() != null)
             generoMusicalOptional = generoMusicalRepository.findById(cancion.getGeneroMusical().getIdGenero());
