@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Nunito&family=Roboto+Slab&display=swap');
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background: #4287EF;
+  padding: 15px;
+  display: flex;
+  align-items: flex-end;
+  height: 60px;
+  justify-content: space-between;
+}
+
+header p {
+  color: #dddddd;
+  font-family: 'Jomhuria', cursive;
+}
+
+.title {
+  margin-left: 40px;
+  font-size: 120px;
+  text-align-all: start;
+}
+
+.wiki {
+  margin-right: 40px;
+  font-size: 50px;
+  align-self: end;
+}
