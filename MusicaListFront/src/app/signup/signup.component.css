@@ -1,0 +1,104 @@
+/* Estilo para el elemento que contiene .form-box y lo centra */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0; /* Elimina el margen predeterminado del cuerpo */
+  background-color: #f0f0f0; /* Color de fondo opcional */
+  height: 100vh;
+}
+
+/* Estilo para .form-box */
+.form-box {
+  align-content: center;
+  max-width: 500px; /* Aumenta el ancho del formulario */
+  background: #f1f7fe;
+  overflow: hidden;
+  border-radius: 16px;
+  color: #010101;
+}
+
+/* Estilo para .form */
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 64px 24px 24px; /* Aumenta el padding vertical para hacerlo más alto */
+  gap: 16px;
+  text-align: center;
+}
+
+/*Form text*/
+.title {
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 10px;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: #666;
+  padding: 10px;
+}
+
+/*Inputs box*/
+.form-container {
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 1rem 0 .5rem;
+  width: 100%;
+}
+
+.input {
+  background: none;
+  border: 0;
+  outline: 0;
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  font-size: 1.1rem;
+  padding: 8px 15px;
+}
+
+.form-section {
+  padding: 20px;
+  font-size: 1rem;
+  background-color: #e0ecfb;
+  box-shadow: rgb(0 0 0 / 8%) 0 -1px;
+}
+
+.form-section a {
+  font-weight: bold;
+  color: #0066ff;
+  transition: color .3s ease;
+}
+
+.form-section a:hover {
+  color: #005ce6;
+  text-decoration: underline;
+}
+
+/*Button*/
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.form button {
+  width: 50%;
+  margin: 8px;
+  background-color: #0066ff;
+  color: #fff;
+  border: 0;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
+
+.form button:hover {
+  background-color: #005ce6;
+}
