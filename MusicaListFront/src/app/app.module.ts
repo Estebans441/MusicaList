@@ -11,7 +11,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { FormComponent } from './form/form.component';
-
+import{GeneroMusicalService} from './services/generoMusical.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,7 @@ import { FormComponent } from './form/form.component';
     MatIconModule,
     MatListModule
   ],
-  providers: [],
+  providers: [GeneroMusicalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

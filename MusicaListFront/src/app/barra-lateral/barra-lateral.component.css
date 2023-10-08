@@ -132,3 +132,11 @@ svg {
   border: 1px solid #ffcaa6;
   background-color: #ffcaa6;
 }
+.gridElements{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  padding: 1rem;
+}

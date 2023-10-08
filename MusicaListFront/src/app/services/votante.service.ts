@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import axios, {AxiosResponse} from 'axios';
 import {Votante} from "../models/votante.model";
-import {Cancion} from "../models/cancion.model";
 import {from, Observable, throwError} from "rxjs";
 import {catchError, map} from "rxjs/operators";
 
@@ -54,5 +53,4 @@ export class VotanteService{
       catchError((error: any) => throwError(error))
     );
   }
-
 }
