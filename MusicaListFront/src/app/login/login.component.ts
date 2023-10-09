@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit{
           this.adminService.obtenerAdministradorPorNombre(login.usuarioCorreo).subscribe((res: Administrador) => {
             this.adminService.administrador = res;
             if(res.idCuenta != null){
-              this.router.navigate(['/genres-admin']);
+              this.router.navigate(['/admin']);
             }
             else{
               this.iniciarVotante()
@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit{
           this.votanteService.getVotanteByNombre(login.usuarioCorreo).subscribe((res: Votante) => {
             this.votanteService.votante = res;
             if(res.idCuenta != null){
-              this.router.navigate(['/genres-vot']);
+              this.router.navigate(['/vot']);
             }
             else{
               this.iniciarAdministrador()

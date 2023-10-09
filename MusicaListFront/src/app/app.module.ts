@@ -12,22 +12,28 @@ import {MatListModule} from '@angular/material/list';
 import {GeneroMusicalService} from './services/generoMusical.service';
 import {LoginComponent} from './login/login.component';
 import {SignupComponent} from './signup/signup.component';
-import {GenresAdminComponent} from './genres-admin/genres-admin.component';
+import {MainAdminComponent} from './main-admin/main-admin.component';
 import {FormsModule} from "@angular/forms";
 import {CuentaService} from "./services/cuenta.service";
 import {VotanteService} from "./services/votante.service";
 import {AdministradorService} from "./services/administrador.service";
-import { GenresVotComponent } from './genres-vot/genres-vot.component';
+import { MainVotComponent } from './main-vot/main-vot.component';
 import { AdminMenuComponent } from './admin-menu/admin-menu.component';
+import { AdminGenresComponent } from './admin-genres/admin-genres.component';
+import { AdminAccountComponent } from './admin-account/admin-account.component';
+import { VotMenuComponent } from './vot-menu/vot-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    GenresAdminComponent,
-    GenresVotComponent,
-    AdminMenuComponent
+    MainAdminComponent,
+    MainVotComponent,
+    AdminMenuComponent,
+    AdminGenresComponent,
+    AdminAccountComponent,
+    VotMenuComponent
   ],
   imports: [
     BrowserModule,
