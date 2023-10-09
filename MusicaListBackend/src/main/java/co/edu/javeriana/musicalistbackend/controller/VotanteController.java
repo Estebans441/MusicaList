@@ -31,9 +31,15 @@ public class VotanteController {
     List<Votante> getVotantes(){return votanteRepository.findAll();}
 
     @CrossOrigin
-    @GetMapping("{id}")
+    @GetMapping("/id/{id}")
     public Votante getVotanteID (@PathVariable Integer id){
         return votanteRepository.findById(id).orElse(null);
+    }
+
+    @CrossOrigin
+    @GetMapping("{nombre}")
+    public Votante getVotanteNombre (@PathVariable String nombre){
+        return votanteRepository.findByNombreUsuario(nombre).orElse(null);
     }
 
     @CrossOrigin

@@ -18,7 +18,7 @@ public class CuentaController {
 
     // Retrieve -> GET
     @CrossOrigin
-    @GetMapping("/autenticar")
+    @PostMapping("/autenticar")
     public Boolean autenticarCuenta(@RequestBody Login login){
         Optional<Cuenta> cuentaOptional = cuentaRepository.findByNombreUsuarioOrCorreo(login.usuarioCorreo, login.usuarioCorreo);
         if(cuentaOptional.isPresent())

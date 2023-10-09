@@ -32,7 +32,14 @@ export class VotanteService{
 
   // Obtener votante por ID.
   getVotanteById(id: number): Observable<Votante> {
-    return from(axios.get(this.apiUrl + id)).pipe(
+    return from(axios.get(this.apiUrl + "id/" + id)).pipe(
+      map((response: AxiosResponse) => response.data),
+      catchError((error: any) => throwError(error))
+    );
+  }
+
+  getVotanteByNombre(nombre: string): Observable<Votante> {
+    return from(axios.get(this.apiUrl + nombre)).pipe(
       map((response: AxiosResponse) => response.data),
       catchError((error: any) => throwError(error))
     );
