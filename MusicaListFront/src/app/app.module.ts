@@ -18,6 +18,7 @@ import {CuentaService} from "./services/cuenta.service";
 import {VotanteService} from "./services/votante.service";
 import {AdministradorService} from "./services/administrador.service";
 import { GenresVotComponent } from './genres-vot/genres-vot.component';
+import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { GenresVotComponent } from './genres-vot/genres-vot.component';
     LoginComponent,
     SignupComponent,
     GenresAdminComponent,
-    GenresVotComponent
+    GenresVotComponent,
+    AdminMenuComponent
   ],
   imports: [
     BrowserModule,

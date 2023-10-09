@@ -28,3 +28,7 @@ header p {
   font-size: 50px;
   align-self: end;
 }
+
+.content {
+  padding-top: 80px;
+}
