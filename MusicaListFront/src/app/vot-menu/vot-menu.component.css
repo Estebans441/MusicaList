@@ -29,7 +29,17 @@
   border-radius: 4px;
   font-family: 'Jomhuria', cursive;
   font-size: 45px;
+  transition: 300ms;
 }
+
+#logout {
+  background-color: #4287EF;
+  color: #ffffff;
+  position: fixed;
+  bottom: 50px;
+  width: 250px;
+}
+
 .value svg {
   margin: 20px;
 }
@@ -68,7 +78,6 @@
 
 
 .input:hover > :not(.value:hover) {
-  transition: 300ms;
   filter: blur(1px);
   transform: scale(0.95,0.95);
 }
