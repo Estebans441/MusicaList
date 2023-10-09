@@ -8,15 +8,13 @@ export class Votante implements Cuenta{
   correo: string;
   idCuenta: number;
   nombreUsuario: string;
-  cuenta_id : number;
 
-  constructor(cuenta_id : number, cancionesVotadas: Cancion[], activada: boolean, contrasena: string, correo: string, idCuenta: number, nombreUsuario: string) {
-    this.cuenta_id = idCuenta;
-    this.cancionesVotadas = cancionesVotadas;
+  constructor(idCuenta: number, activada: boolean, contrasena: string, correo: string, nombreUsuario: string, cancionesVotadas: Cancion[]) {
     this.activada = activada;
     this.contrasena = contrasena;
     this.correo = correo;
     this.idCuenta = idCuenta;
     this.nombreUsuario = nombreUsuario;
+    this.cancionesVotadas = cancionesVotadas
   }
 }

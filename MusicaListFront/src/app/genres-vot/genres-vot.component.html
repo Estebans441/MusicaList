@@ -1,0 +1,9 @@
+<body>
+{{ votanteService.votante.idCuenta }}
+{{ votanteService.votante.correo }}
+{{ votanteService.votante.nombreUsuario }}
+<ul>
+  <li *ngFor="let cancion of votanteService.votante.cancionesVotadas"> {{ cancion.nombre }} </li>
+</ul>
+</body>
+

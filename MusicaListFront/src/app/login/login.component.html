@@ -4,8 +4,8 @@
     <span class="title">Iniciar sesi&oacute;n</span>
     <span class="subtitle">Inicia sesi&oacute;n con correo y contraseña</span>
     <div class="form-container">
-      <input type="email" class="input" placeholder="Correo" [(ngModel)]="form.email" [ngModelOptions]="{standalone: true}">
-      <input type="password" class="input" placeholder="Contraseña" [(ngModel)]="form.pass" [ngModelOptions]="{standalone: true}">
+      <input type="email" class="input" placeholder="Correo" [(ngModel)]="form.usuarioCorreo" [ngModelOptions]="{standalone: true}">
+      <input type="password" class="input" placeholder="Contraseña" [(ngModel)]="form.contrasena" [ngModelOptions]="{standalone: true}">
     </div>
     <div class="buttons">
       <button (click)="iniciarAdministrador()">Administrador</button>

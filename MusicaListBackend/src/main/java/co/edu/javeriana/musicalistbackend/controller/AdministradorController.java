@@ -36,6 +36,6 @@ public class AdministradorController {
     @CrossOrigin
     @GetMapping("/{nombre}")
     public Administrador getAdministradorId(@PathVariable String nombre) {
-        return administradorRepository.findByNombreUsuario(nombre).orElse(null);
+        return administradorRepository.findByNombreUsuarioOrCorreo(nombre, nombre).orElse(null);
     }
 }

@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface VotanteRepository extends JpaRepository<Votante, Integer> {
-    Optional<Votante> findByNombreUsuario(String nombre);
+    Optional<Votante> findByNombreUsuarioOrCorreo(String nombre, String correo);
 }

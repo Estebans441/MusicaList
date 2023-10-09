@@ -13,6 +13,7 @@ export class VotanteService{
   }
 
   private apiUrl = "http://localhost:8080/musicalist/api/votante/";
+  public votante : Votante = new Votante(-1, false, "", "", "", []);
 
   // Crear votante
   createVotante(votante: Votante): Observable<Votante> {

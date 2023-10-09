@@ -17,13 +17,15 @@ import {FormsModule} from "@angular/forms";
 import {CuentaService} from "./services/cuenta.service";
 import {VotanteService} from "./services/votante.service";
 import {AdministradorService} from "./services/administrador.service";
+import { GenresVotComponent } from './genres-vot/genres-vot.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    GenresAdminComponent
+    GenresAdminComponent,
+    GenresVotComponent
   ],
   imports: [
     BrowserModule,

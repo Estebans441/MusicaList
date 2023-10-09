@@ -39,7 +39,7 @@ public class VotanteController {
     @CrossOrigin
     @GetMapping("{nombre}")
     public Votante getVotanteNombre (@PathVariable String nombre){
-        return votanteRepository.findByNombreUsuario(nombre).orElse(null);
+        return votanteRepository.findByNombreUsuarioOrCorreo(nombre, nombre).orElse(new Votante());
     }
 
     @CrossOrigin
