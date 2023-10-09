@@ -1,8 +1,0 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0; /* Elimina el margen predeterminado del cuerpo */
-  background-color: #f0f0f0; /* Color de fondo opcional */
-  height: 100vh;
-}

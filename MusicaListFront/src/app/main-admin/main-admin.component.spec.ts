@@ -6,15 +6,15 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import {GenresAdminComponent} from "./genres-admin.component";
+import {MainAdminComponent} from "./main-admin.component";
 
 describe('BarraLateralComponent', () => {
-  let component: GenresAdminComponent;
-  let fixture: ComponentFixture<GenresAdminComponent>;
+  let component: MainAdminComponent;
+  let fixture: ComponentFixture<MainAdminComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [GenresAdminComponent],
+      declarations: [MainAdminComponent],
       imports: [
         NoopAnimationsModule,
         MatButtonModule,
@@ -27,7 +27,7 @@ describe('BarraLateralComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GenresAdminComponent);
+    fixture = TestBed.createComponent(MainAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

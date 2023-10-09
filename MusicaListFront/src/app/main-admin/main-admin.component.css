@@ -1,0 +1,10 @@
+mat-sidenav{
+  background: rgba(245, 245, 245, 0.29);
+}
+mat-nav-list{
+  padding-top: 100px;
+  overflow: hidden;
+  scroll-behavior: unset;
+}
+
+

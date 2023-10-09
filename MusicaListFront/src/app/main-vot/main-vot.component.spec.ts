@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GenresVotComponent } from './genres-vot.component';
+import { MainVotComponent } from './main-vot.component';
 
 describe('GenresVotComponent', () => {
-  let component: GenresVotComponent;
-  let fixture: ComponentFixture<GenresVotComponent>;
+  let component: MainVotComponent;
+  let fixture: ComponentFixture<MainVotComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [GenresVotComponent]
+      declarations: [MainVotComponent]
     });
-    fixture = TestBed.createComponent(GenresVotComponent);
+    fixture = TestBed.createComponent(MainVotComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
