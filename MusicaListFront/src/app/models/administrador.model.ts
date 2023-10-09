@@ -1,7 +1,18 @@
-export class Administrador{
-  cuenta_id : number;
+import {Cuenta} from "./cuenta.model";
 
-  constructor(cuenta_id: number) {
-    this.cuenta_id = cuenta_id;
+export class Administrador implements Cuenta{
+  cuenta_id : number;
+  activada: boolean;
+  contrasena: string;
+  correo: string;
+  idCuenta: number;
+  nombreUsuario: string;
+  constructor(cuenta_id : number, activada: boolean, contrasena: string, correo: string, idCuenta: number, nombreUsuario: string) {
+    this.cuenta_id = idCuenta;
+    this.activada = activada;
+    this.contrasena = contrasena;
+    this.correo = correo;
+    this.idCuenta = idCuenta;
+    this.nombreUsuario = nombreUsuario;
   }
 }
