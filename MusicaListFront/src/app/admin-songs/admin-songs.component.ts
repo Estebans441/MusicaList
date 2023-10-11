@@ -30,4 +30,10 @@ export class AdminSongsComponent {
       }
     )
   }
+
+  eliminarCancion(id: number) {
+    this.cancionService.deleteCancionById(id).subscribe((cancion: Cancion) => {
+      this.canciones = this.canciones.filter((cancion: Cancion) => cancion.idCancion != id)
+    })
+  }
 }
