@@ -22,6 +22,7 @@ import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 import { AdminGenresComponent } from './admin-genres/admin-genres.component';
 import { AdminAccountComponent } from './admin-account/admin-account.component';
 import { VotMenuComponent } from './vot-menu/vot-menu.component';
+import { AdminSongsComponent } from './admin-songs/admin-songs.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { VotMenuComponent } from './vot-menu/vot-menu.component';
     AdminMenuComponent,
     AdminGenresComponent,
     AdminAccountComponent,
-    VotMenuComponent
+    VotMenuComponent,
+    AdminSongsComponent
   ],
   imports: [
     BrowserModule,

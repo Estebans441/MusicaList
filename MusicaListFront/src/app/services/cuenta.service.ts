@@ -16,17 +16,17 @@ export class CuentaService {
   private apiUrl = "http://localhost:8080/musicalist/api/cuenta/";
 
   // Autenticar cuenta con el Login.
-  getCuentaLogin(login:Login): Observable<boolean> {
+  getCuentaLogin(login:Login): Observable<number> {
     const formData = {
       usuarioCorreo:login.usuarioCorreo,
       contrasena:login.contrasena
     };
     return from(
       axios
-        .post<boolean>(this.apiUrl + "autenticar",formData, {
+        .post<number>(this.apiUrl + "autenticar",formData, {
           headers: { "Content-Type": "application/json" }
         })
-        .then((response: AxiosResponse<boolean>) => response.data)
+        .then((response: AxiosResponse<number>) => response.data)
     ).pipe(
       catchError((error) => {
         return throwError(error);

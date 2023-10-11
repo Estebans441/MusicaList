@@ -14,6 +14,7 @@ import {Votante} from "../models/votante.model";
 })
 export class LoginComponent implements OnInit{
   form = new Login("", "")
+  errorMessage = ""
 
   constructor(private cuentaService:CuentaService, private votanteService:VotanteService, private adminService:AdministradorService, private router:Router) {
   }
@@ -22,47 +23,28 @@ export class LoginComponent implements OnInit{
 
   }
 
-  iniciarAdministrador() {
+  iniciarSesion() {
     const login = this.form
     this.cuentaService.getCuentaLogin(login).subscribe({
       next: (resultado) => {
-        if (resultado) {
-          this.adminService.obtenerAdministradorPorNombre(login.usuarioCorreo).subscribe((res: Administrador) => {
+        if (resultado != -1) {
+          this.adminService.obtenerAdministradorPorId(resultado).subscribe((res: Administrador) => {
             this.adminService.administrador = res;
-            if(res.idCuenta != null){
+            if(res.idCuenta != -1){
               this.router.navigate(['/admin']);
             }
             else{
-              this.iniciarVotante()
+              this.votanteService.getVotanteById(resultado).subscribe((vot:Votante)=>{
+                this.votanteService.votante = vot;
+                if(vot.idCuenta !=-1){
+                  this.router.navigate(['/vot'])
+                }
+              })
             }
           });
         } else {
           // Lógica para el caso de resultado falso
-        }
-      },
-      error: (error) => {
-        // Manejar errores aquí
-      },
-    });
-  }
-
-
-  iniciarVotante(){
-    const login = this.form
-    this.cuentaService.getCuentaLogin(login).subscribe({
-      next: (resultado) => {
-        if (resultado) {
-          this.votanteService.getVotanteByNombre(login.usuarioCorreo).subscribe((res: Votante) => {
-            this.votanteService.votante = res;
-            if(res.idCuenta != null){
-              this.router.navigate(['/vot']);
-            }
-            else{
-              this.iniciarAdministrador()
-            }
-          });
-        } else {
-          // Lógica para el caso de resultado falso
+          this.errorMessage = "Nombre de usuario o contraseña incorrectos"
         }
       },
       error: (error) => {

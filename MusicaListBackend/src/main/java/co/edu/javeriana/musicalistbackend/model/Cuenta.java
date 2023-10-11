@@ -24,6 +24,7 @@ public class Cuenta {
     protected Boolean activada;
 
     public Cuenta() {
+        this.idCuenta = -1;
         this.nombreUsuario = "";
         this.correo = "";
         this.contrasena = "";

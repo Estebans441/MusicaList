@@ -7,9 +7,9 @@
       <input type="email" class="input" placeholder="Correo" [(ngModel)]="form.usuarioCorreo" [ngModelOptions]="{standalone: true}">
       <input type="password" class="input" placeholder="Contraseña" [(ngModel)]="form.contrasena" [ngModelOptions]="{standalone: true}">
     </div>
+    <span class="error-message">{{ errorMessage }}</span>
     <div class="buttons">
-      <button (click)="iniciarAdministrador()">Administrador</button>
-      <button (click)="iniciarVotante()">Votante</button>
+      <button (click)="iniciarSesion()">Iniciar sesi&oacute;n</button>
     </div>
   </form>
   <div class="form-section">

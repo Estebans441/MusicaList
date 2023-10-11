@@ -33,7 +33,7 @@ public class VotanteController {
     @CrossOrigin
     @GetMapping("/id/{id}")
     public Votante getVotanteID (@PathVariable Integer id){
-        return votanteRepository.findById(id).orElse(null);
+        return votanteRepository.findById(id).orElse(new Votante());
     }
 
     @CrossOrigin

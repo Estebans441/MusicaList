@@ -1,1 +1,8 @@
-<p>admin-account works!</p>
+
+{{ votante.idCuenta }}
+{{ votante.nombreUsuario }}
+<ul>
+  <li *ngFor="let cancion of votante.cancionesVotadas">
+    {{cancion.nombre}}
+  </li>
+</ul>

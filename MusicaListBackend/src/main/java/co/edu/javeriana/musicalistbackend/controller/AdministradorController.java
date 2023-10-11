@@ -30,7 +30,7 @@ public class AdministradorController {
     @CrossOrigin
     @GetMapping("/id/{id}")
     public Administrador getAdministradorId(@PathVariable Integer id) {
-        return administradorRepository.findById(id).orElse(null);
+        return administradorRepository.findById(id).orElse(new Administrador());
     }
 
     @CrossOrigin

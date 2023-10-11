@@ -19,11 +19,12 @@ public class CuentaController {
     // Retrieve -> GET
     @CrossOrigin
     @PostMapping("/autenticar")
-    public Boolean autenticarCuenta(@RequestBody Login login){
+    public Integer autenticarCuenta(@RequestBody Login login){
         Optional<Cuenta> cuentaOptional = cuentaRepository.findByNombreUsuarioOrCorreo(login.usuarioCorreo, login.usuarioCorreo);
-        if(cuentaOptional.isPresent())
-            return cuentaOptional.get().autenticar(login.contrasena);
-        return false;
+        if(cuentaOptional.isPresent() && cuentaOptional.get().autenticar(login.contrasena)){
+            return cuentaOptional.get().getIdCuenta();
+        };
+        return -1;
     }
 
     // Update -> PUT

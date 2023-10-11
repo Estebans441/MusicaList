@@ -6,6 +6,7 @@ import {MainAdminComponent} from "./main-admin/main-admin.component";
 import {MainVotComponent} from "./main-vot/main-vot.component";
 import {AdminGenresComponent} from "./admin-genres/admin-genres.component";
 import {AdminAccountComponent} from "./admin-account/admin-account.component";
+import {AdminSongsComponent} from "./admin-songs/admin-songs.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'admin', component: MainAdminComponent,
     children: [
       {path: 'genres', component: AdminGenresComponent},
+      {path: 'genre/:id', component: AdminSongsComponent},
       {path: 'account', component: AdminAccountComponent},
       {path: '', redirectTo:'genres', pathMatch: 'full'}
     ]},

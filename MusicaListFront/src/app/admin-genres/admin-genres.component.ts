@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {GeneroMusical} from "../models/generoMusical.model";
 import {GeneroMusicalService} from "../services/generoMusical.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-admin-genres',
@@ -19,5 +20,4 @@ export class AdminGenresComponent implements OnInit{
       }
     );
   }
-
 }
