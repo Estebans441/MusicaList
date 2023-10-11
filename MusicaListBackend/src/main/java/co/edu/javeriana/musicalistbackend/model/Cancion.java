@@ -28,7 +28,7 @@ public class Cancion {
     @JsonIgnoreProperties("canciones")
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "genero_musical_id", nullable = false)
+    @JoinColumn(name = "genero_musical_id")
     private GeneroMusical generoMusical;
 
     @ManyToMany

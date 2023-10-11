@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS musicalist.cancion (
   nombre VARCHAR(45) NOT NULL,
   artista VARCHAR(45) NULL,
   duracion_seg INT NULL,
-  genero_musical_id INT NOT NULL,
+  genero_musical_id INT NULL,
   PRIMARY KEY (id_cancion),
   INDEX fk_cancion_genero_musical1_idx (genero_musical_id ASC) VISIBLE,
   CONSTRAINT fk_cancion_genero_musical1
