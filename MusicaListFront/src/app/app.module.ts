@@ -23,6 +23,10 @@ import { AdminGenresComponent } from './admin-genres/admin-genres.component';
 import { AdminAccountComponent } from './admin-account/admin-account.component';
 import { VotMenuComponent } from './vot-menu/vot-menu.component';
 import { AdminSongsComponent } from './admin-songs/admin-songs.component';
+import { VotGenresComponent } from './vot-genres/vot-genres.component';
+import { VotSongsComponent } from './vot-songs/vot-songs.component';
+import { VotVotesComponent } from './vot-votes/vot-votes.component';
+import { VotSearchComponent } from './vot-search/vot-search.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { AdminSongsComponent } from './admin-songs/admin-songs.component';
     AdminGenresComponent,
     AdminAccountComponent,
     VotMenuComponent,
-    AdminSongsComponent
+    AdminSongsComponent,
+    VotGenresComponent,
+    VotSongsComponent,
+    VotVotesComponent,
+    VotSearchComponent
   ],
   imports: [
     BrowserModule,

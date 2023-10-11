@@ -1,8 +1,10 @@
+<app-vot-search></app-vot-search>
+
 <p class="section-title">
   Generos musicales
 </p>
 <hr>
-<div class = "gridElements">
+<div class="gridElements">
   <div *ngFor="let genero of generosMusicales">
     <div style="padding: 15px">
       <link rel="stylesheet"
@@ -10,7 +12,7 @@
       <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
       <div class="card">
-        <div [routerLink]="['/admin/genre',genero.idGenero]" class="card-img">
+        <div [routerLink]="['/vot/genre',genero.idGenero]" class="card-img">
           <img src="https://static.vecteezy.com/system/resources/previews/001/208/094/original/music-cd-png.png">
         </div>
         <div class="card-info">
@@ -19,12 +21,6 @@
         </div>
         <div class="card-footer">
           <span class="text-title">{{genero.canciones.length + " Canciones"}}</span>
-          <div class="card-button">
-            <span class="material-symbols-outlined">edit</span>
-          </div>
-          <div class="card-button">
-            <span class="material-symbols-outlined">delete</span>
-          </div>
         </div>
       </div>
     </div>

@@ -3,6 +3,8 @@ import {ActivatedRoute} from "@angular/router";
 import {CancionService} from "../services/cancion.service";
 import {Cancion} from "../models/cancion.model";
 import {toNumbers} from "@angular/compiler-cli/src/version_helpers";
+import {GeneroMusicalService} from "../services/generoMusical.service";
+import {GeneroMusical} from "../models/generoMusical.model";
 
 @Component({
   selector: 'app-admin-songs',
@@ -12,8 +14,9 @@ import {toNumbers} from "@angular/compiler-cli/src/version_helpers";
 export class AdminSongsComponent {
   id: number
   canciones: Cancion[] = [];
+  genero=""
 
-  constructor(private route: ActivatedRoute, private cancionService: CancionService) {
+  constructor(private route: ActivatedRoute, private cancionService: CancionService, private generoService:GeneroMusicalService) {
     this.id = -1;
   }
 
@@ -21,8 +24,9 @@ export class AdminSongsComponent {
     let stringN = this.route.snapshot.paramMap.get('id')
     if (stringN == null) this.id = -1
     else this.id = parseInt(stringN)
-    this.cancionService.getCancionesByGeneroId(this.id).subscribe((canciones: Cancion[]) => {
-        this.canciones = canciones;
+    this.generoService.getGeneroMusicalById(this.id).subscribe((genero: GeneroMusical) => {
+        this.canciones = genero.canciones.sort((a, b) => b.numeroVotos - a.numeroVotos);
+        this.genero = genero.nombreGenero
       }
     )
   }

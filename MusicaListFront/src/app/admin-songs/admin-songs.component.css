@@ -1,6 +1,14 @@
+.section-title {
+  margin-top: 60px;
+  margin-left: 20px;
+  padding-bottom: 10px;
+  font-family: 'Jomhuria', cursive;
+  font-size: 85px;
+}
+
 .card {
   width: 190px;
-  height: 270px;
+  height: fit-content;
   padding: .8em;
   border-radius: .5rem;
   background: #f5f5f5;
@@ -11,7 +19,7 @@
 
 .card-img {
   background-color: rgba(66, 135, 239, 0.27);
-  height: 40%;
+  height: 108px;
   border-radius: .5rem;
   transition: .3s ease;
   display: flex;

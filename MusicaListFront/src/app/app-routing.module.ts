@@ -7,6 +7,9 @@ import {MainVotComponent} from "./main-vot/main-vot.component";
 import {AdminGenresComponent} from "./admin-genres/admin-genres.component";
 import {AdminAccountComponent} from "./admin-account/admin-account.component";
 import {AdminSongsComponent} from "./admin-songs/admin-songs.component";
+import {VotGenresComponent} from "./vot-genres/vot-genres.component";
+import {VotSongsComponent} from "./vot-songs/vot-songs.component";
+import {VotVotesComponent} from "./vot-votes/vot-votes.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -20,9 +23,10 @@ const routes: Routes = [
     ]},
   {path: 'vot', component: MainVotComponent,
     children: [
-      {path: 'genres', component: AdminGenresComponent},
+      {path: 'genres', component: VotGenresComponent},
+      {path: 'genre/:id', component: VotSongsComponent},
       {path: 'account', component: AdminAccountComponent},
-      {path: 'votes', component: AdminAccountComponent},
+      {path: 'votes', component: VotVotesComponent},
       {path: '', redirectTo:'genres', pathMatch: 'full'}
     ]},
   {path: '', redirectTo: 'login', pathMatch: 'full'},

@@ -6,3 +6,6 @@ mat-nav-list{
   overflow: hidden;
   scroll-behavior: unset;
 }
+mat-sidenav-content{
+  padding-top: 60px;
+}
