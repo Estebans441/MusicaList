@@ -27,10 +27,10 @@ export class LoginComponent implements OnInit{
     const login = this.form
     this.cuentaService.getCuentaLogin(login).subscribe({
       next: (resultado) => {
-        if (resultado != -1) {
+        if (resultado != -1) { // Existe cuenta con dichas credenciales
           this.adminService.obtenerAdministradorPorId(resultado).subscribe((res: Administrador) => {
             this.adminService.administrador = res;
-            if(res.idCuenta != -1){
+            if(res.idCuenta != -1){ // Es un administrador
               this.router.navigate(['/admin']);
             }
             else{

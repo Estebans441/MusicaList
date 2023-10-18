@@ -4,13 +4,17 @@
     <span class="title">Registrar cuenta</span>
     <span class="subtitle">Registrate en el sistema de MusicaList</span>
     <div class="form-container">
-      <input type="text" class="input" placeholder="Nombre de usuario">
-      <input type="email" class="input" placeholder="Correo">
-      <input type="password" class="input" placeholder="Contraseña">
+      <input type="text" class="input" placeholder="Nombre de usuario" [(ngModel)]="form.nombre"
+             [ngModelOptions]="{standalone: true}">
+      <input type="email" class="input" placeholder="Correo" [(ngModel)]="form.correo"
+             [ngModelOptions]="{standalone: true}">
+      <input type="password" class="input" placeholder="Contraseña" [(ngModel)]="form.contrasena"
+             [ngModelOptions]="{standalone: true}">
     </div>
+    <span class="error-message">{{ errorMessage }}</span>
     <div class="buttons">
-      <button>Administrador</button>
-      <button>Votante</button>
+      <button (click)="registrarAdmin()">Administrador</button>
+      <button (click)="registrarVot()">Votante</button>
     </div>
   </form>
   <div class="form-section">

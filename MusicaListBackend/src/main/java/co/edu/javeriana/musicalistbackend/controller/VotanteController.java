@@ -1,11 +1,13 @@
 package co.edu.javeriana.musicalistbackend.controller;
 
+import co.edu.javeriana.musicalistbackend.model.Administrador;
 import co.edu.javeriana.musicalistbackend.model.Cancion;
 import co.edu.javeriana.musicalistbackend.model.Votante;
 import co.edu.javeriana.musicalistbackend.repository.CancionRepository;
 import co.edu.javeriana.musicalistbackend.repository.VotanteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -21,33 +23,39 @@ public class VotanteController {
     // Create -> POST
     @CrossOrigin
     @PostMapping(value = "/crear")
-    public Votante crearVotante(@RequestBody Votante votante){
+    public Votante crearVotante(@RequestBody Votante votante) {
+        Optional<Votante> optionalAdministrador = votanteRepository.findByNombreUsuarioOrCorreo(votante.getNombreUsuario(), votante.getCorreo());
+        if (optionalAdministrador.isPresent()) {
+            return new Votante();
+        }
         return votanteRepository.save(votante);
     }
 
     // Retrieve -> GET
     @CrossOrigin
     @GetMapping("/all")
-    List<Votante> getVotantes(){return votanteRepository.findAll();}
+    List<Votante> getVotantes() {
+        return votanteRepository.findAll();
+    }
 
     @CrossOrigin
     @GetMapping("/id/{id}")
-    public Votante getVotanteID (@PathVariable Integer id){
+    public Votante getVotanteID(@PathVariable Integer id) {
         return votanteRepository.findById(id).orElse(new Votante());
     }
 
     @CrossOrigin
     @GetMapping("{nombre}")
-    public Votante getVotanteNombre (@PathVariable String nombre){
+    public Votante getVotanteNombre(@PathVariable String nombre) {
         return votanteRepository.findByNombreUsuarioOrCorreo(nombre, nombre).orElse(new Votante());
     }
 
     @CrossOrigin
     @PutMapping("/votar/{idVotante}-{idCancion}")
-    public Boolean votarCancion(@PathVariable Integer idVotante, @PathVariable Integer idCancion){
+    public Boolean votarCancion(@PathVariable Integer idVotante, @PathVariable Integer idCancion) {
         Optional<Votante> votanteOptional = votanteRepository.findById(idVotante);
         Optional<Cancion> cancionOptional = cancionRepository.findById(idCancion);
-        if(votanteOptional.isEmpty() || cancionOptional.isEmpty())
+        if (votanteOptional.isEmpty() || cancionOptional.isEmpty())
             return false;
         Votante votante = votanteOptional.get();
         votante.votarCancion(cancionOptional.get());
@@ -57,10 +65,10 @@ public class VotanteController {
 
     @CrossOrigin
     @PutMapping("/eliminar-voto/{idVotante}-{idCancion}")
-    public Boolean eliminarVotoCancion(@PathVariable Integer idVotante, @PathVariable Integer idCancion){
+    public Boolean eliminarVotoCancion(@PathVariable Integer idVotante, @PathVariable Integer idCancion) {
         Optional<Votante> votanteOptional = votanteRepository.findById(idVotante);
         Optional<Cancion> cancionOptional = cancionRepository.findById(idCancion);
-        if(votanteOptional.isEmpty() || cancionOptional.isEmpty())
+        if (votanteOptional.isEmpty() || cancionOptional.isEmpty())
             return false;
         Votante votante = votanteOptional.get();
         votante.eliminarVotoCancion(cancionOptional.get());

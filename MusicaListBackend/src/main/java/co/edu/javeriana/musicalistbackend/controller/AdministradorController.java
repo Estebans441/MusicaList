@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/musicalist/api/administrador")
@@ -17,6 +18,10 @@ public class AdministradorController {
     @CrossOrigin
     @PostMapping(value = "/crear")
     public Administrador crearAdministrador(@RequestBody Administrador administrador) {
+        Optional<Administrador> optionalAdministrador = administradorRepository.findByNombreUsuarioOrCorreo(administrador.getNombreUsuario(), administrador.getCorreo());
+        if(optionalAdministrador.isPresent()){
+            return new Administrador();
+        }
         return administradorRepository.save(administrador);
     }
 

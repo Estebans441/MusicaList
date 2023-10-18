@@ -35,6 +35,12 @@ body {
   padding: 10px;
 }
 
+.error-message {
+  font-size: 1rem;
+  color: #fd0202;
+  padding: 10px;
+}
+
 .subtitle {
   font-size: 1.3rem;
   color: #666;

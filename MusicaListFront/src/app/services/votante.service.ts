@@ -1,19 +1,34 @@
 import {Injectable} from '@angular/core';
 import axios, {AxiosResponse} from 'axios';
 import {Votante} from "../models/votante.model";
-import {from, Observable, throwError} from "rxjs";
+import {from, Observable, Subject, throwError} from "rxjs";
 import {catchError, map} from "rxjs/operators";
+import {GeneroMusicalService} from "./generoMusical.service";
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class VotanteService{
+export class VotanteService {
+  private apiUrl = "http://localhost:8080/musicalist/api/votante/";
+  public votante: Votante;
+  public votante$: Subject<Votante>;
+
   constructor() {
+    this.votante = new Votante(-1, false, "", "", "", [])
+    this.votante$ = new Subject()
   }
 
-  private apiUrl = "http://localhost:8080/musicalist/api/votante/";
-  public votante : Votante = new Votante(-1, false, "", "", "", []);
+  actualizarVotante(id: number) {
+    this.getVotanteById(id).subscribe(votante => {
+      this.votante = votante
+      this.votante$.next(this.votante)
+    })
+  }
+
+  getVotante$() {
+    return this.votante$.asObservable()
+  }
 
   // Crear votante
   createVotante(votante: Votante): Observable<Votante> {
@@ -39,26 +54,27 @@ export class VotanteService{
     );
   }
 
-  getVotanteByNombre(nombre: string): Observable<Votante> {
-    return from(axios.get(this.apiUrl + nombre)).pipe(
-      map((response: AxiosResponse) => response.data),
-      catchError((error: any) => throwError(error))
-    );
-  }
-
   // Realizar voto teniendo id del votante e id de la canción
-  realizarVoto(idVotante: number, idCancion: number): Observable<Votante> {
-    return from(axios.put(this.apiUrl + "votar/" + idVotante + "-" + idCancion)).pipe(
+  realizarVoto(idVotante: number, idCancion: number) {
+    let ret:Observable<boolean> = from(axios.put(this.apiUrl + "votar/" + idVotante + "-" + idCancion)).pipe(
       map((response: AxiosResponse) => response.data),
       catchError((error: any) => throwError(error))
-    );
+    )
+    ret.subscribe((response: boolean) => {
+      if (response)
+        this.actualizarVotante(this.votante.idCuenta)
+    })
+    return ret
   }
 
   // Eliminar voto teniendo id del votante e id de la canción
-  eliminarVoto(idVotante: number, idCancion: number): Observable<Votante> {
-    return from(axios.put(this.apiUrl + "eliminar-voto/" + idVotante + "-" + idCancion)).pipe(
+  eliminarVoto(idVotante: number, idCancion: number) {
+    from(axios.put(this.apiUrl + "eliminar-voto/" + idVotante + "-" + idCancion)).pipe(
       map((response: AxiosResponse) => response.data),
       catchError((error: any) => throwError(error))
-    );
+    ).subscribe((response: boolean) => {
+      if (response)
+        this.actualizarVotante(this.votante.idCuenta)
+    })
   }
 }

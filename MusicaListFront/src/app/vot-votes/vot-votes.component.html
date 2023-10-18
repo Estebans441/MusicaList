@@ -1,1 +1,28 @@
-<p>vot-votes works!</p>
+<p class="section-title">
+  Mis votos
+</p>
+<hr>
+<div class="gridElements">
+  <div *ngFor="let cancion of votante.cancionesVotadas">
+    <div style="padding: 15px">
+      <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+      <div class="card">
+        <div class="card-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/ITunes_logo.svg">
+        </div>
+        <div class="card-info">
+          <p class="text-title">{{cancion.nombre}} </p>
+          <p class="text-body">{{cancion.artista}}</p>
+          <p class="text-duration">{{cancion.duracionSeg}} seg</p>
+        </div>
+        <div class="card-footer">
+          <span class="text-title">{{cancion.numeroVotos}} votos</span>
+          <div class="card-button" (click)="eliminarVoto(cancion.idCancion)">
+            <span class="material-symbols-outlined">thumb_up</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
