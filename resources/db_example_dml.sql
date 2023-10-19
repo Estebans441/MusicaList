@@ -1,21 +1,3 @@
--- Inserts para 4 cuentas
-INSERT INTO musicalist.cuenta (nombre_usuario, correo, contrasena, activada)
-VALUES ('estebans441', 'estebans441@gmail.com', '1b91331a76dd7440b4f6bd119a2267737ae6dd67718fc30eb2d37cc7762d7794',
-        '0'),
-       ('juanframireze', 'juanframireze@gmail.com', 'dfa555dda0531c5adb758388cce2cb22cc117bc1940db11f45f09183772c65bc',
-        '0'),
-       ('moyano1711', 'moyano1711@gmail.com', '72b24f3928519a6f4e86d390ccd8cc560937e5a7db50add6465e83123af8b7de', '0'),
-       ('camorag', 'camorag@gmail.com', 'cfb9106ff07c952a3888917f1225dcb138cefb928f36081ed851f5f4f54d0f66', '0');
-
--- Inserts para 2 administradores
-INSERT
-musicalist.administrador (cuenta_id) VALUES	(1), (2);
-    
--- Inserts para 2 votantes
-INSERT
-musicalist.votante (cuenta_id) VALUES (3), (4);
-
-
 -- Inserts para 5 géneros musicales
 INSERT INTO musicalist.genero_musical (nombre_genero, descripcion)
 VALUES ('Pop', 'Género musical pop'),
@@ -91,12 +73,6 @@ VALUES ('Blinding Lights', 'The Weeknd', 200, 5),
        ('Best Part', 'Daniel Caesar ft. H.E.R.', 219, 5),
        ('Peaches', 'Justin Bieber ft. Daniel Caesar', 198, 5),
        ('Pony', 'Ginuwine', 319, 5);
-
-INSERT INTO musicalist.votos_cancion (votante_cuenta_id, cancion_id_cancion)
-VALUES (3, 1),
-       (4, 1),
-       (3, 2),
-       (4, 3);
 
 INSERT INTO musicalist.peticion_contacto(nombre_usuario, correo, edad, asunto, mensaje)
 VALUES ('Juan Francisco Ramírez', 'juanframireze@gmail.com', 19, 'Saludo', 'Hola, mi nombre es Juan Francisco y tengo una duda'),
