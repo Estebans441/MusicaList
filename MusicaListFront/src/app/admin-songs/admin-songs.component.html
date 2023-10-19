@@ -33,7 +33,7 @@
 </div>
 
 <div class="add-container">
-  <button class="add" [routerLink]="['/admin/genre',this.id,'add']">
+  <button class="add" (click)="agregar()">
     <span class="material-symbols-outlined">add</span>
     Agregar canci&oacute;n
   </button>

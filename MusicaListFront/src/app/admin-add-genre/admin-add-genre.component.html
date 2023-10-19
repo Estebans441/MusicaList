@@ -1,14 +1,12 @@
 <form class="form">
-  <p class="title">Register </p>
-  <p class="message">Signup now and get full access to our app. </p>
-
+  <p class="title">Crear genero </p>
   <label>
-    <input class="input" type="email" placeholder="" required="">
+    <input class="input" placeholder="" [(ngModel)]="genero.nombreGenero" [ngModelOptions]="{standalone: true}">
     <span>Nombre genero</span>
   </label>
   <label>
-    <input class="input" type="email" placeholder="" required="">
+    <input class="input" placeholder="" [(ngModel)]="genero.descripcion" [ngModelOptions]="{standalone: true}">
     <span>Descripcion genero</span>
   </label>
-  <button class="submit">Crear</button>
+  <button class="submit" (click)="onConfirm()">Crear</button>
 </form>

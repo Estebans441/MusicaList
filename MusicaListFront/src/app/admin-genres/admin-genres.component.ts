@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {GeneroMusical} from "../models/generoMusical.model";
 import {GeneroMusicalService} from "../services/generoMusical.service";
-import {Router} from "@angular/router";
 import {Cancion} from "../models/cancion.model";
-import {CancionService} from "../services/cancion.service";
 import {AdministradorService} from "../services/administrador.service";
+import {MatDialog} from "@angular/material/dialog";
+import {AdminAddGenreComponent} from "../admin-add-genre/admin-add-genre.component";
+
 
 @Component({
   selector: 'app-admin-genres',
@@ -15,7 +16,7 @@ export class AdminGenresComponent implements OnInit {
   generosMusicales: GeneroMusical[] = [];
   canciones: Cancion[] = [];
 
-  constructor(private generoMusicalService: GeneroMusicalService, private administradorService: AdministradorService) {
+  constructor(private generoMusicalService: GeneroMusicalService, private administradorService: AdministradorService, public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -26,6 +27,25 @@ export class AdminGenresComponent implements OnInit {
     );
   }
 
+  agregar() {
+    const dialogRef = this.dialog.open(AdminAddGenreComponent, {
+      height: '300px',
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        let genero: GeneroMusical = result['genero'];
+        this.generoMusicalService.createGeneroMusical(genero).subscribe(res => {
+          this.generoMusicalService.getAllGenerosMusicales().subscribe(
+            (generosMusicales: GeneroMusical[]) => {
+              this.generosMusicales = generosMusicales;
+            }
+          )
+        })
+      }
+    })
+  }
 
   eliminarGenero(id: number) {
     if (this.administradorService.administrador.idCuenta == -1)

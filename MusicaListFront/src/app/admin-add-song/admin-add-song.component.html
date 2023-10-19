@@ -1,1 +1,16 @@
-<p>admin-add-song works!</p>
+<form class="form">
+  <p class="title">Crear cancion </p>
+  <label>
+    <input class="input" placeholder="" [(ngModel)]="cancion.nombre" [ngModelOptions]="{standalone: true}">
+    <span>Nombre cancion</span>
+  </label>
+  <label>
+    <input class="input" placeholder="" [(ngModel)]="cancion.artista" [ngModelOptions]="{standalone: true}">
+    <span>Artista</span>
+  </label>
+  <label>
+    <input class="input" placeholder="" [(ngModel)]="cancion.duracionSeg" [ngModelOptions]="{standalone: true}">
+    <span>Duracion</span>
+  </label>
+  <button class="submit" (click)="onConfirm()">Crear</button>
+</form>

@@ -1,1 +1,12 @@
-<p>admin-edit-genre works!</p>
+<form class="form">
+  <p class="title">Crear genero </p>
+  <label>
+    <input class="input" placeholder="" [(ngModel)]="genero.nombreGenero" [ngModelOptions]="{standalone: true}">
+    <span>Nombre genero</span>
+  </label>
+  <label>
+    <input class="input" placeholder="" [(ngModel)]="genero.descripcion" [ngModelOptions]="{standalone: true}">
+    <span>Descripcion genero</span>
+  </label>
+  <button class="submit" (click)="onConfirm()">Crear</button>
+</form>

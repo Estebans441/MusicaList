@@ -23,11 +23,7 @@ const routes: Routes = [
     path: 'admin', component: MainAdminComponent,
     children: [
       {path: 'genres', component: AdminGenresComponent},
-      {path: 'genres/add', component: AdminAddGenreComponent},
-      {path: 'genres/edit/:id', component: AdminEditGenreComponent},
       {path: 'genre/:id', component: AdminSongsComponent},
-      {path: 'genre/:id/add', component: AdminAddSongComponent},
-      {path: 'songs/edit/:id', component: AdminEditSongComponent},
       {path: 'account', component: AdminAccountComponent},
       {path: '', redirectTo: 'genres', pathMatch: 'full'}
     ]
