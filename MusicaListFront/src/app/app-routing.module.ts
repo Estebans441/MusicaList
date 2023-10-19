@@ -14,6 +14,7 @@ import {VotAccountComponent} from "./vot-account/vot-account.component";
 import {AdminAddGenreComponent} from "./admin-add-genre/admin-add-genre.component";
 import {AdminEditGenreComponent} from "./admin-edit-genre/admin-edit-genre.component";
 import {AdminAddSongComponent} from "./admin-add-song/admin-add-song.component";
+import {AdminEditSongComponent} from "./admin-edit-song/admin-edit-song.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
       {path: 'genres/edit/:id', component: AdminEditGenreComponent},
       {path: 'genre/:id', component: AdminSongsComponent},
       {path: 'genre/:id/add', component: AdminAddSongComponent},
+      {path: 'songs/edit/:id', component: AdminEditSongComponent},
       {path: 'account', component: AdminAccountComponent},
       {path: '', redirectTo: 'genres', pathMatch: 'full'}
     ]

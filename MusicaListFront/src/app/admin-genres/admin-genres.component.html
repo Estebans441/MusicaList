@@ -2,7 +2,7 @@
   Generos musicales
 </p>
 <hr>
-<div class = "gridElements">
+<div class="gridElements">
   <div *ngFor="let genero of generosMusicales">
     <div style="padding: 15px">
       <link rel="stylesheet"
@@ -19,7 +19,7 @@
         </div>
         <div class="card-footer">
           <span class="text-title">{{genero.canciones.length + " Canciones"}}</span>
-          <div class="card-button">
+          <div class="card-button" [routerLink]="['/admin/genres/edit',genero.idGenero]">
             <span class="material-symbols-outlined">edit</span>
           </div>
           <div class="card-button" (click)="eliminarGenero(genero.idGenero)">
@@ -30,3 +30,11 @@
     </div>
   </div>
 </div>
+
+<div class="add-container">
+  <button class="add" id="logout" routerLink="/admin/genres/add">
+    <span class="material-symbols-outlined">add</span>
+    Agregar g&eacute;nero
+  </button>
+</div>
+

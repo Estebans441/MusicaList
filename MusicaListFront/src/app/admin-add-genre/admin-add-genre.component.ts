@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-add-genre.component.css']
 })
 export class AdminAddGenreComponent {
-
+  constructor() {
+  }
 }

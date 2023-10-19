@@ -98,3 +98,31 @@ svg {
   padding: 1rem;
   background: #ffffff;
 }
+
+.add-container {
+  /* Establece un alto y ancho para el contenedor si es necesario */
+  height: 100%;
+  width: 100%;
+  /* Utiliza flexbox para centrar vertical y horizontalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add {
+  background-color: #4287EF;
+  color: #ffffff;
+  bottom: 50px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Jomhuria', cursive;
+  font-size: 35px;
+  transition: 300ms;
+}
+

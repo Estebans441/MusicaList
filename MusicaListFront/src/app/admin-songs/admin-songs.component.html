@@ -20,7 +20,7 @@
         </div>
         <div class="card-footer">
           <span class="text-title">{{cancion.numeroVotos}} votos</span>
-          <div class="card-button">
+          <div class="card-button" [routerLink]="['/admin/songs/edit',cancion.idCancion]">
             <span class="material-symbols-outlined">edit</span>
           </div>
           <div class="card-button" (click)="eliminarCancion(cancion.idCancion)">
@@ -30,4 +30,11 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="add-container">
+  <button class="add" [routerLink]="['/admin/genre',this.id,'add']">
+    <span class="material-symbols-outlined">add</span>
+    Agregar canci&oacute;n
+  </button>
 </div>
