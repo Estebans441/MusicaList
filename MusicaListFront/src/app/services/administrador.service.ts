@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import axios, {AxiosResponse} from 'axios';
-import{Administrador} from "../models/administrador.model";
-import {from, Observable, throwError} from "rxjs";
+import {Administrador} from "../models/administrador.model";
+import {from, Observable, Subject, throwError} from "rxjs";
 import {catchError, map} from "rxjs/operators";
 
 @Injectable(
@@ -10,28 +10,46 @@ import {catchError, map} from "rxjs/operators";
   }
 )
 
-export class AdministradorService{
+export class AdministradorService {
   private apiUrl: string = "http://localhost:8080/musicalist/api/administrador/";
-  public administrador : Administrador = new Administrador(-1, false, "", "", "");
+  public administrador: Administrador;
+  public administrador$: Subject<Administrador>
+
+  constructor() {
+    this.administrador = new Administrador(-1, false, "", "", "");
+    this.administrador$ = new Subject()
+  }
+
+  actualizarAdministrador(id: number) {
+    this.obtenerAdministradorPorId(id).subscribe(admin => {
+      this.administrador = admin
+      this.administrador$.next(this.administrador)
+    })
+  }
+
+  getAdministrador$() {
+    return this.administrador$.asObservable()
+  }
+
   // Crear Administrador
-    public crearAdministrador(administrador: Administrador): Observable<Administrador>{
-        return from(axios.post<Administrador>(this.apiUrl + "crear", administrador))
-        .pipe(
-            map((response: AxiosResponse<Administrador>) => response.data),
-            catchError((error) => throwError(error))
-        );
-    }
+  public crearAdministrador(administrador: Administrador): Observable<Administrador> {
+    return from(axios.post<Administrador>(this.apiUrl + "crear", administrador))
+      .pipe(
+        map((response: AxiosResponse<Administrador>) => response.data),
+        catchError((error) => throwError(error))
+      );
+  }
 
-    // Obtener Administrador por id
-    public obtenerAdministradorPorId(id: number): Observable<Administrador>{
-        return from(axios.get<Administrador>(this.apiUrl + "id/ "+ id))
-        .pipe(
-            map((response: AxiosResponse<Administrador>) => response.data),
-            catchError((error) => throwError(error))
-        );
-    }
+  // Obtener Administrador por id
+  public obtenerAdministradorPorId(id: number): Observable<Administrador> {
+    return from(axios.get<Administrador>(this.apiUrl + "id/ " + id))
+      .pipe(
+        map((response: AxiosResponse<Administrador>) => response.data),
+        catchError((error) => throwError(error))
+      );
+  }
 
-  public obtenerAdministradorPorNombre(nombre: string): Observable<Administrador>{
+  public obtenerAdministradorPorNombre(nombre: string): Observable<Administrador> {
     return from(axios.get<Administrador>(this.apiUrl + nombre))
       .pipe(
         map((response: AxiosResponse<Administrador>) => response.data),
@@ -39,12 +57,12 @@ export class AdministradorService{
       );
   }
 
-    // Obtener todos los administradores
-    public obtenerTodosLosAdministradores(): Observable<Administrador[]>{
-        return from(axios.get<Administrador[]>(this.apiUrl + "all"))
-        .pipe(
-            map((response: AxiosResponse<Administrador[]>) => response.data),
-            catchError((error) => throwError(error))
-        );
-    }
+  // Obtener todos los administradores
+  public obtenerTodosLosAdministradores(): Observable<Administrador[]> {
+    return from(axios.get<Administrador[]>(this.apiUrl + "all"))
+      .pipe(
+        map((response: AxiosResponse<Administrador[]>) => response.data),
+        catchError((error) => throwError(error))
+      );
+  }
 }

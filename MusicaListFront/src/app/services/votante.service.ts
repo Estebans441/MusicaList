@@ -56,7 +56,7 @@ export class VotanteService {
 
   // Realizar voto teniendo id del votante e id de la canción
   realizarVoto(idVotante: number, idCancion: number) {
-    let ret:Observable<boolean> = from(axios.put(this.apiUrl + "votar/" + idVotante + "-" + idCancion)).pipe(
+    let ret: Observable<boolean> = from(axios.put(this.apiUrl + "votar/" + idVotante + "-" + idCancion)).pipe(
       map((response: AxiosResponse) => response.data),
       catchError((error: any) => throwError(error))
     )
@@ -69,12 +69,14 @@ export class VotanteService {
 
   // Eliminar voto teniendo id del votante e id de la canción
   eliminarVoto(idVotante: number, idCancion: number) {
-    from(axios.put(this.apiUrl + "eliminar-voto/" + idVotante + "-" + idCancion)).pipe(
+    let ret: Observable<boolean> = from(axios.put(this.apiUrl + "eliminar-voto/" + idVotante + "-" + idCancion)).pipe(
       map((response: AxiosResponse) => response.data),
       catchError((error: any) => throwError(error))
-    ).subscribe((response: boolean) => {
+    )
+    ret.subscribe((response: boolean) => {
       if (response)
         this.actualizarVotante(this.votante.idCuenta)
     })
+    return ret
   }
 }

@@ -9,7 +9,7 @@ import {Votante} from "../models/votante.model";
   templateUrl: './vot-votes.component.html',
   styleUrls: ['./vot-votes.component.css']
 })
-export class VotVotesComponent implements OnInit{
+export class VotVotesComponent implements OnInit {
   votante: Votante;
 
   constructor(private votanteService: VotanteService, private router: Router) {
@@ -26,7 +26,10 @@ export class VotVotesComponent implements OnInit{
   }
 
   eliminarVoto(id: number) {
-    this.votanteService.eliminarVoto(this.votanteService.votante.idCuenta, id)
-    alert("Voto eliminado")
+    this.votanteService.eliminarVoto(this.votanteService.votante.idCuenta, id).subscribe(response => {
+      if (response)
+        alert("Voto eliminado con exito")
+      else alert("Error eliminando el voto")
+    })
   }
 }

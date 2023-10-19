@@ -46,6 +46,12 @@ public class CancionController {
         return cancionRepository.findById(id).orElse(null);
     }
 
+    @CrossOrigin
+    @GetMapping("/name-like/{name}")
+    public List<Cancion> findCancionName(@PathVariable String name) {
+        return cancionRepository.findByNombreContainingOrArtistaContaining(name, name);
+    }
+
     //Feature -> GET
     @CrossOrigin
     @GetMapping("/cancionesGenero/{id}")

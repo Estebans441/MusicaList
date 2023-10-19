@@ -25,19 +25,19 @@ export class VotSongsComponent implements OnInit {
     if (stringN == null) this.id = -1
     else this.id = parseInt(stringN)
 
-    this.generoService.getGenero$(this.id).subscribe(genero=> {
+    this.generoService.getGenero$(this.id).subscribe(genero => {
         this.genero = genero
+        this.genero.canciones = this.genero.canciones.sort((a, b) => b.numeroVotos - a.numeroVotos);
       }
     )
   }
 
   votarCancion(id: number) {
-    this.votanteService.realizarVoto(this.votanteService.votante.idCuenta, id).subscribe(ret=>{
-      if(ret){
+    this.votanteService.realizarVoto(this.votanteService.votante.idCuenta, id).subscribe(ret => {
+      if (ret) {
         this.generoService.actualizarGenero(this.id)
         alert("Voto realizado con exito")
-      }
-      else alert("Error realizando el voto")
+      } else alert("Error realizando el voto")
     })
   }
 }
