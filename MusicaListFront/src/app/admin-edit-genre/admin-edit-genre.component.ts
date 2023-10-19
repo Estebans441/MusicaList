@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {GeneroMusical} from "../models/generoMusical.model";
-import {MatDialogRef} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-admin-edit-genre',
@@ -10,8 +10,8 @@ import {MatDialogRef} from "@angular/material/dialog";
 export class AdminEditGenreComponent {
   genero: GeneroMusical;
 
-  constructor(public dialogRef: MatDialogRef<AdminEditGenreComponent>) {
-    this.genero = new GeneroMusical(-1, "", "", [])
+  constructor(public dialogRef: MatDialogRef<AdminEditGenreComponent>, @Inject(MAT_DIALOG_DATA) public data: {name: string, desc: string}) {
+    this.genero = new GeneroMusical(-1, data.name, data.desc, [])
   }
 
   onConfirm(): void {

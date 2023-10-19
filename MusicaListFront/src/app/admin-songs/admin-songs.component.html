@@ -2,7 +2,7 @@
   {{genero}}
 </p>
 <hr>
-<div class = "gridElements">
+<div class="gridElements">
   <div *ngFor="let cancion of canciones">
     <div style="padding: 15px">
       <link rel="stylesheet"
@@ -20,7 +20,7 @@
         </div>
         <div class="card-footer">
           <span class="text-title">{{cancion.numeroVotos}} votos</span>
-          <div class="card-button" [routerLink]="['/admin/songs/edit',cancion.idCancion]">
+          <div class="card-button" (click)="editar(cancion.idCancion, cancion)">
             <span class="material-symbols-outlined">edit</span>
           </div>
           <div class="card-button" (click)="eliminarCancion(cancion.idCancion)">

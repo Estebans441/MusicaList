@@ -5,6 +5,7 @@ import {Cancion} from "../models/cancion.model";
 import {AdministradorService} from "../services/administrador.service";
 import {MatDialog} from "@angular/material/dialog";
 import {AdminAddGenreComponent} from "../admin-add-genre/admin-add-genre.component";
+import {AdminEditGenreComponent} from "../admin-edit-genre/admin-edit-genre.component";
 
 
 @Component({
@@ -37,6 +38,27 @@ export class AdminGenresComponent implements OnInit {
       if (result) {
         let genero: GeneroMusical = result['genero'];
         this.generoMusicalService.createGeneroMusical(genero).subscribe(res => {
+          this.generoMusicalService.getAllGenerosMusicales().subscribe(
+            (generosMusicales: GeneroMusical[]) => {
+              this.generosMusicales = generosMusicales;
+            }
+          )
+        })
+      }
+    })
+  }
+
+  editar(genreId:number, genreNombre:string, genreDesc:string) {
+    const dialogRef = this.dialog.open(AdminEditGenreComponent, {
+      height: '300px',
+      width: '400px',
+      data: {name: genreNombre, desc: genreDesc}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        let genero: GeneroMusical = result['genero'];
+        this.generoMusicalService.updateGeneroMusicalById(genreId, genero).subscribe(res => {
           this.generoMusicalService.getAllGenerosMusicales().subscribe(
             (generosMusicales: GeneroMusical[]) => {
               this.generosMusicales = generosMusicales;

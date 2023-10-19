@@ -19,7 +19,7 @@
         </div>
         <div class="card-footer">
           <span class="text-title">{{genero.canciones.length + " Canciones"}}</span>
-          <div class="card-button" [routerLink]="['/admin/genres/edit',genero.idGenero]">
+          <div class="card-button" (click)="editar(genero.idGenero, genero.nombreGenero, genero.descripcion)">
             <span class="material-symbols-outlined">edit</span>
           </div>
           <div class="card-button" (click)="eliminarGenero(genero.idGenero)">

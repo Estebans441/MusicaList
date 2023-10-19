@@ -8,6 +8,8 @@ import {GeneroMusical} from "../models/generoMusical.model";
 import {AdminAddGenreComponent} from "../admin-add-genre/admin-add-genre.component";
 import {MatDialog} from "@angular/material/dialog";
 import {AdminAddSongComponent} from "../admin-add-song/admin-add-song.component";
+import {AdminEditGenreComponent} from "../admin-edit-genre/admin-edit-genre.component";
+import {AdminEditSongComponent} from "../admin-edit-song/admin-edit-song.component";
 
 @Component({
   selector: 'app-admin-songs',
@@ -17,9 +19,9 @@ import {AdminAddSongComponent} from "../admin-add-song/admin-add-song.component"
 export class AdminSongsComponent {
   id: number
   canciones: Cancion[] = [];
-  genero=""
+  genero = ""
 
-  constructor(private route: ActivatedRoute, private cancionService: CancionService, private generoService:GeneroMusicalService, public dialog: MatDialog) {
+  constructor(private route: ActivatedRoute, private cancionService: CancionService, private generoService: GeneroMusicalService, public dialog: MatDialog) {
     this.id = -1;
   }
 
@@ -54,6 +56,28 @@ export class AdminSongsComponent {
       }
     })
   }
+
+  editar(id: number, cancion: Cancion) {
+    const dialogRef = this.dialog.open(AdminEditSongComponent, {
+      height: '350px',
+      width: '400px',
+      data: {cancion: cancion, idGenero:this.id}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        let cancion: Cancion = result['cancion'];
+        this.cancionService.updateCancionById(id, cancion).subscribe(res => {
+          this.generoService.getGeneroMusicalById(this.id).subscribe((genero: GeneroMusical) => {
+              this.canciones = genero.canciones.sort((a, b) => b.numeroVotos - a.numeroVotos);
+              this.genero = genero.nombreGenero
+            }
+          )
+        })
+      }
+    })
+  }
+
 
   eliminarCancion(id: number) {
     this.cancionService.deleteCancionById(id).subscribe((cancion: Cancion) => {

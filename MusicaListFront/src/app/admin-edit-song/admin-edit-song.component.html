@@ -1,1 +1,24 @@
-<p>admin-edit-song works!</p>
+<form class="form">
+  <p class="title">Editar cancion </p>
+  <label>
+    <input class="input" placeholder="" [(ngModel)]="cancion.nombre" [ngModelOptions]="{standalone: true}">
+    <span>Nombre cancion</span>
+  </label>
+  <label>
+    <input class="input" placeholder="" [(ngModel)]="cancion.artista" [ngModelOptions]="{standalone: true}">
+    <span>Artista</span>
+  </label>
+  <label>
+    <input class="input" placeholder="" [(ngModel)]="cancion.duracionSeg" [ngModelOptions]="{standalone: true}">
+    <span>Duracion</span>
+  </label>
+
+  <mat-form-field appearance="fill">
+    <mat-select [(value)]="selected">
+      <mat-label>Genero de la cancion</mat-label>
+      <mat-option *ngFor="let genero of generos" value="{{genero.idGenero}}">{{genero.nombreGenero}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button class="submit" (click)="onConfirm()">Editar</button>
+</form>

@@ -33,6 +33,7 @@ import { AdminEditSongComponent } from './admin-edit-song/admin-edit-song.compon
 import { AdminEditGenreComponent } from './admin-edit-genre/admin-edit-genre.component';
 import { VotAccountComponent } from './vot-account/vot-account.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatIconModule,
     MatListModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [
     GeneroMusicalService,
