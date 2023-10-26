@@ -1,4 +1,4 @@
-package co.edu.javeriana.jwt.model;
+package co.edu.javeriana.jwt.security;
 
 import lombok.AllArgsConstructor;
 import lombok.Generated;

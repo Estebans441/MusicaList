@@ -1,14 +1,12 @@
-package co.edu.javeriana.jwt.model;
+package co.edu.javeriana.jwt.security;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.MalformedJwtException;
-import io.jsonwebtoken.UnsupportedJwtException;
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpServletRequest;
-import lombok.Generated;
+import java.io.IOException;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,10 +15,16 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import java.io.IOException;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.UnsupportedJwtException;
+import lombok.Generated;
 
 @Component
 public class JWTFiltroAutorizacion extends OncePerRequestFilter {
+
+
     public static final String HEADER = "Authorization";
     public static final String PREFIX = "Bearer ";
 
@@ -34,26 +38,8 @@ public class JWTFiltroAutorizacion extends OncePerRequestFilter {
     }
 
     @Generated
-    private Claims validarToken(HttpServletRequest request) {
-        String jwtToken = request.getHeader(HEADER).replace(PREFIX, "");
-        return jwtTokenProvider.getClaims(jwtToken);
-    }
-
-    @Generated
-    private String getUsername(HttpServletRequest request) {
-        String jwtToken = request.getHeader(HEADER).replace(PREFIX, "");
-        return jwtTokenProvider.getUsername(jwtToken);
-    }
-
-    @Generated
-    private boolean existeJWTToken(HttpServletRequest request) {
-        String authenticationHeader = request.getHeader(HEADER);
-        return !(authenticationHeader == null || !authenticationHeader.startsWith(PREFIX));
-    }
-
-    @Generated
     @Override
-    protected void doFilterInternal(jakarta.servlet.http.HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
         try {
             if (existeJWTToken(request)) {
                 Claims claims = validarToken(request);
@@ -72,7 +58,25 @@ public class JWTFiltroAutorizacion extends OncePerRequestFilter {
             }
             chain.doFilter(request, response);
         } catch (ExpiredJwtException | UnsupportedJwtException | MalformedJwtException e) {
-            response.sendError(javax.servlet.http.HttpServletResponse.SC_FORBIDDEN, e.getMessage());
+            response.sendError(HttpServletResponse.SC_FORBIDDEN, e.getMessage());
         }
+    }
+
+    @Generated
+    private Claims validarToken(HttpServletRequest request) {
+        String jwtToken = request.getHeader(HEADER).replace(PREFIX, "");
+        return jwtTokenProvider.getClaims(jwtToken);
+    }
+
+    @Generated
+    private String getUsername(HttpServletRequest request) {
+        String jwtToken = request.getHeader(HEADER).replace(PREFIX, "");
+        return jwtTokenProvider.getUsername(jwtToken);
+    }
+
+    @Generated
+    private boolean existeJWTToken(HttpServletRequest request) {
+        String authenticationHeader = request.getHeader(HEADER);
+        return !(authenticationHeader == null || !authenticationHeader.startsWith(PREFIX));
     }
 }

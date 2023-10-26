@@ -1,4 +1,4 @@
-package co.edu.javeriana.jwt.model;
+package co.edu.javeriana.jwt.security;
 
 import java.security.Key;
 import java.util.Date;
@@ -15,26 +15,23 @@ import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 
 
+
 @Component
 public class JWTProveedorToken {
-
-
     private String jwtSecret;
     private long jwtExpirationDate;
 
-
-    public JWTProveedorToken() {
+    public JWTProveedorToken(){
         jwtSecret = "daf66e01593f61a15b857cf433aae03a005812b31234e149036bcc8dee755dbb";
         jwtExpirationDate = 604800000;
     }
 
     // generate JWT token
-    public String generateToken(String username) {
+    public String generateToken(String username){
         Date currentDate = new Date();
         Date expireDate = new Date(currentDate.getTime() + jwtExpirationDate);
 
-
-        Map<String, Object> authoritiesClaim = new HashMap<>();
+        Map<String, Object>authoritiesClaim = new HashMap<>();
         authoritiesClaim.put("authorities", new SimpleGrantedAuthority("Prueba"));
 
         return Jwts.builder()
@@ -46,25 +43,23 @@ public class JWTProveedorToken {
                 .compact();
     }
 
-    private Key key() {
-        return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
+    private Key key(){
+        return Keys.hmacShaKeyFor( Decoders.BASE64.decode(jwtSecret));
     }
 
     // get username from Jwt token
-    public String getUsername(String token) {
+    public String getUsername(String token){
         Jws<Claims> claimsJws = Jwts.parserBuilder()
                 .setSigningKey(key())
                 .build()
                 .parseClaimsJws(token);
         return claimsJws.getBody().getSubject();
     }
-
-    public Claims getClaims(String token) {
+    public Claims getClaims(String token){
         Jws<Claims> claimsJws = Jwts.parserBuilder()
                 .setSigningKey(key())
                 .build()
                 .parseClaimsJws(token);
         return claimsJws.getBody();
     }
-
 }

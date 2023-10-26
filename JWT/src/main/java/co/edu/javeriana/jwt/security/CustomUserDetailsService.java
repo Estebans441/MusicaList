@@ -1,4 +1,4 @@
-package co.edu.javeriana.jwt.model;
+package co.edu.javeriana.jwt.security;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -21,8 +21,8 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String usernameOrEmail) throws UsernameNotFoundException {
 
-        Set<GrantedAuthority> authorities = new HashSet<>();
-        authorities.add(new SimpleGrantedAuthority("Prueba"));
+        Set<GrantedAuthority> authorities =  new HashSet<>();
+        authorities.add(  new SimpleGrantedAuthority("Prueba")  ) ;
 
         return new org.springframework.security.core.userdetails.User(
                 usernameOrEmail,

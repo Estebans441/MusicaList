@@ -1,4 +1,4 @@
-package co.edu.javeriana.jwt.model;
+package co.edu.javeriana.jwt.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,13 +19,13 @@ import lombok.AllArgsConstructor;
 @Configuration
 @AllArgsConstructor
 public class ConfiguracionSeguridad {
+
     private JWTFiltroAutorizacion jwtFiltroAutorizacion;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
@@ -34,6 +34,7 @@ public class ConfiguracionSeguridad {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
         http.addFilterAfter(jwtFiltroAutorizacion, UsernamePasswordAuthenticationFilter.class).authorizeRequests(authorize -> {
             authorize.
                     antMatchers(HttpMethod.POST, "/public/autenticacion-usuario").permitAll()
