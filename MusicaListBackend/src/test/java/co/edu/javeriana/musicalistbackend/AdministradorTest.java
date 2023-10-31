@@ -44,7 +44,7 @@ public class AdministradorTest {
     void findAdministradorByNombre() {
         Administrador administrador = new Administrador();
         Optional<Administrador> optionalAdministrador =
-                administradorRepository.findByNombreUsuario("estebans441");
+                administradorRepository.findByNombreUsuarioOrCorreo("estebans441", "estebans441@gmail.com");
         if (optionalAdministrador.isPresent())
             administrador = optionalAdministrador.get();
         System.out.println("Nombre de administrador: " +

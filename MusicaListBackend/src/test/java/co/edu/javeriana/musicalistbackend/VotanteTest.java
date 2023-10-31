@@ -19,67 +19,66 @@ public class VotanteTest {
     VotanteRepository votanteRepository;
 
     @Test
-    void crearVotante(){
+    void crearVotante() {
         Votante votante = new Votante("unpipol",
                 "pablo@gmail.com",
                 "PABLO1234");
         votanteRepository.save(votante);
-        assert(true);
+        assert (true);
     }
 
     @Test
-    void findVotanteById(){
+    void findVotanteById() {
         Votante votante = new Votante();
         Optional<Votante> optionalVotante =
                 votanteRepository.findById(3);
-        if(optionalVotante.isPresent())
+        if (optionalVotante.isPresent())
             votante = optionalVotante.get();
         System.out.println("Nombre de votante: " +
                 votante.getNombreUsuario());
-        assert(true);
+        assert (true);
     }
 
     @Test
-    void findVotanteByNombre(){
+    void findVotanteByNombre() {
         Votante votante = new Votante();
         Optional<Votante> optionalVotante =
-                votanteRepository.
-                        findByNombreUsuario("moyano1711");
-        if(optionalVotante.isPresent())
+                votanteRepository.findByNombreUsuarioOrCorreo("moyano1711", "moyano1711");
+        if (optionalVotante.isPresent())
             votante = optionalVotante.get();
         System.out.println("Nombre de votante: " +
                 votante.getNombreUsuario());
-        assert(true);
+        assert (true);
     }
 
     @Test
-    void findAllVotantes(){
+    void findAllVotantes() {
         ArrayList<Votante> vontante =
                 (ArrayList<Votante>)
                         votanteRepository.findAll();
-        for(Votante votante : vontante){
+        for (Votante votante : vontante) {
             System.out.println("Nombre de votante: " +
                     votante.getNombreUsuario());
         }
-        assert(true);
+        assert (true);
     }
 
     @Test
-    void actualizarVotante(){
+    void actualizarVotante() {
         Votante votante = new Votante();
         Optional<Votante> optionalVotante =
                 votanteRepository.findById(3);
-        if(optionalVotante.isPresent())
+        if (optionalVotante.isPresent())
             votante = optionalVotante.get();
         votante.setCorreo("moyano1711@hotmail.com");
         votanteRepository.save(votante);
 
-        assert(true);
+        assert (true);
     }
 
     @Test
-    void eliminarVotante(){
+    void eliminarVotante() {
         votanteRepository.deleteById(3);
-        assert(true);
+        assert (true);
     }
 }
