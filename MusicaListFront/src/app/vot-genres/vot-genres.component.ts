@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {GeneroMusical} from "../models/generoMusical.model";
 import {GeneroMusicalService} from "../services/generoMusical.service";
 

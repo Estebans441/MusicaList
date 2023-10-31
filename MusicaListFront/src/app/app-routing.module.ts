@@ -11,10 +11,6 @@ import {VotGenresComponent} from "./vot-genres/vot-genres.component";
 import {VotSongsComponent} from "./vot-songs/vot-songs.component";
 import {VotVotesComponent} from "./vot-votes/vot-votes.component";
 import {VotAccountComponent} from "./vot-account/vot-account.component";
-import {AdminAddGenreComponent} from "./admin-add-genre/admin-add-genre.component";
-import {AdminEditGenreComponent} from "./admin-edit-genre/admin-edit-genre.component";
-import {AdminAddSongComponent} from "./admin-add-song/admin-add-song.component";
-import {AdminEditSongComponent} from "./admin-edit-song/admin-edit-song.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},

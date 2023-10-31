@@ -2,13 +2,10 @@ import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {CancionService} from "../services/cancion.service";
 import {Cancion} from "../models/cancion.model";
-import {toNumbers} from "@angular/compiler-cli/src/version_helpers";
 import {GeneroMusicalService} from "../services/generoMusical.service";
 import {GeneroMusical} from "../models/generoMusical.model";
-import {AdminAddGenreComponent} from "../admin-add-genre/admin-add-genre.component";
 import {MatDialog} from "@angular/material/dialog";
 import {AdminAddSongComponent} from "../admin-add-song/admin-add-song.component";
-import {AdminEditGenreComponent} from "../admin-edit-genre/admin-edit-genre.component";
 import {AdminEditSongComponent} from "../admin-edit-song/admin-edit-song.component";
 
 @Component({

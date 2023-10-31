@@ -1,6 +1,5 @@
 package co.edu.javeriana.musicalistbackend;
 
-import co.edu.javeriana.musicalistbackend.model.Administrador;
 import co.edu.javeriana.musicalistbackend.model.Cancion;
 import co.edu.javeriana.musicalistbackend.model.GeneroMusical;
 import co.edu.javeriana.musicalistbackend.repository.AdministradorRepository;

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { VotMenuComponent } from './vot-menu.component';
+import {VotMenuComponent} from './vot-menu.component';
 
 describe('VotMenuComponent', () => {
   let component: VotMenuComponent;

@@ -1,9 +1,9 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {AdministradorService} from "../services/administrador.service";
 import {Router} from "@angular/router";
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {Observable} from 'rxjs';
+import {map, shareReplay} from 'rxjs/operators';
 
 @Component({
   selector: 'app-genres-admin',

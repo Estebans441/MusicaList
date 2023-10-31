@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { VotSearchComponent } from './vot-search.component';
+import {VotSearchComponent} from './vot-search.component';
 
 describe('VotSearchComponent', () => {
   let component: VotSearchComponent;

@@ -1,4 +1,4 @@
-package co.edu.javeriana.musicalistbackend.model;
+package co.edu.javeriana.jwt.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
@@ -9,15 +9,14 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name = "administrador")
+@Table(name = "votante")
 @PrimaryKeyJoinColumn(name = "cuenta_id")
-public class Administrador extends Cuenta {
-
-    public Administrador() {
+public class Votante extends Cuenta {
+    public Votante() {
         super();
     }
 
-    public Administrador(String nombreUsuario, String correo, String contrasena) {
+    public Votante(String nombreUsuario, String correo, String contrasena) {
         this.nombreUsuario = nombreUsuario;
         this.correo = correo;
         this.contrasena = this.hashContrasena(contrasena);

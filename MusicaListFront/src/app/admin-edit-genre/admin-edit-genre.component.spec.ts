@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AdminEditGenreComponent } from './admin-edit-genre.component';
+import {AdminEditGenreComponent} from './admin-edit-genre.component';
 
 describe('AdminEditGenreComponent', () => {
   let component: AdminEditGenreComponent;

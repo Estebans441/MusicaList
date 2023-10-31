@@ -1,7 +1,6 @@
 package co.edu.javeriana.musicalistbackend;
 
 import co.edu.javeriana.musicalistbackend.model.Administrador;
-import co.edu.javeriana.musicalistbackend.model.GeneroMusical;
 import co.edu.javeriana.musicalistbackend.repository.AdministradorRepository;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
@@ -10,7 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.Optional;
-import java.util.Set;
 
 @SpringBootTest
 @Transactional

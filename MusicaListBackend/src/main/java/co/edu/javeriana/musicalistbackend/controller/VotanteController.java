@@ -1,6 +1,5 @@
 package co.edu.javeriana.musicalistbackend.controller;
 
-import co.edu.javeriana.musicalistbackend.model.Administrador;
 import co.edu.javeriana.musicalistbackend.model.Cancion;
 import co.edu.javeriana.musicalistbackend.model.Votante;
 import co.edu.javeriana.musicalistbackend.repository.CancionRepository;

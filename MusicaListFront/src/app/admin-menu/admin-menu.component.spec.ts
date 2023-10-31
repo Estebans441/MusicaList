@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AdminMenuComponent } from './admin-menu.component';
+import {AdminMenuComponent} from './admin-menu.component';
 
 describe('AdminMenuComponent', () => {
   let component: AdminMenuComponent;

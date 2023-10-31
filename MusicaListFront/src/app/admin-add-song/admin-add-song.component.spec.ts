@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AdminAddSongComponent } from './admin-add-song.component';
+import {AdminAddSongComponent} from './admin-add-song.component';
 
 describe('AdminAddSongComponent', () => {
   let component: AdminAddSongComponent;

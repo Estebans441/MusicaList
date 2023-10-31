@@ -3,7 +3,6 @@ import axios, {AxiosResponse} from 'axios';
 import {Votante} from "../models/votante.model";
 import {from, Observable, Subject, throwError} from "rxjs";
 import {catchError, map} from "rxjs/operators";
-import {GeneroMusicalService} from "./generoMusical.service";
 
 @Injectable({
   providedIn: 'root'

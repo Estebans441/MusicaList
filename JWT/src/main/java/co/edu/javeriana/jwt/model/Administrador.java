@@ -1,4 +1,4 @@
-package co.edu.javeriana.musicalistbackend.model;
+package co.edu.javeriana.jwt.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
