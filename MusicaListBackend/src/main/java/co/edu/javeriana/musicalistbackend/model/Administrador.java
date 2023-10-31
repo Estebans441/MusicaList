@@ -20,12 +20,7 @@ public class Administrador extends Cuenta {
     public Administrador(String nombreUsuario, String correo, String contrasena) {
         this.nombreUsuario = nombreUsuario;
         this.correo = correo;
-        this.contrasena = this.hashContrasena(contrasena);
+        this.contrasena = contrasena;
         this.activada = false;
-    }
-
-    @Override
-    public void setContrasena(String contrasena) {
-        this.contrasena = this.hashContrasena(contrasena);
     }
 }

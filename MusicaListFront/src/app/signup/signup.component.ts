@@ -4,6 +4,7 @@ import {VotanteService} from "../services/votante.service";
 import {Administrador} from "../models/administrador.model";
 import {Router} from "@angular/router";
 import {Votante} from "../models/votante.model";
+import {HashService} from "../services/hash.service";
 
 @Component({
   selector: 'app-signup',
@@ -18,13 +19,14 @@ export class SignupComponent {
   }
   errorMessage = ""
 
-  constructor(private administradorService: AdministradorService, private votanteService: VotanteService, private router: Router) {
+  constructor(private administradorService: AdministradorService, private votanteService: VotanteService, private router: Router,
+              private hashService: HashService) {
   }
 
   public registrarAdmin() {
-    if(this.validarFormulario()){
+    if (this.validarFormulario()) {
       this.administradorService.crearAdministrador(
-        new Administrador(-1, false, this.form.contrasena, this.form.correo, this.form.nombre))
+        new Administrador(-1, false, this.hashService.hashSHA256(this.form.contrasena), this.form.correo, this.form.nombre))
         .subscribe((administrador: Administrador) => {
           if (administrador.idCuenta != -1)
             this.router.navigate(["/login"])
@@ -35,9 +37,9 @@ export class SignupComponent {
   }
 
   public registrarVot() {
-    if(this.validarFormulario()){
+    if (this.validarFormulario()) {
       this.votanteService.createVotante(
-        new Votante(-1, false, this.form.contrasena, this.form.correo, this.form.nombre, []))
+        new Votante(-1, false, this.hashService.hashSHA256(this.form.contrasena), this.form.correo, this.form.nombre, []))
         .subscribe((votante: Votante) => {
           if (votante.idCuenta != -1)
             this.router.navigate(["/login"])

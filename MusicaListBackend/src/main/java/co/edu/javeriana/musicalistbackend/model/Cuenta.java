@@ -32,34 +32,10 @@ public class Cuenta {
     }
 
     public Boolean coincide(String nuevaContrasena){
-        return (this.hashContrasena(nuevaContrasena).equals(this.getContrasena()));
+        return (nuevaContrasena.equals(this.getContrasena()));
     }
 
     public Boolean autenticar(String contrasena){
-        return this.contrasena.equals(this.hashContrasena(contrasena));
-    }
-
-    protected String hashContrasena(String contrasena){
-        try{
-            // Crear una instancia de MessageDigest para SHA-256
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
-
-            // Calcular el hash SHA-256
-            byte[] hash = digest.digest(contrasena.getBytes(StandardCharsets.UTF_8));
-
-            // Convertir el hash a una representación hexadecimal
-            StringBuilder hexString = new StringBuilder();
-            for (byte b : hash) {
-                String hex = Integer.toHexString(0xff & b);
-                if (hex.length() == 1) {
-                    hexString.append('0');
-                }
-                hexString.append(hex);
-            }
-            return hexString.toString();
-        }
-        catch(NoSuchAlgorithmException e){
-            return contrasena;
-        }
+        return this.contrasena.equals(contrasena);
     }
 }

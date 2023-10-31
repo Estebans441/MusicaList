@@ -4,13 +4,14 @@ import {Cuenta} from "../models/cuenta.model";
 import {from, Observable, throwError} from "rxjs";
 import {catchError, map} from "rxjs/operators";
 import {Login} from "../models/login.model";
+import {HashService} from "./hash.service";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class CuentaService {
-  constructor() {
+  constructor(private hashService:HashService) {
   }
 
   private apiUrl = "http://localhost:8080/musicalist/api/cuenta/";
@@ -19,7 +20,7 @@ export class CuentaService {
   getCuentaLogin(login:Login): Observable<number> {
     const formData = {
       usuarioCorreo:login.usuarioCorreo,
-      contrasena:login.contrasena
+      contrasena:this.hashService.hashSHA256(login.contrasena)
     };
     return from(
       axios
