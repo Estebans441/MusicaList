@@ -24,10 +24,10 @@ public class JWTFiltroAutorizacion extends OncePerRequestFilter {
 
 
     public static final String HEADER = "Authorization";
-    public static final String PREFIX = "Bearer ";
+    public static final String PREFIX = "Bearer";
 
-    private JWTProveedorToken jwtTokenProvider;
-    private UserDetailsService userDetailsService;
+    private final JWTProveedorToken jwtTokenProvider;
+    private final UserDetailsService userDetailsService;
 
     @Generated
     public JWTFiltroAutorizacion(JWTProveedorToken jwtTokenProvider, CustomUserDetailsService userDetailsService) {
