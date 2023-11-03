@@ -10,6 +10,7 @@ public class GeneroSimpleDTO {
     private Integer idGenero;
     private String nombreGenero;
     private String descripcion;
+    private Integer numCanciones;
 
     public GeneroSimpleDTO() {
         // Constructor vacío
@@ -19,5 +20,6 @@ public class GeneroSimpleDTO {
         this.idGenero = generoMusical.getIdGenero();
         this.nombreGenero = generoMusical.getNombreGenero();
         this.descripcion = generoMusical.getDescripcion();
+        this.numCanciones = generoMusical.getCanciones().size();
     }
 }

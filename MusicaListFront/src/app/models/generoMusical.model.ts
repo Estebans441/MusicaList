@@ -5,11 +5,13 @@ export class GeneroMusical{
     nombreGenero : string;
     descripcion : string;
     canciones : Cancion[];
+    numCanciones : number;
 
-    constructor(idGenero : number, nombreGenero : string, descripcion : string, canciones : Cancion[]){
+    constructor(idGenero : number, nombreGenero : string, descripcion : string, canciones : Cancion[], numCanciones:number){
         this.idGenero = idGenero;
         this.nombreGenero = nombreGenero;
         this.descripcion = descripcion;
         this.canciones = canciones;
+        this.numCanciones = numCanciones;
     }
 }

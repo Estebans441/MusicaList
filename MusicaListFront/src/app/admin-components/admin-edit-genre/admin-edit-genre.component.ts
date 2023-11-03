@@ -11,7 +11,7 @@ export class AdminEditGenreComponent {
   genero: GeneroMusical;
 
   constructor(public dialogRef: MatDialogRef<AdminEditGenreComponent>, @Inject(MAT_DIALOG_DATA) public data: {name: string, desc: string}) {
-    this.genero = new GeneroMusical(-1, data.name, data.desc, [])
+    this.genero = new GeneroMusical(-1, data.name, data.desc, [], 0)
   }
 
   onConfirm(): void {

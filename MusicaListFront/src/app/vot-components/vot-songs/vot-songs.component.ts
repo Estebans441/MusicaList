@@ -11,7 +11,7 @@ import {VotanteService} from "../../services/votante.service";
 })
 export class VotSongsComponent implements OnInit {
   id: number
-  genero: GeneroMusical = new GeneroMusical(-1, "", "", []);
+  genero: GeneroMusical = new GeneroMusical(-1, "", "", [], 0);
 
   constructor(private route: ActivatedRoute, private generoService: GeneroMusicalService, private votanteService: VotanteService, private router: Router) {
     this.id = -1;

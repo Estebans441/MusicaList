@@ -1,5 +1,6 @@
 package co.edu.javeriana.musicalistbackend.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import java.util.Set;
 @Table(name = "votante")
 @PrimaryKeyJoinColumn(name = "cuenta_id")
 public class Votante extends Cuenta {
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "votos_cancion",
             joinColumns = @JoinColumn(name = "votante_cuenta_id"),

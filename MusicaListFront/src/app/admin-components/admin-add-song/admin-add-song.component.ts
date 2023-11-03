@@ -12,7 +12,7 @@ export class AdminAddSongComponent {
   cancion: Cancion
 
   constructor(public dialogRef: MatDialogRef<AdminAddSongComponent>) {
-    this.cancion = new Cancion(-1, "", "", 1, new GeneroMusical(-1, "", "", []), 0)
+    this.cancion = new Cancion(-1, "", "", 1, new GeneroMusical(-1, "", "", [], 0), 0)
   }
   onConfirm(): void {
     if(this.validateForm())

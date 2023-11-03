@@ -11,7 +11,7 @@ export class AdminAddGenreComponent {
   genero: GeneroMusical;
 
   constructor(public dialogRef: MatDialogRef<AdminAddGenreComponent>) {
-    this.genero = new GeneroMusical(-1, "", "", [])
+    this.genero = new GeneroMusical(-1, "", "", [], 0)
   }
 
   onConfirm(): void {

@@ -19,7 +19,7 @@ export class AdminEditSongComponent {
     idGenero: number
   }, generoService: GeneroMusicalService) {
     this.cancion = data.cancion
-    this.cancion.generoMusical = new GeneroMusical(-1,"","",[])
+    this.cancion.generoMusical = new GeneroMusical(-1,"","",[], 0)
     this.selected = data.idGenero.toString()
     generoService.getAllGenerosMusicales().subscribe(generos => {
       this.generos = generos

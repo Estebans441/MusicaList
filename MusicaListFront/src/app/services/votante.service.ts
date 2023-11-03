@@ -3,13 +3,14 @@ import axios, {AxiosResponse} from 'axios';
 import {Votante} from "../models/votante.model";
 import {from, Observable, Subject, throwError} from "rxjs";
 import {catchError, map} from "rxjs/operators";
+import {Administrador} from "../models/administrador.model";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class VotanteService {
-  private apiUrl = "http://localhost:8080/musicalist/api/votante/";
+  private apiUrl = "http://localhost:8080/musicalist/api/votantes/";
   public votante: Votante;
   public votante$: Subject<Votante>;
 
@@ -31,7 +32,7 @@ export class VotanteService {
 
   // Crear votante
   createVotante(votante: Votante): Observable<Votante> {
-    return from(axios.post(this.apiUrl + "crear", votante)).pipe(
+    return from(axios.post(this.apiUrl, votante)).pipe(
       map((response: AxiosResponse) => response.data),
       catchError((error: any) => throwError(error))
     );
@@ -47,9 +48,10 @@ export class VotanteService {
 
   // Obtener votante por ID.
   getVotanteById(id: number): Observable<Votante> {
-    return from(axios.get(this.apiUrl + "id/" + id)).pipe(
+    return from(axios.get(this.apiUrl + id)).pipe(
       map((response: AxiosResponse) => response.data),
-      catchError((error: any) => throwError(error))
+    ).pipe(
+      catchError((error) => throwError(error))
     );
   }
 

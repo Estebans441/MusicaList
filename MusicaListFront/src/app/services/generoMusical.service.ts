@@ -11,12 +11,12 @@ import {catchError, map} from "rxjs/operators";
 )
 
 export class GeneroMusicalService {
-  private apiUrl: string = "http://localhost:8080/musicalist/api/genero/"
+  private apiUrl: string = "http://localhost:8080/musicalist/api/generos/"
   private genero: GeneroMusical
   private genero$: Subject<GeneroMusical>
 
   constructor() {
-    this.genero = new GeneroMusical(-1, "", "", [])
+    this.genero = new GeneroMusical(-1, "", "", [], 0)
     this.genero$ = new Subject()
   }
 
@@ -34,7 +34,7 @@ export class GeneroMusicalService {
 
   // Crear un género musical.
   createGeneroMusical(generoMusical: GeneroMusical): Observable<GeneroMusical> {
-    return from(axios.post(this.apiUrl + "crear", generoMusical)).pipe(
+    return from(axios.post(this.apiUrl, generoMusical)).pipe(
       map((response: AxiosResponse) => response.data),
       catchError((error: any) => throwError(error))
     );
@@ -42,7 +42,7 @@ export class GeneroMusicalService {
 
   // Obtener todos los géneros musicales.
   getAllGenerosMusicales(): Observable<GeneroMusical[]> {
-    return from(axios.get(this.apiUrl + "all")).pipe(
+    return from(axios.get(this.apiUrl)).pipe(
       map((response: AxiosResponse) => response.data),
       catchError((error: any) => throwError(error))
     );
@@ -58,7 +58,7 @@ export class GeneroMusicalService {
 
   // Actualizar un género musical por ID.
   updateGeneroMusicalById(id: number, generoMusical: GeneroMusical): Observable<GeneroMusical> {
-    return from(axios.put(this.apiUrl + "actualizar/" + id, generoMusical)).pipe(
+    return from(axios.put(this.apiUrl + id, generoMusical)).pipe(
       map((response: AxiosResponse) => response.data),
       catchError((error: any) => throwError(error))
     );
@@ -66,7 +66,7 @@ export class GeneroMusicalService {
 
   // Eliminar un género musical por ID
   deleteGeneroMusicalById(id: number): Observable<GeneroMusical> {
-    return from(axios.delete(this.apiUrl + "eliminar/" + id)).pipe(
+    return from(axios.delete(this.apiUrl + id)).pipe(
       map((response: AxiosResponse) => response.data),
       catchError((error: any) => throwError(error))
     );

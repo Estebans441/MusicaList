@@ -11,7 +11,7 @@ import {catchError, map} from "rxjs/operators";
 )
 
 export class AdministradorService {
-  private apiUrl: string = "http://localhost:8080/musicalist/api/administrador/";
+  private apiUrl: string = "http://localhost:8080/musicalist/api/administradores/";
   public administrador: Administrador;
   public administrador$: Subject<Administrador>
 
@@ -33,7 +33,7 @@ export class AdministradorService {
 
   // Crear Administrador
   public crearAdministrador(administrador: Administrador): Observable<Administrador> {
-    return from(axios.post<Administrador>(this.apiUrl + "crear", administrador))
+    return from(axios.post<Administrador>(this.apiUrl, administrador))
       .pipe(
         map((response: AxiosResponse<Administrador>) => response.data),
         catchError((error) => throwError(error))
@@ -42,7 +42,7 @@ export class AdministradorService {
 
   // Obtener Administrador por id
   public obtenerAdministradorPorId(id: number): Observable<Administrador> {
-    return from(axios.get<Administrador>(this.apiUrl + "id/ " + id))
+    return from(axios.get<Administrador>(this.apiUrl + id))
       .pipe(
         map((response: AxiosResponse<Administrador>) => response.data),
         catchError((error) => throwError(error))
