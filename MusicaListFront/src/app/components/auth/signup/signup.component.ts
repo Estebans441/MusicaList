@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
 import {AdministradorService} from "../../../services/administrador.service";
 import {VotanteService} from "../../../services/votante.service";
-import {Administrador} from "../../../models/administrador.model";
+import {Administrador} from "../../../models/entities/administrador.model";
 import {Router} from "@angular/router";
-import {Votante} from "../../../models/votante.model";
+import {Votante} from "../../../models/entities/votante.model";
 import {HashService} from "../../../services/hash.service";
 
 @Component({

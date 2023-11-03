@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import axios, {AxiosResponse} from 'axios';
-import {Votante} from "../models/votante.model";
+import {Votante} from "../models/entities/votante.model";
 import {from, Observable, Subject, throwError} from "rxjs";
 import {catchError, map} from "rxjs/operators";
-import {Administrador} from "../models/administrador.model";
+import {Administrador} from "../models/entities/administrador.model";
 
 @Injectable({
   providedIn: 'root'

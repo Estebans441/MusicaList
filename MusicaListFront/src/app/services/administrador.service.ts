@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import axios, {AxiosResponse} from 'axios';
-import {Administrador} from "../models/administrador.model";
+import {Administrador} from "../models/entities/administrador.model";
 import {from, Observable, Subject, throwError} from "rxjs";
 import {catchError, map} from "rxjs/operators";
 

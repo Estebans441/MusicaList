@@ -1,7 +1,7 @@
 import {Component, Inject} from '@angular/core';
-import {GeneroMusical} from "../../../../models/generoMusical.model";
+import {GeneroMusical} from "../../../../models/entities/generoMusical.model";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {Cancion} from "../../../../models/cancion.model";
+import {Cancion} from "../../../../models/entities/cancion.model";
 import {GeneroMusicalService} from "../../../../services/generoMusical.service";
 
 @Component({

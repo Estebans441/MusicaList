@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import axios, {AxiosResponse} from 'axios';
-import {Cuenta} from "../models/cuenta.model";
+import {Cuenta} from "../models/entities/cuenta.model";
 import {from, Observable, throwError} from "rxjs";
 import {catchError, map} from "rxjs/operators";
-import {Login} from "../models/login.model";
+import {Login} from "../models/dto/login.model";
 import {HashService} from "./hash.service";
 
 @Injectable({

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {GeneroMusical} from "../../../../models/generoMusical.model";
+import {GeneroMusical} from "../../../../models/entities/generoMusical.model";
 import {GeneroMusicalService} from "../../../../services/generoMusical.service";
-import {Cancion} from "../../../../models/cancion.model";
+import {Cancion} from "../../../../models/entities/cancion.model";
 import {AdministradorService} from "../../../../services/administrador.service";
 import {MatDialog} from "@angular/material/dialog";
 import {AdminAddGenreComponent} from "../add-genre/admin-add-genre.component";

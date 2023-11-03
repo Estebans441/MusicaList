@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {MatDialogRef} from "@angular/material/dialog";
-import {GeneroMusical} from "../../../../models/generoMusical.model";
+import {GeneroMusical} from "../../../../models/entities/generoMusical.model";
 
 @Component({
   selector: 'app-admin-add-genre',

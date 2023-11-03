@@ -1,6 +1,6 @@
 package co.edu.javeriana.jwt.repository;
 
-import co.edu.javeriana.jwt.model.Votante;
+import co.edu.javeriana.jwt.model.entity.Votante;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

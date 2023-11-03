@@ -1,4 +1,4 @@
-package co.edu.javeriana.jwt.model;
+package co.edu.javeriana.jwt.model.entity;
 
 import javax.persistence.*;
 

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import axios, {AxiosResponse} from 'axios';
-import {GeneroMusical} from "../models/generoMusical.model";
+import {GeneroMusical} from "../models/entities/generoMusical.model";
 import {from, Observable, Subject, throwError} from "rxjs";
 import {catchError, map} from "rxjs/operators";
 
