@@ -10,11 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/musicalist/api/canciones/")
@@ -28,11 +25,12 @@ public class CancionController {
     // Create -> POST
     @CrossOrigin
     @PostMapping()
-    public ResponseEntity<CancionDTO> crearCancion(@RequestBody Cancion cancion) {
+    public ResponseEntity<CancionDTO> crearCancion(@RequestBody CancionDTO cancion) {
+        Cancion creada = new Cancion(cancion.getNombre(), cancion.getArtista(), cancion.getDuracionSeg(), null);
         Optional<GeneroMusical> generoMusicalOptional = generoMusicalRepository.findById(cancion.getGeneroMusical().getIdGenero());
         if (generoMusicalOptional.isPresent()) {
-            cancion.setGeneroMusical(generoMusicalOptional.get());
-            return ResponseEntity.status(HttpStatus.CREATED).body(new CancionDTO(cancionRepository.save(cancion)));
+            creada.setGeneroMusical(generoMusicalOptional.get());
+            return ResponseEntity.status(HttpStatus.CREATED).body(new CancionDTO(cancionRepository.save(creada)));
         }
         return ResponseEntity.notFound().build();
     }

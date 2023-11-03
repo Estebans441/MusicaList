@@ -1,6 +1,5 @@
 package co.edu.javeriana.musicalistbackend.model.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,5 +1,7 @@
 package co.edu.javeriana.musicalistbackend.controller;
 
+import co.edu.javeriana.musicalistbackend.model.dto.GeneroMusicalDTO;
+import co.edu.javeriana.musicalistbackend.model.dto.GeneroSimpleDTO;
 import co.edu.javeriana.musicalistbackend.model.entity.GeneroMusical;
 import co.edu.javeriana.musicalistbackend.repository.AdministradorRepository;
 import co.edu.javeriana.musicalistbackend.repository.CancionRepository;
@@ -27,36 +29,38 @@ public class GeneroController {
     // Create -> Post
     @CrossOrigin
     @PostMapping()
-    public ResponseEntity<GeneroMusical> crearGeneroMusical(@RequestBody GeneroMusical generoMusical) {
-        GeneroMusical savedGeneroMusical = generoMusicalRepository.save(generoMusical);
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedGeneroMusical);
+    public ResponseEntity<GeneroSimpleDTO> crearGeneroMusical(@RequestBody GeneroMusicalDTO generoMusical) {
+        GeneroMusical creado = new GeneroMusical(generoMusical.getNombreGenero(), generoMusical.getDescripcion());
+        GeneroMusical savedGeneroMusical = generoMusicalRepository.save(creado);
+        return ResponseEntity.status(HttpStatus.CREATED).body(new GeneroSimpleDTO(savedGeneroMusical));
     }
 
     // Retrieve -> GET
     @CrossOrigin
     @GetMapping()
-    public ResponseEntity<List<GeneroMusical>> getGenerosMusicales() {
-        List<GeneroMusical> generosMusicales = generoMusicalRepository.findAll();
+    public ResponseEntity<List<GeneroSimpleDTO>> getGenerosMusicales() {
+        List<GeneroSimpleDTO> generosMusicales = generoMusicalRepository.findAll().stream().map(GeneroSimpleDTO::new).toList();
         return ResponseEntity.ok(generosMusicales);
     }
 
     @CrossOrigin
     @GetMapping("{id}")
-    public ResponseEntity<GeneroMusical> getGeneroID(@PathVariable Integer id) {
+    public ResponseEntity<GeneroMusicalDTO> getGeneroID(@PathVariable Integer id) {
         Optional<GeneroMusical> generoMusicalOptional = generoMusicalRepository.findById(id);
-        return generoMusicalOptional.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        return generoMusicalOptional.map(generoMusical -> ResponseEntity.ok(new GeneroMusicalDTO(generoMusical))).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     // Update -> PUT
     @CrossOrigin
     @PutMapping("{id}")
-    public ResponseEntity<GeneroMusical> actualizarGenero(@PathVariable Integer id, @RequestBody GeneroMusical generoMusical) {
+    public ResponseEntity<GeneroSimpleDTO> actualizarGenero(@PathVariable Integer id, @RequestBody GeneroSimpleDTO generoMusical) {
         Optional<GeneroMusical> generoMusicalOptional = generoMusicalRepository.findById(id);
         if (generoMusicalOptional.isPresent()) {
-            generoMusical.setIdGenero(id);
-            generoMusical.setCanciones(generoMusicalOptional.get().getCanciones());
-            GeneroMusical updatedGenero = generoMusicalRepository.save(generoMusical);
-            return ResponseEntity.ok(updatedGenero);
+            GeneroMusical actualizado = generoMusicalOptional.get();
+            actualizado.setIdGenero(id);
+            actualizado.setNombreGenero(generoMusical.getNombreGenero());
+            actualizado.setDescripcion(generoMusical.getDescripcion());
+            return ResponseEntity.ok(new GeneroSimpleDTO(generoMusicalRepository.save(actualizado)));
         }
         return ResponseEntity.notFound().build();
     }
