@@ -1,6 +1,6 @@
 package co.edu.javeriana.musicalistbackend.controller;
 
-import co.edu.javeriana.musicalistbackend.model.PeticionContacto;
+import co.edu.javeriana.musicalistbackend.model.entity.PeticionContacto;
 import co.edu.javeriana.musicalistbackend.repository.PeticionContactoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

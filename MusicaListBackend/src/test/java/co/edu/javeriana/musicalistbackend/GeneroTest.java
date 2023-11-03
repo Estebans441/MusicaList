@@ -1,7 +1,7 @@
 package co.edu.javeriana.musicalistbackend;
 
-import co.edu.javeriana.musicalistbackend.model.Cancion;
-import co.edu.javeriana.musicalistbackend.model.GeneroMusical;
+import co.edu.javeriana.musicalistbackend.model.entity.Cancion;
+import co.edu.javeriana.musicalistbackend.model.entity.GeneroMusical;
 import co.edu.javeriana.musicalistbackend.repository.AdministradorRepository;
 import co.edu.javeriana.musicalistbackend.repository.GeneroMusicalRepository;
 import jakarta.transaction.Transactional;

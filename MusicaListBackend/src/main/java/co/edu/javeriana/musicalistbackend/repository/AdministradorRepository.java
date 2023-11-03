@@ -1,6 +1,6 @@
 package co.edu.javeriana.musicalistbackend.repository;
 
-import co.edu.javeriana.musicalistbackend.model.Administrador;
+import co.edu.javeriana.musicalistbackend.model.entity.Administrador;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

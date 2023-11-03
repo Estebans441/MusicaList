@@ -1,4 +1,4 @@
-package co.edu.javeriana.musicalistbackend.model;
+package co.edu.javeriana.musicalistbackend.model.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -1,6 +1,6 @@
 package co.edu.javeriana.musicalistbackend;
 
-import co.edu.javeriana.musicalistbackend.model.PeticionContacto;
+import co.edu.javeriana.musicalistbackend.model.entity.PeticionContacto;
 import co.edu.javeriana.musicalistbackend.repository.PeticionContactoRepository;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;

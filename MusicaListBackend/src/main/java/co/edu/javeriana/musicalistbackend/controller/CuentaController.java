@@ -1,67 +1,70 @@
 package co.edu.javeriana.musicalistbackend.controller;
 
-import co.edu.javeriana.musicalistbackend.model.Cuenta;
-import co.edu.javeriana.musicalistbackend.model.dto.CambioContrasena;
-import co.edu.javeriana.musicalistbackend.model.dto.Login;
+import co.edu.javeriana.musicalistbackend.model.entity.Cuenta;
 import co.edu.javeriana.musicalistbackend.repository.CuentaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/musicalist/api/cuenta")
+@RequestMapping("/musicalist/api/cuentas/")
 public class CuentaController {
 
     @Autowired
     CuentaRepository cuentaRepository;
 
-    // Retrieve -> GET
+    // Autenticar -> POST
     @CrossOrigin
-    @PostMapping("/autenticar")
-    public Integer autenticarCuenta(@RequestBody Login login){
-        Optional<Cuenta> cuentaOptional = cuentaRepository.findByNombreUsuarioOrCorreo(login.usuarioCorreo, login.usuarioCorreo);
-        if(cuentaOptional.isPresent() && cuentaOptional.get().autenticar(login.contrasena)){
-            return cuentaOptional.get().getIdCuenta();
-        };
-        return -1;
+    @PostMapping("auth")
+    public ResponseEntity<Integer> autenticarCuenta(@RequestParam String correo, @RequestParam String contrasena) {
+        Optional<Cuenta> cuentaOptional = cuentaRepository.findByNombreUsuarioOrCorreo(correo, correo);
+        if (cuentaOptional.isPresent() && cuentaOptional.get().autenticar(contrasena)) {
+            return ResponseEntity.ok(cuentaOptional.get().getIdCuenta());
+        }
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(-1);
     }
 
     // Update -> PUT
     @CrossOrigin
-    @PutMapping("/actualizar/{id}")
-    public Cuenta actualizarCuenta(@PathVariable Integer id, @RequestBody Cuenta nuevaCuenta) {
+    @PutMapping("{id}")
+    public ResponseEntity<Cuenta> actualizarCuenta(@PathVariable Integer id, @RequestBody Cuenta nuevaCuenta) {
         Optional<Cuenta> cuentaOptional = cuentaRepository.findById(id);
-        Cuenta cuenta;
         if (cuentaOptional.isPresent()) {
-            cuenta = cuentaOptional.get();
+            Cuenta cuenta = cuentaOptional.get();
             cuenta.setNombreUsuario(nuevaCuenta.getNombreUsuario());
             cuenta.setCorreo(nuevaCuenta.getCorreo());
-            return cuentaRepository.save(cuenta);
+            cuentaRepository.save(cuenta);
+            return ResponseEntity.ok(cuenta);
         }
-        return null;
+        return ResponseEntity.notFound().build();
     }
 
     // Update -> PUT
     @CrossOrigin
-    @PutMapping("/actualizar-c/{id}")
-    public Boolean actualizarContrasena(@PathVariable Integer id, @RequestBody CambioContrasena cambio) {
+    @PutMapping("pass/{id}")
+    public ResponseEntity<Boolean> actualizarPass(@PathVariable Integer id, @RequestParam String anterior, @RequestParam String nueva) {
         Optional<Cuenta> cuentaOptional = cuentaRepository.findById(id);
-        if (cuentaOptional.isEmpty())
-            return false;
-        Cuenta cuenta = cuentaOptional.get();
-        if (cuenta.coincide(cambio.anteriorContrasena)) {
-            cuenta.setContrasena(cambio.nuevaContrasena);
-            cuentaRepository.save(cuenta);
-            return true;
-        } else return false;
+        if (cuentaOptional.isPresent()) {
+            Cuenta cuenta = cuentaOptional.get();
+            if (cuenta.coincide(anterior)) {
+                cuenta.setContrasena(nueva);
+                cuentaRepository.save(cuenta);
+                return ResponseEntity.ok(true);
+            } else {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(false);
+            }
+        }
+        return ResponseEntity.notFound().build();
     }
 
     // Delete -> DELETE
     @CrossOrigin
-    @DeleteMapping("/eliminar/{id}")
-    public Boolean borrarId(@PathVariable Integer id) {
+    @DeleteMapping("{id}")
+    public ResponseEntity<Boolean> borrarId(@PathVariable Integer id) {
         cuentaRepository.deleteById(id);
-        return true;
+        return ResponseEntity.ok(true);
     }
 }

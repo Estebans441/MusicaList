@@ -1,4 +1,4 @@
-package co.edu.javeriana.musicalistbackend.model;
+package co.edu.javeriana.musicalistbackend.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;

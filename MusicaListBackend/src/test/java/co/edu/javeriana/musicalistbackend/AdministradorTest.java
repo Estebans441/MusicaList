@@ -1,6 +1,6 @@
 package co.edu.javeriana.musicalistbackend;
 
-import co.edu.javeriana.musicalistbackend.model.Administrador;
+import co.edu.javeriana.musicalistbackend.model.entity.Administrador;
 import co.edu.javeriana.musicalistbackend.repository.AdministradorRepository;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
