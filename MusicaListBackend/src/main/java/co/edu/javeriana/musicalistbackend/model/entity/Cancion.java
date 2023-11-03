@@ -13,7 +13,6 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@JsonIgnoreProperties({"votos"})
 @Table(name = "cancion")
 public class Cancion {
     @Id
@@ -25,7 +24,6 @@ public class Cancion {
     private String artista;
     private Integer duracionSeg;
 
-    @JsonIgnoreProperties("canciones")
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "genero_musical_id")
@@ -36,9 +34,6 @@ public class Cancion {
             joinColumns = @JoinColumn(name = "cancion_id_cancion"),
             inverseJoinColumns = @JoinColumn(name = "votante_cuenta_id"))
     private Set<Votante> votos = new LinkedHashSet<>();
-
-    @Transient
-    private Integer numeroVotos;
 
     public Cancion(){
         this.nombre = "";
@@ -55,10 +50,5 @@ public class Cancion {
         this.artista = artista;
         this.duracionSeg = duracionSeg;
         this.generoMusical = generoMusical;
-    }
-
-    public Integer getNumeroVotos() {
-        this.numeroVotos = getVotos().size();
-        return numeroVotos;
     }
 }

@@ -1,5 +1,6 @@
 package co.edu.javeriana.musicalistbackend.controller;
 
+import co.edu.javeriana.musicalistbackend.model.dto.CancionDTO;
 import co.edu.javeriana.musicalistbackend.model.entity.Cancion;
 import co.edu.javeriana.musicalistbackend.model.entity.GeneroMusical;
 import co.edu.javeriana.musicalistbackend.repository.CancionRepository;
@@ -9,9 +10,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/musicalist/api/canciones/")
@@ -25,12 +28,11 @@ public class CancionController {
     // Create -> POST
     @CrossOrigin
     @PostMapping()
-    public ResponseEntity<Cancion> crearCancion(@RequestBody Cancion cancion) {
+    public ResponseEntity<CancionDTO> crearCancion(@RequestBody Cancion cancion) {
         Optional<GeneroMusical> generoMusicalOptional = generoMusicalRepository.findById(cancion.getGeneroMusical().getIdGenero());
         if (generoMusicalOptional.isPresent()) {
             cancion.setGeneroMusical(generoMusicalOptional.get());
-            Cancion savedCancion = cancionRepository.save(cancion);
-            return ResponseEntity.status(HttpStatus.CREATED).body(savedCancion);
+            return ResponseEntity.status(HttpStatus.CREATED).body(new CancionDTO(cancionRepository.save(cancion)));
         }
         return ResponseEntity.notFound().build();
     }
@@ -38,29 +40,33 @@ public class CancionController {
     // Retrieve -> GET
     @CrossOrigin
     @GetMapping()
-    public ResponseEntity<List<Cancion>> getCanciones() {
-        List<Cancion> canciones = cancionRepository.findAll();
+    public ResponseEntity<List<CancionDTO>> getCanciones() {
+        List<CancionDTO> canciones = cancionRepository.findAll().stream()
+                .map(CancionDTO::new)
+                .toList();
         return ResponseEntity.ok(canciones);
     }
 
     @CrossOrigin
     @GetMapping("{id}")
-    public ResponseEntity<Cancion> getCancionId(@PathVariable Integer id) {
+    public ResponseEntity<CancionDTO> getCancionId(@PathVariable Integer id) {
         Optional<Cancion> cancionOptional = cancionRepository.findById(id);
-        return cancionOptional.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        return cancionOptional.map(cancion -> ResponseEntity.ok(new CancionDTO(cancion))).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @CrossOrigin
     @GetMapping("/name-artist/{name}")
-    public ResponseEntity<List<Cancion>> findCancionName(@PathVariable String name) {
-        List<Cancion> canciones = cancionRepository.findByNombreContainingOrArtistaContaining(name, name);
+    public ResponseEntity<List<CancionDTO>> findCancionName(@PathVariable String name) {
+        List<CancionDTO> canciones = cancionRepository.findByNombreContainingOrArtistaContaining(name, name).stream()
+                .map(CancionDTO::new)
+                .toList();
         return ResponseEntity.ok(canciones);
     }
 
     // Update -> PUT
     @CrossOrigin
     @PutMapping("{id}")
-    public ResponseEntity<Cancion> actualizarCancion(@PathVariable Integer id, @RequestBody Cancion cancion) {
+    public ResponseEntity<CancionDTO> actualizarCancion(@PathVariable Integer id, @RequestBody Cancion cancion) {
         Optional<Cancion> cancionOptional = cancionRepository.findById(id);
         if (cancionOptional.isEmpty()) {
             return ResponseEntity.notFound().build();
@@ -79,7 +85,7 @@ public class CancionController {
         else cancion.setGeneroMusical(cancionOptional.get().getGeneroMusical());
 
         Cancion updatedCancion = cancionRepository.save(cancion);
-        return ResponseEntity.ok(updatedCancion);
+        return ResponseEntity.ok(new CancionDTO(updatedCancion));
     }
 
     // Delete -> DELETE
