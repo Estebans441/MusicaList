@@ -1,5 +1,6 @@
 package co.edu.javeriana.musicalistbackend.controller;
 
+import co.edu.javeriana.musicalistbackend.model.dto.VotanteDTO;
 import co.edu.javeriana.musicalistbackend.model.entity.Cancion;
 import co.edu.javeriana.musicalistbackend.model.entity.Votante;
 import co.edu.javeriana.musicalistbackend.repository.CancionRepository;
@@ -43,13 +44,9 @@ public class VotanteController {
 
     @CrossOrigin
     @GetMapping("{id}")
-    public ResponseEntity<Votante> getVotanteID(@PathVariable Integer id) {
+    public ResponseEntity<VotanteDTO> getVotanteID(@PathVariable Integer id) {
         Optional<Votante> votanteOptional = votanteRepository.findById(id);
-        if (votanteOptional.isPresent()) {
-            return ResponseEntity.ok(votanteOptional.get());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        return votanteOptional.map(votante -> ResponseEntity.ok(new VotanteDTO(votante))).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @CrossOrigin
