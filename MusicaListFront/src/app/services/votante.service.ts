@@ -38,14 +38,6 @@ export class VotanteService {
     );
   }
 
-  // Obtener todos los votantes.
-  getAllVotantes(): Observable<Votante[]> {
-    return from(axios.get(this.apiUrl + "all")).pipe(
-      map((response: AxiosResponse) => response.data),
-      catchError((error: any) => throwError(error))
-    );
-  }
-
   // Obtener votante por ID.
   getVotanteById(id: number): Observable<Votante> {
     return from(axios.get(this.apiUrl + id)).pipe(

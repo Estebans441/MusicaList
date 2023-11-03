@@ -48,21 +48,4 @@ export class AdministradorService {
         catchError((error) => throwError(error))
       );
   }
-
-  public obtenerAdministradorPorNombre(nombre: string): Observable<Administrador> {
-    return from(axios.get<Administrador>(this.apiUrl + nombre))
-      .pipe(
-        map((response: AxiosResponse<Administrador>) => response.data),
-        catchError((error) => throwError(error))
-      );
-  }
-
-  // Obtener todos los administradores
-  public obtenerTodosLosAdministradores(): Observable<Administrador[]> {
-    return from(axios.get<Administrador[]>(this.apiUrl + "all"))
-      .pipe(
-        map((response: AxiosResponse<Administrador[]>) => response.data),
-        catchError((error) => throwError(error))
-      );
-  }
 }

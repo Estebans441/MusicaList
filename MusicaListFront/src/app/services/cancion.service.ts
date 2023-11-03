@@ -24,22 +24,6 @@ export class CancionService {
     );
   }
 
-  // Obtener todas las canciones.
-  getAllCanciones(): Observable<Cancion[]> {
-    return from(axios.get(this.apiUrl)).pipe(
-      map((response: AxiosResponse) => response.data),
-      catchError((error: any) => throwError(error))
-    );
-  }
-
-  // Obtener una cancion por su ID.
-  getCancionById(id: number): Observable<Cancion> {
-    return from(axios.get(this.apiUrl + id)).pipe(
-      map((response: AxiosResponse) => response.data),
-      catchError((error: any) => throwError(error))
-    );
-  }
-
   // Obtener cancion por nombre similar
   getCancionByNombre(nombre: String): Observable<Cancion[]> {
     return from(axios.get(this.apiUrl + "name-artist/" + nombre)).pipe(
