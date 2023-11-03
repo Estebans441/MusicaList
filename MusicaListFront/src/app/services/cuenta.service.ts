@@ -14,19 +14,14 @@ export class CuentaService {
   constructor(private hashService:HashService) {
   }
 
-  private apiUrl = "http://localhost:8080/musicalist/api/cuenta/";
+  private apiUrl = "http://localhost:8080/musicalist/api/cuentas/";
 
   // Autenticar cuenta con el Login.
   getCuentaLogin(login:Login): Observable<number> {
-    const formData = {
-      usuarioCorreo:login.usuarioCorreo,
-      contrasena:this.hashService.hashSHA256(login.contrasena)
-    };
+    const queryParams = `correo=${login.usuarioCorreo}&contrasena=${login.contrasena}`;
     return from(
       axios
-        .post<number>(this.apiUrl + "autenticar",formData, {
-          headers: { "Content-Type": "application/json" }
-        })
+        .post<number>(`${this.apiUrl}auth?${queryParams}`)
         .then((response: AxiosResponse<number>) => response.data)
     ).pipe(
       catchError((error) => {

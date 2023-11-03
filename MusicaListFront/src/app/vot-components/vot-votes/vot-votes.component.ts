@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {VotanteService} from "../services/votante.service";
-import {Votante} from "../models/votante.model";
+import {VotanteService} from "../../services/votante.service";
+import {Votante} from "../../models/votante.model";
 
 @Component({
   selector: 'app-vot-votes',

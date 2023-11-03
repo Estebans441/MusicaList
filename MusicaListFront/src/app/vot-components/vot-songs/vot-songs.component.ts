@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {GeneroMusicalService} from "../services/generoMusical.service";
-import {GeneroMusical} from "../models/generoMusical.model";
-import {VotanteService} from "../services/votante.service";
+import {GeneroMusicalService} from "../../services/generoMusical.service";
+import {GeneroMusical} from "../../models/generoMusical.model";
+import {VotanteService} from "../../services/votante.service";
 
 @Component({
   selector: 'app-vot-songs',

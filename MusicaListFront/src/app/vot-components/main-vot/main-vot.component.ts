@@ -1,6 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {VotanteService} from "../services/votante.service";
+import {VotanteService} from "../../services/votante.service";
 import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 import {Observable} from "rxjs";
 import {map, shareReplay} from "rxjs/operators";

@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {CuentaService} from "../services/cuenta.service";
-import {Login} from "../models/login.model";
-import {VotanteService} from "../services/votante.service";
-import {AdministradorService} from "../services/administrador.service";
-import {Administrador} from "../models/administrador.model";
-import {Votante} from "../models/votante.model";
+import {CuentaService} from "../../services/cuenta.service";
+import {Login} from "../../models/login.model";
+import {VotanteService} from "../../services/votante.service";
+import {AdministradorService} from "../../services/administrador.service";
+import {Administrador} from "../../models/administrador.model";
+import {Votante} from "../../models/votante.model";
 
 @Component({
   selector: 'app-login',

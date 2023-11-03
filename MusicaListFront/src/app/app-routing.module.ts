@@ -1,16 +1,16 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {LoginComponent} from "./login/login.component";
-import {SignupComponent} from "./signup/signup.component";
-import {MainAdminComponent} from "./main-admin/main-admin.component";
-import {MainVotComponent} from "./main-vot/main-vot.component";
-import {AdminGenresComponent} from "./admin-genres/admin-genres.component";
-import {AdminAccountComponent} from "./admin-account/admin-account.component";
-import {AdminSongsComponent} from "./admin-songs/admin-songs.component";
-import {VotGenresComponent} from "./vot-genres/vot-genres.component";
-import {VotSongsComponent} from "./vot-songs/vot-songs.component";
-import {VotVotesComponent} from "./vot-votes/vot-votes.component";
-import {VotAccountComponent} from "./vot-account/vot-account.component";
+import {LoginComponent} from "./auth-components/login/login.component";
+import {SignupComponent} from "./auth-components/signup/signup.component";
+import {MainAdminComponent} from "./admin-components/main-admin/main-admin.component";
+import {MainVotComponent} from "./vot-components/main-vot/main-vot.component";
+import {AdminGenresComponent} from "./admin-components/admin-genres/admin-genres.component";
+import {AdminAccountComponent} from "./admin-components/admin-account/admin-account.component";
+import {AdminSongsComponent} from "./admin-components/admin-songs/admin-songs.component";
+import {VotGenresComponent} from "./vot-components/vot-genres/vot-genres.component";
+import {VotSongsComponent} from "./vot-components/vot-songs/vot-songs.component";
+import {VotVotesComponent} from "./vot-components/vot-votes/vot-votes.component";
+import {VotAccountComponent} from "./vot-components/vot-account/vot-account.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},

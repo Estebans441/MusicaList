@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {GeneroMusical} from "../models/generoMusical.model";
-import {GeneroMusicalService} from "../services/generoMusical.service";
+import {GeneroMusical} from "../../models/generoMusical.model";
+import {GeneroMusicalService} from "../../services/generoMusical.service";
 
 @Component({
   selector: 'app-vot-genres',

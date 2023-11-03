@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {MatDialogRef} from "@angular/material/dialog";
-import {Cancion} from "../models/cancion.model";
-import {GeneroMusical} from "../models/generoMusical.model";
+import {Cancion} from "../../models/cancion.model";
+import {GeneroMusical} from "../../models/generoMusical.model";
 
 @Component({
   selector: 'app-admin-add-song',

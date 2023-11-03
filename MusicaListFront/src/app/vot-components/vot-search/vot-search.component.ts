@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {Cancion} from "../models/cancion.model";
-import {CancionService} from "../services/cancion.service";
-import {VotanteService} from "../services/votante.service";
+import {Cancion} from "../../models/cancion.model";
+import {CancionService} from "../../services/cancion.service";
+import {VotanteService} from "../../services/votante.service";
 
 @Component({
   selector: 'app-vot-search',

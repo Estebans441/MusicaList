@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {AdministradorService} from "../services/administrador.service";
-import {VotanteService} from "../services/votante.service";
-import {Administrador} from "../models/administrador.model";
+import {AdministradorService} from "../../services/administrador.service";
+import {VotanteService} from "../../services/votante.service";
+import {Administrador} from "../../models/administrador.model";
 import {Router} from "@angular/router";
-import {Votante} from "../models/votante.model";
-import {HashService} from "../services/hash.service";
+import {Votante} from "../../models/votante.model";
+import {HashService} from "../../services/hash.service";
 
 @Component({
   selector: 'app-signup',
