@@ -4,6 +4,7 @@ import {VotanteService} from "../../../services/votante.service";
 import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 import {Observable} from "rxjs";
 import {map, shareReplay} from "rxjs/operators";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-genres-vot',
@@ -12,6 +13,7 @@ import {map, shareReplay} from "rxjs/operators";
 })
 export class MainVotComponent implements OnInit {
   private breakpointObserver = inject(BreakpointObserver);
+  cookieService = inject(CookieService)
 
   constructor(public votanteService: VotanteService, private router: Router) {
   }
@@ -23,6 +25,6 @@ export class MainVotComponent implements OnInit {
     );
 
   ngOnInit(): void {
-
+    console.log(this.cookieService.get("JWT-token"))
   }
 }

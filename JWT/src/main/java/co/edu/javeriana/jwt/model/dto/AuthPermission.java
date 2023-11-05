@@ -1,5 +1,6 @@
 package co.edu.javeriana.jwt.model.dto;
 
+import co.edu.javeriana.jwt.model.entity.Cuenta;
 import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
@@ -7,11 +8,11 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AuthPermission {
-    Integer uId;
     String role;
+    CuentaDTO cuenta;
 
-    public AuthPermission(Integer uId, String role) {
-        this.uId = uId;
+    public AuthPermission(String role, CuentaDTO cuenta) {
         this.role = role;
+        this.cuenta = cuenta;
     }
 }

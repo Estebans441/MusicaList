@@ -1,6 +1,7 @@
 package co.edu.javeriana.jwt.controller;
 
 import co.edu.javeriana.jwt.model.dto.AuthPermission;
+import co.edu.javeriana.jwt.model.dto.CuentaDTO;
 import co.edu.javeriana.jwt.model.entity.Cuenta;
 import co.edu.javeriana.jwt.repository.AdministradorRepository;
 import co.edu.javeriana.jwt.repository.CuentaRepository;
@@ -10,6 +11,7 @@ import co.edu.javeriana.jwt.security.JWTToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +27,7 @@ public class AutenticacionController {
     @Autowired
     AdministradorRepository administradorRepository;
 
+    @CrossOrigin
     @PostMapping(value = "/public/autenticacion-usuario", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<JWTToken> autenticar(
             @RequestParam(required = false) String correo,
@@ -43,7 +46,7 @@ public class AutenticacionController {
 
             // Generamos el token JWT y creamos un objeto AuthPermission
             String token = jwtProveedorToken.generateToken(cuentaOptional.get(), role);
-            AuthPermission authPermission = new AuthPermission(idCuenta, role);
+            AuthPermission authPermission = new AuthPermission(role, new CuentaDTO(cuentaOptional.get()));
 
             // Devolvemos una respuesta exitosa con el token y el objeto AuthPermission
             return ResponseEntity.ok(new JWTToken(token, JWTFiltroAutorizacion.PREFIX, authPermission));

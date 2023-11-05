@@ -34,6 +34,7 @@ import {AdminEditGenreComponent} from './components/admin/genre/edit-genre/admin
 import {VotAccountComponent} from './components/vot/account/vot-account.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
+import {CookieService} from "ngx-cookie-service";
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import {MatSelectModule} from '@angular/material/select';
     GeneroMusicalService,
     CuentaService,
     VotanteService,
-    AdministradorService
+    AdministradorService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

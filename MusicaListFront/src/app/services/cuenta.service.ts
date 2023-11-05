@@ -5,6 +5,7 @@ import {from, Observable, throwError} from "rxjs";
 import {catchError, map} from "rxjs/operators";
 import {Login} from "../models/dto/login.model";
 import {HashService} from "./hash.service";
+import {AuthDTO} from "../models/dto/auth.model";
 
 @Injectable({
   providedIn: 'root'
@@ -14,15 +15,15 @@ export class CuentaService {
   constructor(private hashService:HashService) {
   }
 
-  private apiUrl = "http://localhost:8080/musicalist/api/cuentas/";
+  private apiUrl = "http://localhost:8082/public/autenticacion-usuario";
 
   // Autenticar cuenta con el Login.
-  getCuentaLogin(login:Login): Observable<number> {
-    const queryParams = `correo=${login.usuarioCorreo}&contrasena=${login.contrasena}`;
+  getCuentaLogin(usuarioCorreo:string, contrasena:string): Observable<AuthDTO> {
+    const queryParams = `correo=${usuarioCorreo}&contrasena=${contrasena}`;
     return from(
       axios
-        .post<number>(`${this.apiUrl}auth?${queryParams}`)
-        .then((response: AxiosResponse<number>) => response.data)
+        .post<AuthDTO>(`${this.apiUrl}?${queryParams}`)
+        .then((response: AxiosResponse<AuthDTO>) => response.data)
     ).pipe(
       catchError((error) => {
         return throwError(error);
