@@ -1,10 +1,10 @@
 import {Cuenta} from "../entities/cuenta.model";
 
 export class AuthModel {
-  role: String;
+  role: string;
   cuenta: Cuenta;
 
-  constructor(role: String, cuenta: Cuenta) {
+  constructor(role: string, cuenta: Cuenta) {
     this.role = role;
     this.cuenta = cuenta;
   }

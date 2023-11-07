@@ -11,10 +11,7 @@ import co.edu.javeriana.jwt.security.JWTToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -54,6 +51,16 @@ public class AutenticacionController {
 
         // Si no se encuentra una cuenta o la autenticación falla, devolvemos una respuesta 404
         return ResponseEntity.notFound().build();
+    }
+
+    @CrossOrigin
+    @PostMapping(value = "/public/autenticacion", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<CuentaDTO> autenticarToken(@RequestHeader("jwt-token") String token) {
+        JWTProveedorToken jwtProveedorToken = new JWTProveedorToken();
+        Integer id = Integer.parseInt(jwtProveedorToken.getUsername(token));
+        Optional<Cuenta> cuentaOptional = cuentaRepository.findById(id);
+
+        return cuentaOptional.map(cuenta -> ResponseEntity.ok(new CuentaDTO(cuenta))).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     private String getRole(Integer id) {

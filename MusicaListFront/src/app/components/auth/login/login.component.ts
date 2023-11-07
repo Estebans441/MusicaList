@@ -25,13 +25,25 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    if (this.cookieService.check('JWT-token') && this.cookieService.check('role')) {
+      this.cuentaService.getCuentaToken(this.cookieService.get('JWT-token')).subscribe((res) => {
+        let role = this.cookieService.get('role')
+        if (role == "Admin") {
+          this.adminService.administrador = res;
+          this.router.navigate(['/admin'])
+        } else {
+          this.votanteService.votante = res;
+          this.router.navigate(['/vot'])
+        }
+      })
+    }
   }
 
   iniciarSesion() {
     this.cuentaService.getCuentaLogin(this.form.usuarioCorreo, this.hashService.hashSHA256(this.form.contrasena)).subscribe({
       next: (resultado) => {
         this.cookieService.set('JWT-token', resultado.token)
+        this.cookieService.set('role', resultado.dto.role)
         if (resultado.dto.role == "Admin") {
           this.adminService.administrador = resultado.dto.cuenta
           this.loginAsAdmin(resultado.dto.cuenta.idCuenta)
