@@ -4,8 +4,6 @@ import {CuentaService} from "../../../services/cuenta.service";
 import {Login} from "../../../models/dto/login.model";
 import {VotanteService} from "../../../services/votante.service";
 import {AdministradorService} from "../../../services/administrador.service";
-import {Administrador} from "../../../models/entities/administrador.model";
-import {Votante} from "../../../models/entities/votante.model";
 import {CookieService} from "ngx-cookie-service";
 import {HashService} from "../../../services/hash.service";
 
@@ -38,7 +36,7 @@ export class LoginComponent implements OnInit {
           this.adminService.administrador = resultado.dto.cuenta
           this.loginAsAdmin(resultado.dto.cuenta.idCuenta)
         } else {
-          // this.votanteService.votante = resultado.dto.cuenta
+          //this.votanteService.votante = resultado.dto.cuenta
           this.loginAsVot(resultado.dto.cuenta.idCuenta)
         }
       },

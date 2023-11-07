@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Votante} from "../../../models/entities/votante.model";
 import {VotanteService} from "../../../services/votante.service";
+import {Cuenta} from "../../../models/entities/cuenta.model";
 
 @Component({
   selector: 'app-vot-account',
@@ -8,12 +8,11 @@ import {VotanteService} from "../../../services/votante.service";
   styleUrls: ['./vot-account.component.css']
 })
 export class VotAccountComponent implements OnInit {
-  votante = new Votante(-1, false, "", "", [])
-
+  votante : Cuenta;
   constructor(private votanteService: VotanteService) {
+    this.votante = votanteService.votante;
   }
 
   ngOnInit() {
-    this.votante = this.votanteService.votante
   }
 }

@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import axios, {AxiosResponse} from 'axios';
-import {Votante} from "../models/entities/votante.model";
 import {from, Observable, Subject, throwError} from "rxjs";
 import {catchError, map} from "rxjs/operators";
-import {Administrador} from "../models/entities/administrador.model";
 import {CreateAccountModel} from "../models/dto/create-account.model";
+import {Cuenta} from "../models/entities/cuenta.model";
+import {Cancion} from "../models/entities/cancion.model";
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +12,11 @@ import {CreateAccountModel} from "../models/dto/create-account.model";
 
 export class VotanteService {
   private apiUrl = "http://localhost:8080/musicalist/api/votantes/";
-  public votante: Votante;
-  public votante$: Subject<Votante>;
+  public votante: Cuenta;
+  public votante$: Subject<Cuenta>;
 
   constructor() {
-    this.votante = new Votante(-1, false, "", "", [])
+    this.votante = new Cuenta(-1, "", "", false)
     this.votante$ = new Subject()
   }
 
@@ -40,9 +40,18 @@ export class VotanteService {
   }
 
   // Obtener votante por ID.
-  getVotanteById(id: number): Observable<Votante> {
+  getVotanteById(id: number): Observable<Cuenta> {
     return from(axios.get(this.apiUrl + id)).pipe(
       map((response: AxiosResponse) => response.data),
+    ).pipe(
+      catchError((error) => throwError(error))
+    );
+  }
+
+  // Obtener canciones votadas de un Votante
+  getVotosById(): Observable<Cancion[]> {
+    return from(axios.get(this.apiUrl + this.votante.idCuenta + "/votos")).pipe(
+      map((response: AxiosResponse<Cancion[]>) => response.data),
     ).pipe(
       catchError((error) => throwError(error))
     );
