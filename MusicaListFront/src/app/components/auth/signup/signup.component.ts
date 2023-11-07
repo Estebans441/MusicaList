@@ -1,10 +1,9 @@
 import {Component} from '@angular/core';
 import {AdministradorService} from "../../../services/administrador.service";
 import {VotanteService} from "../../../services/votante.service";
-import {Administrador} from "../../../models/entities/administrador.model";
 import {Router} from "@angular/router";
-import {Votante} from "../../../models/entities/votante.model";
 import {HashService} from "../../../services/hash.service";
+import {CreateAccountModel} from "../../../models/dto/create-account.model";
 
 @Component({
   selector: 'app-signup',
@@ -26,12 +25,10 @@ export class SignupComponent {
   public registrarAdmin() {
     if (this.validarFormulario()) {
       this.administradorService.crearAdministrador(
-        new Administrador(-1, false, this.hashService.hashSHA256(this.form.contrasena), this.form.correo, this.form.nombre))
-        .subscribe((administrador: Administrador) => {
-          if (administrador.idCuenta != -1)
-            this.router.navigate(["/login"])
-          else
-            this.errorMessage = "Nombre de usuario o correo existentes"
+        new CreateAccountModel(this.form.nombre, this.form.correo, this.hashService.hashSHA256(this.form.contrasena)))
+        .subscribe({
+          next: () => this.router.navigate(["/login"]),
+          error: () => this.errorMessage = "Nombre de usuario o correo existentes"
         })
     }
   }
@@ -39,12 +36,10 @@ export class SignupComponent {
   public registrarVot() {
     if (this.validarFormulario()) {
       this.votanteService.createVotante(
-        new Votante(-1, false, this.hashService.hashSHA256(this.form.contrasena), this.form.correo, this.form.nombre, []))
-        .subscribe((votante: Votante) => {
-          if (votante.idCuenta != -1)
-            this.router.navigate(["/login"])
-          else
-            this.errorMessage = "Nombre de usuario o correo existentes"
+        new CreateAccountModel(this.form.nombre, this.form.correo, this.hashService.hashSHA256(this.form.contrasena)))
+        .subscribe({
+          next: () => this.router.navigate(["/login"]),
+          error: () => this.errorMessage = "Nombre de usuario o correo existentes"
         })
     }
   }

@@ -4,6 +4,7 @@ import {Votante} from "../models/entities/votante.model";
 import {from, Observable, Subject, throwError} from "rxjs";
 import {catchError, map} from "rxjs/operators";
 import {Administrador} from "../models/entities/administrador.model";
+import {CreateAccountModel} from "../models/dto/create-account.model";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class VotanteService {
   public votante$: Subject<Votante>;
 
   constructor() {
-    this.votante = new Votante(-1, false, "", "", "", [])
+    this.votante = new Votante(-1, false, "", "", [])
     this.votante$ = new Subject()
   }
 
@@ -31,9 +32,9 @@ export class VotanteService {
   }
 
   // Crear votante
-  createVotante(votante: Votante): Observable<Votante> {
+  createVotante(votante: CreateAccountModel): Observable<CreateAccountModel> {
     return from(axios.post(this.apiUrl, votante)).pipe(
-      map((response: AxiosResponse) => response.data),
+      map((response: AxiosResponse<CreateAccountModel>) => response.data),
       catchError((error: any) => throwError(error))
     );
   }

@@ -3,6 +3,7 @@ import axios, {AxiosResponse} from 'axios';
 import {Administrador} from "../models/entities/administrador.model";
 import {from, Observable, Subject, throwError} from "rxjs";
 import {catchError, map} from "rxjs/operators";
+import {CreateAccountModel} from "../models/dto/create-account.model";
 
 @Injectable(
   {
@@ -16,7 +17,7 @@ export class AdministradorService {
   public administrador$: Subject<Administrador>
 
   constructor() {
-    this.administrador = new Administrador(-1, false, "", "", "");
+    this.administrador = new Administrador(-1, false, "", "");
     this.administrador$ = new Subject()
   }
 
@@ -32,10 +33,10 @@ export class AdministradorService {
   }
 
   // Crear Administrador
-  public crearAdministrador(administrador: Administrador): Observable<Administrador> {
-    return from(axios.post<Administrador>(this.apiUrl, administrador))
+  public crearAdministrador(administrador: CreateAccountModel): Observable<CreateAccountModel> {
+    return from(axios.post<CreateAccountModel>(this.apiUrl, administrador))
       .pipe(
-        map((response: AxiosResponse<Administrador>) => response.data),
+        map((response: AxiosResponse<CreateAccountModel>) => response.data),
         catchError((error) => throwError(error))
       );
   }

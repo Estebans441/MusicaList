@@ -8,7 +8,7 @@ import {VotanteService} from "../../../services/votante.service";
   styleUrls: ['./vot-account.component.css']
 })
 export class VotAccountComponent implements OnInit {
-  votante = new Votante(-1, false, "", "", "", [])
+  votante = new Votante(-1, false, "", "", [])
 
   constructor(private votanteService: VotanteService) {
   }
