@@ -1,6 +1,5 @@
 package co.edu.javeriana.jwt.controller;
 
-import co.edu.javeriana.jwt.model.dto.AuthPermission;
 import co.edu.javeriana.jwt.model.dto.CuentaDTO;
 import co.edu.javeriana.jwt.model.entity.Cuenta;
 import co.edu.javeriana.jwt.repository.AdministradorRepository;
@@ -41,12 +40,9 @@ public class AutenticacionController {
             // Obtenemos el rol (Admin o User) del usuario
             String role = getRole(idCuenta);
 
-            // Generamos el token JWT y creamos un objeto AuthPermission
             String token = jwtProveedorToken.generateToken(cuentaOptional.get(), role);
-            AuthPermission authPermission = new AuthPermission(role, new CuentaDTO(cuentaOptional.get()));
 
-            // Devolvemos una respuesta exitosa con el token y el objeto AuthPermission
-            return ResponseEntity.ok(new JWTToken(token, JWTFiltroAutorizacion.PREFIX, authPermission));
+            return ResponseEntity.ok(new JWTToken(token, JWTFiltroAutorizacion.PREFIX, role));
         }
 
         // Si no se encuentra una cuenta o la autenticación falla, devolvemos una respuesta 404

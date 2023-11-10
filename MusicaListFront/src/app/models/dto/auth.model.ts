@@ -1,23 +1,13 @@
 import {Cuenta} from "../entities/cuenta.model";
 
-export class AuthModel {
-  role: string;
-  cuenta: Cuenta;
-
-  constructor(role: string, cuenta: Cuenta) {
-    this.role = role;
-    this.cuenta = cuenta;
-  }
-}
-
 export class AuthDTO {
   token:string;
   prefijo:String;
-  dto : AuthModel;
+  role : string;
 
-  constructor(token: string, prefijo: String, dto: AuthModel) {
+  constructor(token: string, prefijo: String, role: string) {
     this.token = token;
     this.prefijo = prefijo;
-    this.dto = dto;
+    this.role = role;
   }
 }

@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {GeneroMusical} from "../../../../models/entities/generoMusical.model";
 import {GeneroMusicalService} from "../../../../services/generoMusical.service";
 import {Cancion} from "../../../../models/entities/cancion.model";
-import {AdministradorService} from "../../../../services/administrador.service";
 import {MatDialog} from "@angular/material/dialog";
 import {AdminAddGenreComponent} from "../add-genre/admin-add-genre.component";
 import {AdminEditGenreComponent} from "../edit-genre/admin-edit-genre.component";
+import {CookieService} from "ngx-cookie-service";
 
 
 @Component({
@@ -16,8 +16,9 @@ import {AdminEditGenreComponent} from "../edit-genre/admin-edit-genre.component"
 export class AdminGenresComponent implements OnInit {
   generosMusicales: GeneroMusical[] = [];
   canciones: Cancion[] = [];
+  cookieService = inject(CookieService)
 
-  constructor(private generoMusicalService: GeneroMusicalService, private administradorService: AdministradorService, public dialog: MatDialog) {
+  constructor(private generoMusicalService: GeneroMusicalService, public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -70,7 +71,7 @@ export class AdminGenresComponent implements OnInit {
   }
 
   eliminarGenero(id: number) {
-    if (this.administradorService.administrador.idCuenta == -1)
+    if (this.cookieService.check('JWT-token'))
       alert("Es necesario iniciar sesion para borrar un genero")
     else {
       this.generoMusicalService.deleteGeneroMusicalById(id).subscribe((genero: GeneroMusical) => {

@@ -12,7 +12,7 @@ import {AuthDTO} from "../models/dto/auth.model";
 })
 
 export class CuentaService {
-  constructor(private hashService: HashService) {
+  constructor() {
   }
 
   private apiUrl = "http://localhost:8082/public/";
@@ -24,18 +24,6 @@ export class CuentaService {
       axios
         .post<AuthDTO>(`${this.apiUrl}autenticacion-usuario?${queryParams}`)
         .then((response: AxiosResponse<AuthDTO>) => response.data)
-    ).pipe(
-      catchError((error) => {
-        return throwError(error);
-      })
-    );
-  }
-
-  getCuentaToken(token: string): Observable<Cuenta> {
-    return from(axios.post(this.apiUrl+"autenticacion", null, {
-        headers: {"JWT-token": token}
-      })
-        .then((response: AxiosResponse<Cuenta>) => response.data)
     ).pipe(
       catchError((error) => {
         return throwError(error);

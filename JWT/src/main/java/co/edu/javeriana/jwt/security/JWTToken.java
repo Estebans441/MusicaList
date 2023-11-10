@@ -16,6 +16,6 @@ public class JWTToken {
     @Generated
     private String prefijo;
     @Generated
-    private Object dto;
+    private String role;
 
 }
