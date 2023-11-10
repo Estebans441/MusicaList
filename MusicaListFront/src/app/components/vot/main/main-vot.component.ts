@@ -25,6 +25,6 @@ export class MainVotComponent implements OnInit {
     );
 
   ngOnInit(): void {
-    console.log(this.cookieService.get("JWT-token"))
+
   }
 }
