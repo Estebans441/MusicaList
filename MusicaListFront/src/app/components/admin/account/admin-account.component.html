@@ -1,30 +1,40 @@
 <body class = "bodyColor">
 <div class="form-box">
   <form class="form">
-    <span class="title">Iniciar sesi&oacute;n</span>
-    <span class="subtitle">Inicia sesi&oacute;n con correo y contraseña</span>
+    <span class="title">Información de Usuario: </span>
+    <div class = "seccion">
+      <img src = "https://icon-icons.com/es/icono/administrador-de/129392" alt = "Avatar" class = "avatar">
+    </div>
     <div class="form-container">
-
       <p class = "message">
         <b> ID de Usuario: </b> {{cuenta.idCuenta}}<br>
       </p>
-
       <p class = "message">
         <b> Nombre de Usuario: </b> {{cuenta.nombreUsuario}}<br>
       </p>
-
       <p class = "message">
         <b> Correo de Usuario: </b> {{cuenta.correo}}
       </p>
-
       <p class = "message">
         <b> Rol: </b> Administrador
       </p>
-
     </div>
   </form>
   <div class="form-section">
-    <p>Funcionalidades de acceso: </p>
+    <p> <b> Funcionalidades de acceso: </b> </p>
+    <div class = "form-container">
+      <ul>
+        <li>
+          <p class = "message"> Autenticación de Usuario </p>
+        </li>
+        <li>
+          <p class = "message"> CRUD Géneros Músicales </p>
+        </li>
+        <li>
+          <p class = "message"> CRUD Canciones </p>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 </body>
