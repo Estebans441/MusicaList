@@ -1,5 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {CookieService} from "ngx-cookie-service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-vot-menu',
@@ -8,9 +9,14 @@ import {CookieService} from "ngx-cookie-service";
 })
 export class VotMenuComponent {
   cookieService = inject(CookieService)
-  cerrarSesion(){
+
+  constructor(private router: Router) {
+  }
+
+  cerrarSesion() {
     this.cookieService.deleteAll()
     this.cookieService.delete("JWT-token")
     this.cookieService.delete("role")
+    this.router.navigate(['*'])
   }
 }
