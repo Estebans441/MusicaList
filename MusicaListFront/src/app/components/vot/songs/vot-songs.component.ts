@@ -1,8 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {GeneroMusicalService} from "../../../services/generoMusical.service";
 import {GeneroMusical} from "../../../models/entities/generoMusical.model";
 import {VotanteService} from "../../../services/votante.service";
+import {AxiosError} from "axios";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-vot-songs',
@@ -12,6 +14,7 @@ import {VotanteService} from "../../../services/votante.service";
 export class VotSongsComponent implements OnInit {
   id: number
   genero: GeneroMusical = new GeneroMusical(-1, "", "", [], 0);
+  cookieService = inject(CookieService)
 
   constructor(private route: ActivatedRoute, private generoService: GeneroMusicalService, private votanteService: VotanteService, private router: Router) {
     this.id = -1;
@@ -30,11 +33,27 @@ export class VotSongsComponent implements OnInit {
   }
 
   votarCancion(id: number) {
-    this.votanteService.realizarVoto(id).subscribe(ret => {
-      if (ret) {
-        this.generoService.actualizarGenero(this.id)
-        alert("Voto realizado con exito")
-      } else alert("Error realizando el voto")
-    })
+    if(this.checkToken()) {
+      this.votanteService.realizarVoto(id).subscribe({
+        next: () => {
+          this.generoService.actualizarGenero(this.id)
+          alert("Voto realizado con exito")
+        },
+        error: (error: AxiosError) => {
+          if (error.response && error.response.status === 403)
+            alert("No tienes permisos para realizar esta acción");
+          else
+            alert("Error desconocido");
+        }
+      })
+    }
+  }
+
+  checkToken() {
+    if (!this.cookieService.check('JWT-token')) {
+      alert("Es necesario iniciar sesion para realizar esta accion")
+      return false;
+    }
+    return true;
   }
 }
