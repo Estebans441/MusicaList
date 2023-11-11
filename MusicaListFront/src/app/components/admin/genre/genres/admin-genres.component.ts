@@ -71,7 +71,7 @@ export class AdminGenresComponent implements OnInit {
   }
 
   eliminarGenero(id: number) {
-    if (this.cookieService.check('JWT-token'))
+    if (!this.cookieService.check('JWT-token'))
       alert("Es necesario iniciar sesion para borrar un genero")
     else {
       this.generoMusicalService.deleteGeneroMusicalById(id).subscribe((genero: GeneroMusical) => {

@@ -15,9 +15,6 @@ export class VotSongsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private generoService: GeneroMusicalService, private votanteService: VotanteService, private router: Router) {
     this.id = -1;
-    if (votanteService.votante.idCuenta == -1) {
-      this.router.navigate([""])
-    }
   }
 
   ngOnInit(): void {
@@ -33,7 +30,7 @@ export class VotSongsComponent implements OnInit {
   }
 
   votarCancion(id: number) {
-    this.votanteService.realizarVoto(this.votanteService.votante.idCuenta, id).subscribe(ret => {
+    this.votanteService.realizarVoto(id).subscribe(ret => {
       if (ret) {
         this.generoService.actualizarGenero(this.id)
         alert("Voto realizado con exito")

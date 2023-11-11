@@ -39,40 +39,39 @@ export class GeneroMusicalService {
     return from(axios.post(this.apiUrl, generoMusical, {
       headers: {'jwt-token': this.cookieService.get('JWT-token')}
     })).pipe(
-      map((response: AxiosResponse) => response.data),
-      catchError((error: any) => throwError(error))
-    );
+      map((response: AxiosResponse) => response.data)
+    )
   }
 
   // Obtener todos los géneros musicales.
   getAllGenerosMusicales(): Observable<GeneroMusical[]> {
     return from(axios.get(this.apiUrl)).pipe(
-      map((response: AxiosResponse) => response.data),
-      catchError((error: any) => throwError(error))
-    );
+      map((response: AxiosResponse) => response.data)
+    )
   }
 
   // Obtener un género musical por su ID.
   getGeneroMusicalById(id: number): Observable<GeneroMusical> {
     return from(axios.get(this.apiUrl + id)).pipe(
-      map((response: AxiosResponse) => response.data),
-      catchError((error: any) => throwError(error))
-    );
+      map((response: AxiosResponse) => response.data)
+    )
   }
 
   // Actualizar un género musical por ID.
   updateGeneroMusicalById(id: number, generoMusical: GeneroMusical): Observable<GeneroMusical> {
-    return from(axios.put(this.apiUrl + id, generoMusical)).pipe(
-      map((response: AxiosResponse) => response.data),
-      catchError((error: any) => throwError(error))
-    );
+    return from(axios.put(this.apiUrl + id, generoMusical, {
+      headers: {'jwt-token': this.cookieService.get('JWT-token')}
+    })).pipe(
+      map((response: AxiosResponse) => response.data)
+    )
   }
 
   // Eliminar un género musical por ID
   deleteGeneroMusicalById(id: number): Observable<GeneroMusical> {
-    return from(axios.delete(this.apiUrl + id)).pipe(
-      map((response: AxiosResponse) => response.data),
-      catchError((error: any) => throwError(error))
-    );
+    return from(axios.delete(this.apiUrl + id, {
+      headers: {'jwt-token': this.cookieService.get('JWT-token')}
+    })).pipe(
+      map((response: AxiosResponse) => response.data)
+    )
   }
 }

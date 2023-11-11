@@ -26,16 +26,13 @@ export class VotSearchComponent {
   }
 
   votarCancion(id: number) {
-    if (this.votanteService.votante.idCuenta == -1)
-      alert("Es necesario iniciar sesión para realizar un voto")
-    else {
-      this.votanteService.realizarVoto(this.votanteService.votante.idCuenta, id).subscribe(ret => {
-        if (ret) {
-          alert("Voto realizado con exito")
-          this.buscarCanciones()
-        } else alert("Error realizando el voto")
-      })
-    }
+    this.votanteService.realizarVoto(id).subscribe(ret => {
+      if (ret) {
+        alert("Voto realizado con exito")
+        this.buscarCanciones()
+      } else alert("Error realizando el voto")
+    })
+    // alert("Es necesario iniciar sesión para realizar un voto")
   }
 
 }

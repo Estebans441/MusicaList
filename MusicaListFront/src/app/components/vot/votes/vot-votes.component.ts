@@ -12,22 +12,19 @@ export class VotVotesComponent implements OnInit {
   canciones: Cancion[] = []
 
   constructor(private votanteService: VotanteService, private router: Router) {
-    if (votanteService.votante.idCuenta == -1) {
-      this.router.navigate([""])
-    }
   }
 
   ngOnInit(): void {
-    this.votanteService.getVotosById().subscribe((res) => {
+    this.votanteService.getVotos().subscribe((res) => {
       this.canciones = res;
     })
   }
 
   eliminarVoto(id: number) {
-    this.votanteService.eliminarVoto(this.votanteService.votante.idCuenta, id).subscribe(response => {
+    this.votanteService.eliminarVoto(id).subscribe(response => {
       if (response) {
         alert("Voto eliminado con exito")
-        this.votanteService.getVotosById().subscribe((res) => {
+        this.votanteService.getVotos().subscribe((res) => {
           this.canciones = res;
         })
       } else alert("Error eliminando el voto")

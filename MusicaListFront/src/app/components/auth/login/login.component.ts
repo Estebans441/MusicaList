@@ -21,12 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.cookieService.check('JWT-token') && this.cookieService.check('role')) {
-      if (this.cookieService.get('role') == "Admin")
-        this.router.navigate(['/admin'])
-      else
-        this.router.navigate(['/vot'])
-    }
+    this.goToMainPage()
   }
 
   iniciarSesion() {
@@ -34,15 +29,20 @@ export class LoginComponent implements OnInit {
       next: (resultado) => {
         this.cookieService.set('JWT-token', resultado.token)
         this.cookieService.set('role', resultado.role)
-        if (resultado.role == "Admin") {
-          this.router.navigate(['/admin'])
-        } else {
-          this.router.navigate(['/vot'])
-        }
+        this.goToMainPage()
       },
       error: (error) => {
         this.errorMessage = "Nombre de usuario o contraseña incorrectos"
       },
     });
+  }
+
+  goToMainPage() {
+    if (this.cookieService.check('JWT-token') && this.cookieService.check('role')) {
+      if (this.cookieService.get('role') == "Admin")
+        this.router.navigate(['/admin'])
+      else
+        this.router.navigate(['/vot'])
+    }
   }
 }
