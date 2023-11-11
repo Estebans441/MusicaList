@@ -6,6 +6,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {AdminAddGenreComponent} from "../add-genre/admin-add-genre.component";
 import {AdminEditGenreComponent} from "../edit-genre/admin-edit-genre.component";
 import {CookieService} from "ngx-cookie-service";
+import {AxiosError} from "axios";
 
 
 @Component({
@@ -30,53 +31,84 @@ export class AdminGenresComponent implements OnInit {
   }
 
   agregar() {
-    const dialogRef = this.dialog.open(AdminAddGenreComponent, {
-      height: '300px',
-      width: '400px',
-    });
+    if (this.checkToken()) {
+      const dialogRef = this.dialog.open(AdminAddGenreComponent, {
+        height: '300px',
+        width: '400px',
+      });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
+      dialogRef.afterClosed().subscribe(result => {
         let genero: GeneroMusical = result['genero'];
-        this.generoMusicalService.createGeneroMusical(genero).subscribe(res => {
-          this.generoMusicalService.getAllGenerosMusicales().subscribe(
-            (generosMusicales: GeneroMusical[]) => {
-              this.generosMusicales = generosMusicales;
-            }
-          )
+        this.generoMusicalService.createGeneroMusical(genero).subscribe({
+          next: () => {
+            this.generoMusicalService.getAllGenerosMusicales().subscribe(
+              (generosMusicales: GeneroMusical[]) => {
+                this.generosMusicales = generosMusicales;
+              }
+            )
+          },
+          error: (error: AxiosError) => {
+            if (error.response && error.response.status === 403)
+              alert("No tienes permisos para realizar esta acción");
+            else
+              alert("Error desconocido");
+          }
         })
-      }
-    })
+      })
+    }
   }
 
-  editar(genreId:number, genreNombre:string, genreDesc:string) {
-    const dialogRef = this.dialog.open(AdminEditGenreComponent, {
-      height: '300px',
-      width: '400px',
-      data: {name: genreNombre, desc: genreDesc}
-    });
+  editar(genreId: number, genreNombre: string, genreDesc: string) {
+    if (this.checkToken()) {
+      const dialogRef = this.dialog.open(AdminEditGenreComponent, {
+        height: '300px',
+        width: '400px',
+        data: {name: genreNombre, desc: genreDesc}
+      });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        let genero: GeneroMusical = result['genero'];
-        this.generoMusicalService.updateGeneroMusicalById(genreId, genero).subscribe(res => {
-          this.generoMusicalService.getAllGenerosMusicales().subscribe(
-            (generosMusicales: GeneroMusical[]) => {
-              this.generosMusicales = generosMusicales;
+      dialogRef.afterClosed().subscribe((result) => {
+          let genero: GeneroMusical = result['genero'];
+          this.generoMusicalService.updateGeneroMusicalById(genreId, genero).subscribe({
+            next: res => {
+              this.generoMusicalService.getAllGenerosMusicales().subscribe(
+                (generosMusicales: GeneroMusical[]) => {
+                  this.generosMusicales = generosMusicales;
+                }
+              )
+            },
+            error: (error: AxiosError) => {
+              if (error.response && error.response.status === 403)
+                alert("No tienes permisos para realizar esta acción");
+              else
+                alert("Error desconocido");
             }
-          )
-        })
-      }
-    })
+          })
+        }
+      )
+    }
   }
 
   eliminarGenero(id: number) {
-    if (!this.cookieService.check('JWT-token'))
-      alert("Es necesario iniciar sesion para borrar un genero")
-    else {
-      this.generoMusicalService.deleteGeneroMusicalById(id).subscribe((genero: GeneroMusical) => {
-        this.generosMusicales = this.generosMusicales.filter((genero: GeneroMusical) => genero.idGenero != id)
+    if (this.checkToken()) {
+      this.generoMusicalService.deleteGeneroMusicalById(id).subscribe({
+        next: (genero: GeneroMusical) => {
+          this.generosMusicales = this.generosMusicales.filter((genero: GeneroMusical) => genero.idGenero != id)
+        },
+        error: (error: AxiosError) => {
+          if (error.response && error.response.status === 403)
+            alert("No tienes permisos para realizar esta acción");
+          else
+            alert("Error desconocido");
+        }
       })
     }
+  }
+
+  checkToken() {
+    if (!this.cookieService.check('JWT-token')) {
+      alert("Es necesario iniciar sesion para realizar esta accion")
+      return false;
+    }
+    return true;
   }
 }
