@@ -1,3 +1,30 @@
-ADMIN<br>
-{{cuenta.nombreUsuario}}<br>
-{{cuenta.correo}}
+<body class = "bodyColor">
+<div class="form-box">
+  <form class="form">
+    <span class="title">Iniciar sesi&oacute;n</span>
+    <span class="subtitle">Inicia sesi&oacute;n con correo y contraseña</span>
+    <div class="form-container">
+
+      <p class = "message">
+        <b> ID de Usuario: </b> {{cuenta.idCuenta}}<br>
+      </p>
+
+      <p class = "message">
+        <b> Nombre de Usuario: </b> {{cuenta.nombreUsuario}}<br>
+      </p>
+
+      <p class = "message">
+        <b> Correo de Usuario: </b> {{cuenta.correo}}
+      </p>
+
+      <p class = "message">
+        <b> Rol: </b> Administrador
+      </p>
+
+    </div>
+  </form>
+  <div class="form-section">
+    <p>Funcionalidades de acceso: </p>
+  </div>
+</div>
+</body>
