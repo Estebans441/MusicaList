@@ -19,4 +19,11 @@ export class VotMenuComponent {
     this.cookieService.delete("role")
     this.router.navigate(['*'])
   }
+
+  verCuenta(){
+    if(this.cookieService.check("JWT-token"))
+      this.router.navigate(['/vot/account'])
+    else
+      alert("Es necesario iniciar sesion para realizar esta accion")
+  }
 }
