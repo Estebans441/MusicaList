@@ -1,3 +1,49 @@
-VOTANTE<br>
-{{cuenta.nombreUsuario}}<br>
-{{cuenta.correo}}
+<body class = "bodyColor">
+<div class="form-box">
+  <form class="form">
+    <span class="title">Información de Usuario: </span>
+    <div class = "seccion">
+      <img src = "assets/usuario.png" style="max-width: 50%;" alt = "votanteImage">
+    </div>
+    <div class="form-container">
+      <p class = "message">
+        <b> ID de Usuario: </b> {{cuenta.idCuenta}}<br>
+      </p>
+      <p class = "message">
+        <b> Nombre de Usuario: </b> {{cuenta.nombreUsuario}}<br>
+      </p>
+      <p class = "message">
+        <b> Correo de Usuario: </b> {{cuenta.correo}}
+      </p>
+      <p class = "message">
+        <b> Rol: </b> Votante
+      </p>
+    </div>
+  </form>
+  <div class="form-section">
+    <p> <b> Funcionalidades de acceso: </b> </p>
+    <div class = "form-container">
+      <ul>
+        <li>
+          <p class = "message"> Creación de Cuenta </p>
+        </li>
+        <li>
+          <p class = "message"> Activación de cuenta </p>
+        </li>
+        <li>
+          <p class = "message"> Autenticación de usuario </p>
+        </li>
+        <li>
+          <p class = "message"> Ver listas por género musical creadas </p>
+        </li>
+        <li>
+          <p class = "message"> Buscar canción por nombre </p>
+        </li>
+        <li>
+          <p class = "message"> Votar / Desvotar una canción </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>

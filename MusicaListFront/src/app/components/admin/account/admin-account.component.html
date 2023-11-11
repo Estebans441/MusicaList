@@ -1,3 +1,40 @@
-ADMIN<br>
-{{cuenta.nombreUsuario}}<br>
-{{cuenta.correo}}
+<body class = "bodyColor">
+<div class="form-box">
+  <form class="form">
+    <span class="title">Información de Usuario: </span>
+    <div class = "seccion">
+      <img src = "assets/admin.png" style="max-width: 50%;" alt = "adminImage">
+    </div>
+    <div class="form-container">
+      <p class = "message">
+        <b> ID de Usuario: </b> {{cuenta.idCuenta}}<br>
+      </p>
+      <p class = "message">
+        <b> Nombre de Usuario: </b> {{cuenta.nombreUsuario}}<br>
+      </p>
+      <p class = "message">
+        <b> Correo de Usuario: </b> {{cuenta.correo}}
+      </p>
+      <p class = "message">
+        <b> Rol: </b> Administrador
+      </p>
+    </div>
+  </form>
+  <div class="form-section">
+    <p> <b> Funcionalidades de acceso: </b> </p>
+    <div class = "form-container">
+      <ul>
+        <li>
+          <p class = "message"> Autenticación de Usuario </p>
+        </li>
+        <li>
+          <p class = "message"> CRUD Géneros Músicales </p>
+        </li>
+        <li>
+          <p class = "message"> CRUD Canciones </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
