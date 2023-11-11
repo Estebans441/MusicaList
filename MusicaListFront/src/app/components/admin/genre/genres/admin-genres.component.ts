@@ -38,22 +38,24 @@ export class AdminGenresComponent implements OnInit {
       });
 
       dialogRef.afterClosed().subscribe(result => {
-        let genero: GeneroMusical = result['genero'];
-        this.generoMusicalService.createGeneroMusical(genero).subscribe({
-          next: () => {
-            this.generoMusicalService.getAllGenerosMusicales().subscribe(
-              (generosMusicales: GeneroMusical[]) => {
-                this.generosMusicales = generosMusicales;
-              }
-            )
-          },
-          error: (error: AxiosError) => {
-            if (error.response && error.response.status === 403)
-              alert("No tienes permisos para realizar esta acción");
-            else
-              alert("Error desconocido");
-          }
-        })
+        if(result) {
+          let genero: GeneroMusical = result['genero'];
+          this.generoMusicalService.createGeneroMusical(genero).subscribe({
+            next: () => {
+              this.generoMusicalService.getAllGenerosMusicales().subscribe(
+                (generosMusicales: GeneroMusical[]) => {
+                  this.generosMusicales = generosMusicales;
+                }
+              )
+            },
+            error: (error: AxiosError) => {
+              if (error.response && error.response.status === 403)
+                alert("No tienes permisos para realizar esta acción");
+              else
+                alert("Error desconocido");
+            }
+          })
+        }
       })
     }
   }
@@ -67,6 +69,7 @@ export class AdminGenresComponent implements OnInit {
       });
 
       dialogRef.afterClosed().subscribe((result) => {
+        if(result) {
           let genero: GeneroMusical = result['genero'];
           this.generoMusicalService.updateGeneroMusicalById(genreId, genero).subscribe({
             next: res => {
@@ -83,6 +86,7 @@ export class AdminGenresComponent implements OnInit {
                 alert("Error desconocido");
             }
           })
+        }
         }
       )
     }
