@@ -55,8 +55,7 @@ public class AutenticacionController {
         JWTProveedorToken jwtProveedorToken = new JWTProveedorToken();
         Integer id = Integer.parseInt(jwtProveedorToken.getUsername(token));
         Optional<Cuenta> cuentaOptional = cuentaRepository.findById(id);
-
-        return cuentaOptional.map(cuenta -> ResponseEntity.ok(new CuentaDTO(cuenta))).orElseGet(() -> ResponseEntity.notFound().build());
+        return cuentaOptional.map(cuenta -> ResponseEntity.ok(new CuentaDTO(cuenta, getRole(cuenta.getIdCuenta())))).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     private String getRole(Integer id) {

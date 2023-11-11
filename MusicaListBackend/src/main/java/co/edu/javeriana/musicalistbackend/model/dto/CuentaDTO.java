@@ -1,6 +1,7 @@
-package co.edu.javeriana.jwt.model.dto;
+package co.edu.javeriana.musicalistbackend.model.dto;
 
-import co.edu.javeriana.jwt.model.entity.Cuenta;
+
+import co.edu.javeriana.musicalistbackend.model.entity.Cuenta;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,11 +13,12 @@ public class CuentaDTO {
     private String correo;
     private String role;
 
+    public CuentaDTO() {
+    }
 
-    public CuentaDTO(Cuenta cuenta, String role) {
+    public CuentaDTO(Cuenta cuenta) {
         this.idCuenta = cuenta.getIdCuenta();
         this.nombreUsuario = cuenta.getNombreUsuario();
         this.correo = cuenta.getCorreo();
-        this.role = role;
     }
 }

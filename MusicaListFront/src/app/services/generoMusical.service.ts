@@ -1,8 +1,9 @@
-import {Injectable} from '@angular/core';
+import {inject, Injectable} from '@angular/core';
 import axios, {AxiosResponse} from 'axios';
 import {GeneroMusical} from "../models/entities/generoMusical.model";
-import {from, Observable, Subject, throwError} from "rxjs";
+import {config, from, Observable, Subject, throwError} from "rxjs";
 import {catchError, map} from "rxjs/operators";
+import {CookieService} from "ngx-cookie-service";
 
 @Injectable(
   {
@@ -14,6 +15,7 @@ export class GeneroMusicalService {
   private apiUrl: string = "http://localhost:8080/musicalist/api/generos/"
   private genero: GeneroMusical
   private genero$: Subject<GeneroMusical>
+  private cookieService = inject(CookieService)
 
   constructor() {
     this.genero = new GeneroMusical(-1, "", "", [], 0)
@@ -34,7 +36,9 @@ export class GeneroMusicalService {
 
   // Crear un género musical.
   createGeneroMusical(generoMusical: GeneroMusical): Observable<GeneroMusical> {
-    return from(axios.post(this.apiUrl, generoMusical)).pipe(
+    return from(axios.post(this.apiUrl, generoMusical, {
+      headers: {'jwt-token': this.cookieService.get('JWT-token')}
+    })).pipe(
       map((response: AxiosResponse) => response.data),
       catchError((error: any) => throwError(error))
     );
